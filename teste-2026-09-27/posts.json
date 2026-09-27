@@ -1,0 +1,31 @@
+[
+ {"id":"08","dia":"Dom 27/09","hora":"teste","tema":"O voo mais longo",
+  "slides":[
+   {"t":"cover","eyebrow":"Notícia · Aviação","title":["18 horas","sem escala"],"sub":"A Qantas anunciou um voo direto de Sydney para Nova York. Você encararia?"},
+   {"t":"table","sec":"01","label":"O voo","head":"Sydney → Nova York","rows":[["Distância","16 mil km",""],["Duração","18 horas",""],["Início das vendas","agosto de 2027",""],["Primeiro voo","2028","pos"]],"note":"Avião: Airbus A350-1000ULR, configurado para voos ultralongos."},
+   {"t":"table","sec":"02","label":"A cabine","head":"238 assentos em 4 classes","rows":[["Primeira classe","6",""],["Executiva","52","pos"],["Premium economy","40",""],["Econômica","140",""]],"note":"Entre a premium e a econômica, uma área para alongar e se exercitar durante o voo."},
+   {"t":"point","sec":"03","label":"E não é o maior","head":"Sydney → Londres vem antes","body":["Com cerca de 17 mil km, a rota para Londres começa em outubro de 2027. Nova York será o segundo voo comercial mais longo do mundo."]},
+   {"t":"point","sec":"04","label":"A pergunta","head":"18 horas na econômica ou na executiva?","body":["É nesse tipo de voo que a executiva faz diferença. E é com milhas que ela deixa de custar uma fortuna."]},
+   {"t":"cta","title":["Comenta: você","encararia?"],"body":"Quer aprender a voar de executiva com milhas? Link na bio."}
+  ],
+  "caption":"18 horas sem escala. A Qantas anunciou um voo direto de Sydney para Nova York, com 16 mil km, a partir de 2028.\n\nArrasta para ver a cabine e comenta: você encararia na econômica ou só de executiva?\n\n#aviacao #viagem #qantas #milhas #classeexecutiva"},
+ {"id":"09","dia":"Dom 27/09","hora":"teste","tema":"Dinheiro ou milha",
+  "slides":[
+   {"t":"cover","eyebrow":"Caso da semana · Curitiba","title":["Curitiba por","R$ 319 ida e volta"],"sub":"Com passagem barata assim, usar milhas pode sair mais caro. Eu fiz a conta."},
+   {"t":"table","sec":"01","label":"A promoção","head":"Ida e volta, com taxas","rows":[["Rio de Janeiro → Curitiba","R$ 319","pos"],["São Paulo → Curitiba","R$ 372",""],["Campinas → Porto Alegre","R$ 459",""]],"note":"Promoção para o Sul vista em 26/09/2026. Incluía também Floripa, Foz, Navegantes e Caxias do Sul."},
+   {"t":"stat","sec":"02","label":"A conta","head":"R$ 319 em pontos comprados a R$ 29,40 o milheiro","value":"10.850","unit":"pontos equivalentes","note":"Se a mesma viagem pede mais do que isso em milhas, mais as taxas, pague em dinheiro."},
+   {"t":"point","sec":"03","label":"A regra","head":"Divida o preço pelo seu milheiro","body":["Preço em reais ÷ quanto você paga em mil milhas × 1.000. Esse é o máximo de milhas que vale a pena usar."]},
+   {"t":"point","sec":"04","label":"Por que importa","head":"Milha boa é milha bem usada","body":["Guarde as milhas para o que é caro em dinheiro: férias, feriados, internacional e executiva."]},
+   {"t":"cta","title":["Salve esta conta"],"body":"No meu curso eu ensino a decidir entre milha e dinheiro em 30 segundos. Link na bio."}
+  ],
+  "caption":"Curitiba por R$ 319 ida e volta, saindo do Rio. Com passagem assim, usar milhas pode sair mais caro que pagar em dinheiro.\n\nArrasta para ver a conta e a regra que eu uso para decidir. Salva para a próxima viagem.\n\n#milhas #curitiba #passagensbaratas #viajarbarato #milheiro"},
+ {"id":"10","dia":"Dom 27/09","hora":"teste","tema":"Promoção relâmpago",
+  "slides":[
+   {"t":"cover","eyebrow":"Caso da semana · Promoção relâmpago","title":["5.900 milhas","o trecho"],"sub":"A Smiles abriu voos nacionais da Gol por esse valor. Durou um dia."},
+   {"t":"table","sec":"01","label":"Como foi","head":"MadruGol, 23/09/2026","rows":[["Voos nacionais Gol, a partir de","5.900 milhas","pos"],["Comprando milhas com 80% de desconto","R$ 94,40",""],["São José dos Campos ⇄ Rio","11.800 ida e volta",""]],"note":"Valores por trecho, mais taxas. Assentos limitados."},
+   {"t":"point","sec":"02","label":"Na mesma noite","head":"Azul também soltou promoção","body":["Curitiba ⇄ Maringá por 7.200 pontos ida e volta. Duas companhias, uma noite, poucas horas."]},
+   {"t":"list","sec":"03","label":"Como não perder a próxima","head":"Deixe pronto antes","items":["Conta nos programas criada e com cadastro em dia.","Saldo disponível, ou saber comprar milhas com desconto.","Lista de destinos e datas que você quer.","Decisão em minutos, não em dias."]},
+   {"t":"cta","title":["Salve para a","próxima madrugada"],"body":"No meu curso eu mostro como se preparar para essas janelas. Link na bio."}
+  ],
+  "caption":"Voos nacionais por 5.900 milhas o trecho. A Smiles abriu a promoção numa terça e ela durou um dia. Na mesma noite, a Azul soltou Curitiba–Maringá por 7.200 pontos ida e volta.\n\nArrasta para ver como não perder a próxima.\n\n#milhas #smiles #gol #passagensbaratas #viajarbarato"}
+]
