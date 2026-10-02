@@ -1,0 +1,221 @@
+[
+ {
+  "id": "V1",
+  "duration": 22.0,
+  "cover_t": 0.6,
+  "tema": "POV: o mercado do mês vira passagem (vídeos)",
+  "shots": [
+   {
+    "start": 0,
+    "video": "IMG_1890.mov",
+    "from": 2.0
+   },
+   {
+    "start": 2.6,
+    "video": "IMG_2675.mov",
+    "from": 3.0,
+    "tr": "whipU"
+   },
+   {
+    "start": 5.2,
+    "video": "IMG_5780.mov",
+    "from": 0.4,
+    "tr": "zoom"
+   },
+   {
+    "start": 7.8,
+    "video": "IMG_9994.MOV",
+    "from": 3.0,
+    "tr": "dissolve"
+   },
+   {
+    "start": 10.4,
+    "video": "IMG_9224.mov",
+    "from": 2.0,
+    "tr": "whipL"
+   },
+   {
+    "start": 13.0,
+    "video": "IMG_9401.mov",
+    "from": 1.0,
+    "tr": "whipL"
+   },
+   {
+    "start": 15.6,
+    "video": "IMG_5486.mov",
+    "from": 0.3,
+    "tr": "zoom"
+   },
+   {
+    "start": 18.2,
+    "img": "IMG_2979",
+    "kb": [
+     1.03,
+     1.1,
+     0,
+     0,
+     0,
+     -30
+    ],
+    "tr": "dissolve",
+    "td": 0.6
+   }
+  ],
+  "caps": [
+   {
+    "start": 0,
+    "end": 2.6,
+    "text": "POV: você descobriu que o [[mercado do mês]] vira passagem"
+   },
+   {
+    "start": 2.6,
+    "end": 5.2,
+    "text": "a farmácia, a conta de luz, o streaming…"
+   },
+   {
+    "start": 5.2,
+    "end": 7.8,
+    "text": "tudo vira ponto. E ponto vira [[milha]]."
+   },
+   {
+    "start": 7.8,
+    "end": 10.4,
+    "text": "A milha vira Barcelona."
+   },
+   {
+    "start": 10.4,
+    "end": 13.0,
+    "text": "Vira Sevilha."
+   },
+   {
+    "start": 13.0,
+    "end": 15.6,
+    "text": "Vira [[isso aqui]]."
+   },
+   {
+    "start": 15.6,
+    "end": 18.2,
+    "text": "Sem mudar nada do que você já gasta."
+   },
+   {
+    "start": 18.2,
+    "end": 22.0,
+    "text": "Milha não é sorte. É [[método]]. Eu ensino no Duplicando Milhas.",
+    "small": "Link na bio",
+    "y": 300
+   }
+  ],
+  "caption": "POV: você descobriu que o mercado do mês vira passagem. Farmácia, conta de luz, streaming: tudo vira ponto, e ponto vira viagem.\n\nO método completo está no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #viagem #viajarbarato #pontos #milhasaereas",
+  "cap_lead": 0.22
+ },
+ {
+  "id": "V2",
+  "duration": 22.0,
+  "cover_t": 0.6,
+  "tema": "Milha não é coisa de rico (vídeos)",
+  "shots": [
+   {
+    "start": 0,
+    "video": "IMG_9811.mov",
+    "from": 0.3
+   },
+   {
+    "start": 2.6,
+    "video": "IMG_5780.mov",
+    "from": 1.5,
+    "tr": "zoom"
+   },
+   {
+    "start": 5.0,
+    "video": "IMG_5784.mov",
+    "from": 4.0,
+    "tr": "dissolve"
+   },
+   {
+    "start": 7.6,
+    "video": "IMG_8854.mov",
+    "from": 1.0,
+    "tr": "whipL"
+   },
+   {
+    "start": 10.2,
+    "video": "IMG_8772.mov",
+    "from": 1.2,
+    "tr": "zoom"
+   },
+   {
+    "start": 13.4,
+    "video": "IMG_8684.mov",
+    "from": 0.6,
+    "tr": "whipU"
+   },
+   {
+    "start": 15.6,
+    "video": "IMG_9060.mov",
+    "from": 4.0,
+    "tr": "dissolve"
+   },
+   {
+    "start": 18.0,
+    "img": "IMG_8796",
+    "kb": [
+     1.03,
+     1.1,
+     0,
+     0,
+     0,
+     -30
+    ],
+    "tr": "dissolve",
+    "td": 0.6
+   }
+  ],
+  "caps": [
+   {
+    "start": 0,
+    "end": 2.6,
+    "text": "“Milha é coisa de rico.”",
+    "quote": true
+   },
+   {
+    "start": 2.6,
+    "end": 5.0,
+    "text": "Você já ouviu isso?"
+   },
+   {
+    "start": 5.0,
+    "end": 7.6,
+    "text": "Milha é coisa de quem [[se organiza]]."
+   },
+   {
+    "start": 7.6,
+    "end": 10.2,
+    "text": "Mercado, farmácia, combustível… tudo pode virar ponto."
+   },
+   {
+    "start": 10.2,
+    "end": 13.4,
+    "text": "Em setembro, com o bônus máximo da Azul, [[g:10 mil pontos]] viraram [[g:21 mil]]."
+   },
+   {
+    "start": 13.4,
+    "end": 15.6,
+    "text": "Não é sobre ganhar mais."
+   },
+   {
+    "start": 15.6,
+    "end": 18.0,
+    "text": "É sobre [[usar melhor]]."
+   },
+   {
+    "start": 18.0,
+    "end": 22.0,
+    "text": "O caminho completo está no Duplicando Milhas.",
+    "small": "Link na bio",
+    "y": 260
+   }
+  ],
+  "caption": "“Milha é coisa de rico.” Não é. É coisa de quem se organiza. Mercado, farmácia e combustível já podem virar ponto, e com o bônus certo o ponto rende o dobro.\n\nO caminho completo está no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #viagem #educacaofinanceira #pontos #viajarbarato",
+  "cap_lead": 0.22
+ }
+]

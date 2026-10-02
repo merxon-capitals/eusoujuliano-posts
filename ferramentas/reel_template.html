@@ -1,0 +1,196 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/*FONTS*/
+:root{--carbon:#15171A;--graphite:#3B4048;--steel:#8B9098;--silver:#C4C8CE;--mist:#F1F2F4;--ink:#1C1E21;--pos:#2F6B4F;--pos-d:#6FBF93;--neg:#9E2F2F}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;font-family:Barlow;-webkit-font-smoothing:antialiased;background:var(--carbon)}
+#stage{position:absolute;inset:0;overflow:hidden}
+.bg{position:absolute;inset:0}
+.bg.dark{background:var(--carbon)}
+.bg.light{background:#fff}
+#glow{position:absolute;width:1500px;height:1500px;border-radius:50%;background:radial-gradient(circle,rgba(59,64,72,.55) 0%,rgba(59,64,72,0) 62%)}
+#wipe{position:absolute;left:0;right:0;height:1920px;top:0}
+.c{font-family:BarlowC;text-transform:uppercase}
+.ln{display:block;white-space:nowrap}
+#top{position:absolute;left:88px;right:88px;top:196px;display:flex;justify-content:space-between;font-family:BarlowC;font-weight:700;font-size:32px;letter-spacing:.24em;text-transform:uppercase}
+#prog{position:absolute;left:88px;right:88px;top:258px;display:flex;gap:10px}
+#prog i{flex:1;height:4px;position:relative;overflow:hidden}
+#prog i b{position:absolute;left:0;top:0;bottom:0;width:0}
+.scene{position:absolute;left:88px;right:88px;top:330px;bottom:400px;display:flex;flex-direction:column;justify-content:center}
+.wm{position:absolute;right:-24px;bottom:-40px;font-family:BarlowC;font-weight:800;font-size:520px;line-height:.8}
+.eyebrow{font-weight:700;font-size:34px;letter-spacing:.2em;margin-bottom:40px}
+.ttl{font-weight:800;font-size:190px;line-height:.93}
+.bar{width:130px;height:7px;margin:56px 0 48px}
+.sub{font-size:48px;line-height:1.36}
+.sec{display:flex;align-items:baseline;gap:28px;padding-bottom:24px;border-bottom:5px solid}
+.sec .n{font-family:BarlowC;font-weight:700;font-size:36px;letter-spacing:.2em}
+.sec .l{font-family:BarlowC;font-weight:800;font-size:52px;letter-spacing:.08em;text-transform:uppercase}
+.head{font-weight:700;font-size:76px;line-height:1.1;margin:70px 0 56px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:38px 26px;border-bottom:3px solid var(--silver)}
+.row.hl{background:var(--mist)}
+.row .k{font-size:46px;line-height:1.22}
+.row .v{font-weight:700;font-size:58px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.note{font-size:36px;line-height:1.42;margin-top:44px}
+.statv{font-family:BarlowC;font-weight:800;font-size:270px;white-space:nowrap;line-height:.9;font-variant-numeric:tabular-nums}
+.statu{font-family:BarlowC;font-weight:700;font-size:42px;letter-spacing:.14em;text-transform:uppercase;margin-top:26px}
+.extra{display:flex;justify-content:space-between;align-items:center;margin-top:80px;padding:36px 30px;border-left:8px solid var(--pos);background:var(--mist)}
+.extra .k{font-size:42px;line-height:1.25;max-width:560px}
+.extra .v{font-family:BarlowC;font-weight:800;font-size:96px;color:var(--pos);white-space:nowrap}
+.big{font-weight:800;font-size:150px;line-height:.95}
+.para{font-size:54px;line-height:1.38;margin-top:60px}
+.handle{font-family:BarlowC;font-weight:800;font-size:84px;letter-spacing:.05em;margin-top:90px}
+svg{position:absolute;inset:0}
+.dark-t{color:#fff} .dark-t .eyebrow,.dark-t .sec .n{color:var(--silver)} .dark-t .sub,.dark-t .para,.dark-t .note{color:var(--silver)} .dark-t .bar{background:#fff} .dark-t .sec{border-color:#fff} .dark-t .wm{color:#1D2024} .dark-t .statu{color:var(--steel)}
+.light-t{color:var(--ink)} .light-t .eyebrow,.light-t .sec .n,.light-t .statu,.light-t .note{color:var(--steel)} .light-t .bar{background:var(--carbon)} .light-t .sec{border-color:var(--carbon)} .light-t .wm{color:var(--mist)} .light-t .sub,.light-t .para{color:var(--graphite)}
+.pos{color:var(--pos)} .dark-t .pos{color:var(--pos-d)}
+</style></head><body>
+<div id="stage">
+ <div id="bgA" class="bg"></div>
+ <div id="glow"></div>
+ <div id="wipe"></div>
+ <svg id="arc" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+ <div id="scenes"></div>
+ <div id="top"><span>Duplicando Milhas</span><span>@eusoujuliano</span></div>
+ <div id="prog"></div>
+</div>
+<script>
+const R = /*REEL*/;
+const S = R.scenes;
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const ease = x => 1 - Math.pow(1 - Math.min(Math.max(x,0),1), 3);
+const easeIO = x => { x=Math.min(Math.max(x,0),1); return x<.5 ? 4*x*x*x : 1-Math.pow(-2*x+2,3)/2; };
+const fmt = (n, dec) => n.toLocaleString('pt-BR', {minimumFractionDigits:dec||0, maximumFractionDigits:dec||0});
+
+// ---------- build DOM ----------
+const root = document.getElementById('scenes');
+let k = 0;
+function el(html, delay){ k++; return `<div class="a" data-d="${delay}">${html}</div>`; }
+function counter(c){ return `<span class="cnt" data-n="${c.num}" data-dec="${c.dec||0}" data-pre="${esc(c.pre||'')}" data-suf="${esc(c.suf||'')}">${esc(c.pre||'')}${fmt(c.num,c.dec)}${esc(c.suf||'')}</span>`; }
+function lines(arr){ return arr.map(x => typeof x === 'string' ? `<span class="ln">${esc(x)}</span>` : `<span class="ln">${counter(x)}</span>`).join(''); }
+function sec(s){ return `<div class="sec"><span class="n">${esc(s.sec)}</span><span class="l">${esc(s.label)}</span></div>`; }
+
+S.forEach((s, i) => {
+  const th = s.theme || (s.t === 'table' || s.t === 'stat' ? 'light' : 'dark');
+  s._th = th;
+  let h = '';
+  if (s.wm) h += `<div class="wm">${esc(s.wm)}</div>`;
+  if (s.t === 'hook') {
+    h += el(`<div class="c eyebrow">${esc(s.eyebrow)}</div>`, -.3);
+    s.title.forEach((x, j) => h += el(`<div class="c ttl">${lines([x])}</div>`, -.25 + j*.35));
+    h += el(`<div class="bar"></div>`, .1 + s.title.length*.2);
+    h += el(`<div class="sub">${esc(s.sub)}</div>`, .3 + s.title.length*.25);
+  } else if (s.t === 'table') {
+    h += el(sec(s), .05) + el(`<div class="head">${esc(s.head)}</div>`, .25);
+    s.rows.forEach((r, j) => {
+      const v = typeof r[1] === 'string' ? esc(r[1]) : counter(r[1]);
+      h += el(`<div class="row${r[2]==='pos'?' hl':''}"><span class="k">${esc(r[0])}</span><span class="v ${r[2]||''}">${v}</span></div>`, .6 + j*.42);
+    });
+    if (s.note) h += el(`<div class="note">${esc(s.note)}</div>`, .8 + s.rows.length*.42);
+  } else if (s.t === 'stat') {
+    h += el(sec(s), .05) + el(`<div class="head">${esc(s.head)}</div>`, .25);
+    h += el(`<div class="statv pos">${counter(s.value)}</div>`, .7);
+    h += el(`<div class="statu">${esc(s.unit)}</div>`, .9);
+    if (s.extra) h += el(`<div class="extra"><span class="k">${esc(s.extra[0])}</span><span class="v">${typeof s.extra[1]==='string'?esc(s.extra[1]):counter(s.extra[1])}</span></div>`, s.extra_d || 2.2);
+  } else if (s.t === 'point') {
+    h += el(sec(s), .05);
+    h += el(`<div class="c big" style="margin-top:80px">${lines(s.big)}</div>`, .3);
+    h += el(`<div class="bar"></div>`, .7);
+    h += el(`<div class="para" style="margin-top:0">${esc(s.body)}</div>`, 1.0);
+  } else if (s.t === 'cta') {
+    h += el(`<div class="c big">${lines(s.title)}</div>`, .15);
+    h += el(`<div class="bar"></div>`, .55);
+    h += el(`<div class="para" style="margin-top:0">${esc(s.body)}</div>`, .8);
+    h += el(`<div class="handle">@eusoujuliano</div>`, 1.2);
+    if (s.note) h += el(`<div class="note" style="margin-top:70px;font-size:32px">${esc(s.note)}</div>`, 1.5);
+  }
+  root.insertAdjacentHTML('beforeend', `<div class="scene ${th}-t" id="s${i}">${h}</div>`);
+});
+document.getElementById('prog').innerHTML = S.map(() => '<i><b></b></i>').join('');
+
+// flight arc (hook + cta)
+const arc = document.getElementById('arc');
+arc.innerHTML = `<path id="ap" d="M -60 1760 C 260 1420, 760 1700, 1150 1240" fill="none" stroke="#8B9098" stroke-width="5" stroke-dasharray="18 16"/>
+ <path id="am" d="M -60 1760 C 260 1420, 760 1700, 1150 1240" fill="none" stroke="#000" stroke-width="12"/>
+ <mask id="mk"><rect width="1080" height="1920" fill="black"/><use href="#am" stroke="white"/></mask>
+ <g id="plane"><path d="M30 0 L24 2 L5 3 L-7 19 L-11 19 L-4 3 L-19 2 L-23 8 L-26 8 L-24 0 L-26 -8 L-23 -8 L-19 -2 L-4 -3 L-11 -19 L-7 -19 L5 -3 L24 -2 Z" fill="#fff" transform="scale(2.1)"/></g>`;
+const ap = document.getElementById('ap'), am = document.getElementById('am');
+ap.setAttribute('mask', 'url(#mk)');
+const AL = am.getTotalLength();
+am.setAttribute('stroke-dasharray', AL);
+
+function fit(){
+  document.querySelectorAll('.scene').forEach(n => n.style.display = 'flex');
+  document.querySelectorAll('.cnt').forEach(c => c.textContent = c.dataset.pre + fmt(parseFloat(c.dataset.n), parseInt(c.dataset.dec)) + c.dataset.suf);
+  document.querySelectorAll('.ttl,.big,.statv').forEach(e => {
+    let fs = parseFloat(getComputedStyle(e).fontSize); const w = e.closest('.scene').clientWidth;
+    const ls = e.querySelectorAll('.ln').length ? [...e.querySelectorAll('.ln')] : [e];
+    while (fs > 60 && ls.some(l => l.scrollWidth > w)) { fs -= 2; e.style.fontSize = fs + 'px'; }
+  });
+  render(0);
+}
+
+// ---------- per-frame render ----------
+function render(t){
+  let cur = 0;
+  S.forEach((s, i) => { if (t >= s.start) cur = i; });
+  const s = S[cur];
+  // background + wipe
+  const prev = cur > 0 ? S[cur-1]._th : s._th;
+  const wp = (t - s.start + .15) / .45;              // wipe progress
+  const bgA = document.getElementById('bgA'), wipe = document.getElementById('wipe');
+  const nxt = S[cur+1];
+  let wipeTh = null, wy = 1920;
+  if (prev !== s._th && wp < 1) { bgA.className = 'bg ' + prev; wipeTh = s._th; wy = 1920 * (1 - easeIO(wp)); }
+  else { bgA.className = 'bg ' + s._th; }
+  if (nxt && nxt._th !== s._th && t > nxt.start - .15) { wipeTh = nxt._th; wy = 1920 * (1 - easeIO((t - nxt.start + .15) / .45)); }
+  wipe.style.background = wipeTh === 'light' ? '#fff' : '#15171A';
+  wipe.style.transform = `translateY(${wipeTh ? wy : 1920}px)`;
+  // glow drifts on dark
+  const g = document.getElementById('glow');
+  g.style.left = (-200 + 160*Math.sin(t*.35)) + 'px'; g.style.top = (200 + 120*Math.cos(t*.27)) + 'px';
+  g.style.opacity = s._th === 'dark' ? 1 : 0;
+  // top bar colours
+  const onLight = (s._th === 'light' && !(wipeTh === 'dark' && wy < 300)) || (wipeTh === 'light' && wy < 300);
+  document.getElementById('top').style.color = onLight ? '#8B9098' : '#8B9098';
+  document.querySelectorAll('#prog i').forEach((e, i) => {
+    e.style.background = onLight ? '#E3E5E8' : '#2A2E33';
+    const si = S[i], en = S[i+1] ? S[i+1].start : R.duration;
+    const p = Math.min(Math.max((t - si.start) / (en - si.start), 0), 1);
+    e.firstChild.style.width = (p*100) + '%';
+    e.firstChild.style.background = onLight ? '#15171A' : '#fff';
+  });
+  // scenes
+  S.forEach((sc, i) => {
+    const node = document.getElementById('s' + i);
+    const end = S[i+1] ? S[i+1].start : 1e9;
+    if (t < sc.start - .01 || t > end + .2) { node.style.display = 'none'; return; }
+    node.style.display = 'flex';
+    const lt = t - sc.start;
+    const out = S[i+1] ? ease((t - (end - .3)) / .3) : 0;
+    node.style.opacity = 1 - out; node.style.transform = `translateY(${-80*out}px)`;
+    node.querySelectorAll('.a').forEach(a => {
+      const p = ease((lt - parseFloat(a.dataset.d)) / .5);
+      a.style.opacity = p; a.style.transform = `translateY(${(1-p)*50}px)`;
+      a.querySelectorAll('.cnt').forEach(c => {
+        const cp = 1 - Math.pow(2, -10 * Math.min(Math.max((lt - parseFloat(a.dataset.d)) / 1.1, 0), 1));
+        const n = parseFloat(c.dataset.n) * (lt - parseFloat(a.dataset.d) >= 1.1 ? 1 : cp);
+        c.textContent = c.dataset.pre + fmt(n, parseInt(c.dataset.dec)) + c.dataset.suf;
+      });
+    });
+    const wm = node.querySelector('.wm');
+    if (wm) { const p = ease((lt - .1) / .9); wm.style.opacity = p; wm.style.transform = `translateX(${(1-p)*120}px)`; }
+  });
+  // arc on hook / cta
+  const arcOn = s.t === 'hook' || s.t === 'cta';
+  const lt = t - s.start;
+  const ap2 = Math.min(Math.max((lt - .1) / 2.2, 0), 1);
+  const outA = S[cur+1] ? ease((t - (S[cur+1].start - .3)) / .3) : 0;
+  arc.style.opacity = arcOn ? (1 - outA) : 0;
+  am.setAttribute('stroke-dashoffset', AL * (1 - easeIO(ap2)));
+  const L = Math.max(AL * easeIO(ap2), 1), p1 = am.getPointAtLength(L), p0 = am.getPointAtLength(Math.max(L - 4, 0));
+  const ang = Math.atan2(p1.y - p0.y, p1.x - p0.x) * 180 / Math.PI;
+  document.getElementById('plane').setAttribute('transform', `translate(${p1.x} ${p1.y}) rotate(${ang})`);
+  document.getElementById('plane').style.opacity = ap2 > .02 ? 1 : 0;
+  document.querySelector('#plane path').setAttribute('fill', s._th === 'light' ? '#15171A' : '#fff');
+}
+render(0);
+</script></body></html>

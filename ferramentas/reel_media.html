@@ -1,0 +1,153 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/*FONTS*/
+:root{--carbon:#15171A;--graphite:#3B4048;--steel:#8B9098;--silver:#C4C8CE;--mist:#F1F2F4;--ink:#1C1E21;--pos:#2F6B4F;--pos-d:#6FBF93}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;font-family:Barlow;-webkit-font-smoothing:antialiased;background:var(--carbon)}
+.c{font-family:BarlowC;text-transform:uppercase}
+.ln{display:block;white-space:nowrap}
+.bgl{position:absolute;inset:0;overflow:hidden;opacity:0}
+.bgl img{position:absolute;left:50%;top:50%;width:1080px;height:1920px;object-fit:cover;transform-origin:50% 50%}
+.bgl .fr{display:none}
+.scrim{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(21,23,26,.62) 0%,rgba(21,23,26,0) 20%,rgba(21,23,26,0) 38%,rgba(21,23,26,.86) 70%,rgba(21,23,26,.94) 100%)}
+.dim{position:absolute;inset:0;background:rgba(21,23,26,.58)}
+.solid{position:absolute;inset:0;background:var(--carbon)}
+#top{position:absolute;left:88px;right:88px;top:196px;display:flex;justify-content:space-between;font-family:BarlowC;font-weight:700;font-size:32px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.82);z-index:50}
+#prog{position:absolute;left:88px;right:88px;top:258px;display:flex;gap:10px;z-index:50}
+#prog i{flex:1;height:4px;position:relative;overflow:hidden;background:rgba(255,255,255,.25)}
+#prog i b{position:absolute;left:0;top:0;bottom:0;width:0;background:#fff}
+.scene{position:absolute;left:88px;right:150px;bottom:440px;z-index:20;color:#fff}
+.scene.mid{top:330px;bottom:440px;right:88px;display:flex;flex-direction:column;justify-content:center}
+.tag{display:inline-flex;align-items:center;gap:14px;font-family:BarlowC;font-weight:700;font-size:34px;letter-spacing:.22em;text-transform:uppercase;color:#fff;margin-bottom:34px}
+.tag:before{content:'';width:46px;height:5px;background:#fff}
+.eyebrow{font-weight:700;font-size:34px;letter-spacing:.2em;color:var(--silver);margin-bottom:34px}
+.ttl{font-weight:800;font-size:168px;line-height:.93}
+.bar{width:130px;height:7px;background:#fff;margin:50px 0 42px}
+.sub{font-size:46px;line-height:1.36;color:#E3E5E8}
+.num{font-family:BarlowC;font-weight:800;font-size:64px;color:var(--pos-d);letter-spacing:.06em;margin-bottom:10px}
+.card{background:#fff;color:var(--ink);padding:56px 56px 48px}
+.sec{display:flex;align-items:baseline;gap:26px;padding-bottom:22px;border-bottom:5px solid var(--carbon)}
+.sec .n{font-family:BarlowC;font-weight:700;font-size:34px;letter-spacing:.2em;color:var(--steel)}
+.sec .l{font-family:BarlowC;font-weight:800;font-size:48px;letter-spacing:.08em;text-transform:uppercase;color:var(--carbon)}
+.head{font-weight:700;font-size:62px;line-height:1.12;margin:46px 0 34px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:30px 20px;border-bottom:3px solid var(--silver)}
+.row.hl{background:var(--mist)}
+.row .k{font-size:44px;line-height:1.2}
+.row .v{font-weight:700;font-size:54px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.row .v.pos{color:var(--pos)}
+.note{font-size:32px;line-height:1.42;margin-top:30px;color:var(--steel)}
+.dcard{background:var(--carbon);padding:56px;border-top:8px solid var(--pos-d)}
+.dcard .sec{border-color:#fff}.dcard .sec .l{color:#fff}.dcard .head{color:#fff}
+.statv{font-family:BarlowC;font-weight:800;font-size:250px;line-height:.9;color:var(--pos-d);white-space:nowrap;font-variant-numeric:tabular-nums}
+.statu{font-family:BarlowC;font-weight:700;font-size:40px;letter-spacing:.14em;text-transform:uppercase;color:var(--silver);margin-top:24px}
+.big{font-weight:800;font-size:150px;line-height:.95}
+.para{font-size:50px;line-height:1.38;color:var(--silver)}
+.handle{font-family:BarlowC;font-weight:800;font-size:84px;letter-spacing:.05em;margin-top:80px}
+</style></head><body>
+<div id="bgs"></div>
+<div id="scenes"></div>
+<div id="top"><span>Duplicando Milhas</span><span>@eusoujuliano</span></div>
+<div id="prog"></div>
+<script>
+const R = /*REEL*/;
+const S = R.scenes;
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const cl = x => Math.min(Math.max(x,0),1);
+const ease = x => 1 - Math.pow(1 - cl(x), 3);
+const easeIO = x => { x=cl(x); return x<.5 ? 4*x*x*x : 1-Math.pow(-2*x+2,3)/2; };
+const fmt = (n, dec) => n.toLocaleString('pt-BR', {minimumFractionDigits:dec||0, maximumFractionDigits:dec||0});
+const endOf = i => S[i+1] ? S[i+1].start : R.duration;
+
+function counter(c){ return `<span class="cnt" data-n="${c.num}" data-dec="${c.dec||0}" data-pre="${esc(c.pre||'')}" data-suf="${esc(c.suf||'')}">${esc(c.pre||'')}${fmt(c.num,c.dec)}${esc(c.suf||'')}</span>`; }
+const val = v => typeof v === 'string' ? esc(v) : counter(v);
+const lines = arr => arr.map(x => `<span class="ln">${val(x)}</span>`).join('');
+const el = (h, d) => `<div class="a" data-d="${d}">${h}</div>`;
+const sec = s => `<div class="sec"><span class="n">${esc(s.sec)}</span><span class="l">${esc(s.label)}</span></div>`;
+
+const bgs = document.getElementById('bgs'), root = document.getElementById('scenes');
+S.forEach((s, i) => {
+  // background layer
+  let b = '';
+  if (s.bg && s.bg.frames) b = s.bg.frames.map(f => `<img class="fr" src="${f}">`).join('');
+  else if (s.bg && s.bg.img) b = `<img src="${s.bg.img}">`;
+  else b = '<div class="solid"></div>';
+  const ov = s.t === 'card' || s.t === 'stat' ? '<div class="dim"></div>' : (s.bg ? '<div class="scrim"></div>' : '');
+  bgs.insertAdjacentHTML('beforeend', `<div class="bgl" id="b${i}">${b}${ov}</div>`);
+  // foreground
+  let h = '', cls = 'scene';
+  if (s.t === 'hook' || s.t === 'text') {
+    if (s.tag) h += el(`<div class="tag">${esc(s.tag)}</div>`, .05);
+    if (s.num) h += el(`<div class="num">${esc(s.num)}</div>`, .05);
+    if (s.eyebrow) h += el(`<div class="c eyebrow">${esc(s.eyebrow)}</div>`, s.t==='hook' ? -.2 : .05);
+    (s.title||[]).forEach((x, j) => h += el(`<div class="c ttl" style="${s.size?'font-size:'+s.size+'px':''}">${lines([x])}</div>`, (s.t==='hook'?-.15:.12) + j*.25));
+    if (s.sub) { h += el(`<div class="bar"></div>`, .3 + (s.title||[]).length*.2); h += el(`<div class="sub">${esc(s.sub)}</div>`, .45 + (s.title||[]).length*.22); }
+  } else if (s.t === 'card') {
+    cls += ' mid';
+    let c = sec(s) + `<div class="head">${esc(s.head)}</div>`;
+    s.rows.forEach((r, j) => c += `<div class="row${r[2]==='pos'?' hl':''} rr" data-j="${j}"><span class="k">${esc(r[0])}</span><span class="v ${r[2]||''}">${val(r[1])}</span></div>`);
+    if (s.note) c += `<div class="note">${esc(s.note)}</div>`;
+    h += el(`<div class="card">${c}</div>`, .05);
+  } else if (s.t === 'stat') {
+    cls += ' mid';
+    h += el(`<div class="dcard">${sec(s)}<div class="head">${esc(s.head)}</div><div class="statv">${counter(s.value)}</div><div class="statu">${esc(s.unit)}</div></div>`, .05);
+  } else if (s.t === 'cta') {
+    cls += ' mid';
+    h += el(`<div class="c big">${lines(s.title)}</div>`, .1);
+    h += el(`<div class="bar"></div>`, .5);
+    h += el(`<div class="para">${esc(s.body)}</div>`, .75);
+    h += el(`<div class="handle">@eusoujuliano</div>`, 1.1);
+  }
+  root.insertAdjacentHTML('beforeend', `<div class="${cls}" id="s${i}">${h}</div>`);
+});
+document.getElementById('prog').innerHTML = S.map(() => '<i><b></b></i>').join('');
+
+function fit(){
+  document.querySelectorAll('.scene').forEach(n => n.style.display = n.classList.contains('mid') ? 'flex' : 'block');
+  document.querySelectorAll('.cnt').forEach(c => c.textContent = c.dataset.pre + fmt(parseFloat(c.dataset.n), parseInt(c.dataset.dec)) + c.dataset.suf);
+  document.querySelectorAll('.ttl,.big,.statv').forEach(e => {
+    let fs = parseFloat(getComputedStyle(e).fontSize); const w = e.closest('.scene').clientWidth - (e.closest('.dcard') ? 112 : 0);
+    const ls = e.querySelectorAll('.ln').length ? [...e.querySelectorAll('.ln')] : [e];
+    while (fs > 60 && ls.some(l => l.scrollWidth > w)) { fs -= 2; e.style.fontSize = fs + 'px'; }
+  });
+  render(0);
+}
+async function ready(){ await Promise.all([...document.images].map(i => i.decode().catch(()=>{}))); return true; }
+
+function render(t){
+  S.forEach((s, i) => {
+    const st = s.start, en = endOf(i), b = document.getElementById('b' + i);
+    // crossfade in over 0.4s around the cut; stays under the next one
+    const vis = t >= st - .2 && t < en + .25;
+    b.style.display = vis ? 'block' : 'none';
+    b.style.zIndex = i;
+    b.style.opacity = i === 0 ? 1 : easeIO((t - (st - .2)) / .4);
+    const p = cl((t - (st - .2)) / (en - st + .45));
+    if (s.bg && s.bg.frames) {
+      const fr = b.querySelectorAll('.fr'); const k = Math.min(fr.length - 1, Math.max(0, Math.floor((t - st + .2) * (s.bg.fps || 30) * (s.bg.speed || 1))));
+      fr.forEach((f, j) => { f.style.display = j === k ? 'block' : 'none'; f.style.transform = `translate(-50%,-50%) scale(${1.04 + .03*p})`; });
+    } else if (s.bg && s.bg.img) {
+      const kb = s.bg.kb || [1.06, 1.16, 0, 0, 0, -30];
+      const sc = kb[0] + (kb[1]-kb[0]) * p, x = kb[2] + (kb[3]-kb[2]) * p, y = kb[4] + (kb[5]-kb[4]) * p;
+      b.querySelector('img').style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(${sc})`;
+    }
+    // foreground
+    const n = document.getElementById('s' + i);
+    if (t < st - .01 || t > en + .2) { n.style.display = 'none'; return; }
+    n.style.display = n.classList.contains('mid') ? 'flex' : 'block';
+    const lt = t - st, out = S[i+1] ? ease((t - (en - .28)) / .28) : 0;
+    n.style.opacity = 1 - out; n.style.transform = `translateY(${-60*out}px)`;
+    n.querySelectorAll('.a').forEach(a => {
+      const d = parseFloat(a.dataset.d), q = ease((lt - d) / .45);
+      a.style.opacity = q; a.style.transform = `translateY(${(1-q)*46}px)`;
+      a.querySelectorAll('.rr').forEach(r => { const rq = ease((lt - .45 - .35*parseInt(r.dataset.j)) / .4); r.style.opacity = rq; r.style.transform = `translateX(${(1-rq)*-40}px)`; });
+      a.querySelectorAll('.cnt').forEach(c => {
+        let dd = d; const rr = c.closest('.rr'); if (rr) dd = .45 + .35*parseInt(rr.dataset.j);
+        const x = cl((lt - dd - .1) / 1.0), cp = x >= 1 ? 1 : 1 - Math.pow(2, -10 * x);
+        c.textContent = c.dataset.pre + fmt(parseFloat(c.dataset.n) * cp, parseInt(c.dataset.dec)) + c.dataset.suf;
+      });
+    });
+  });
+  document.querySelectorAll('#prog i').forEach((e, i) => {
+    const p = cl((t - S[i].start) / (endOf(i) - S[i].start)); e.firstChild.style.width = (p*100) + '%';
+  });
+}
+</script></body></html>

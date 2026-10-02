@@ -1,0 +1,23 @@
+[
+ {"id":"03","duration":21,"cover_t":2.6,
+  "scenes":[
+   {"t":"hook","start":0,"eyebrow":"Caso da semana · Internacional",
+    "title":["Europa por",{"num":56,"suf":" mil milhas"}],
+    "sub":"Paris, Madri, Roma e Milão apareceram na LATAM Pass na última semana."},
+   {"t":"table","start":3.6,"sec":"01","label":"Os achados","head":"Econômica, por trecho, mais taxas",
+    "rows":[["Rio → Paris",{"num":56591},"pos"],["São Paulo → Madri","58 mil",""],["Roma ou Milão","58 mil",""]],
+    "note":"Valores vistos entre 24 e 25/09/2026.","wm":"01"},
+   {"t":"stat","start":8.2,"sec":"02","label":"Em reais","head":"Paris com pontos comprados a R$ 29,40 o milheiro",
+    "value":{"pre":"R$ ","num":1664},"unit":"por trecho, mais taxas",
+    "extra":["Com 25% de bônus na transferência",{"pre":"R$ ","num":1331}],"extra_d":2.0,"wm":"02"},
+   {"t":"point","start":13.2,"sec":"03","label":"O truque","big":["Busque sempre","ida e volta"],
+    "body":"Na LATAM, a busca só de ida mostrou preços bem mais altos para os mesmos voos.","wm":"03"},
+   {"t":"cta","start":17.0,"title":["Salve este post"],
+    "body":"Quer aprender a fazer essa conta para a sua viagem? Link na bio.",
+    "note":"Preços da semana de 21 a 27/09/2026."}
+  ],
+  "cues":[{"t":0.25,"type":"tick"},{"t":0.5,"type":"tick"},{"t":3.6,"type":"whoosh"},
+          {"t":4.2,"type":"tick"},{"t":4.6,"type":"tick"},{"t":5.0,"type":"tick"},
+          {"t":8.9,"type":"tick"},{"t":10.2,"type":"tick"},{"t":13.2,"type":"whoosh"},{"t":17.0,"type":"tick"},{"t":17.2,"type":"hit"}],
+  "caption":"Paris por 56.591 milhas o trecho. Madri, Roma e Milão por 58 mil. Com os pontos comprados na promoção da semana, Paris sairia por cerca de R$ 1.664 o trecho, mais taxas.\n\nSalva para fazer a conta da sua próxima viagem. Os valores são da última semana e mudam rápido.\n\n#milhas #europa #paris #latampass #viajarbarato"}
+]

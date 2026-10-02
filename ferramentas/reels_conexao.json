@@ -1,0 +1,363 @@
+[
+ {
+  "id": "C1",
+  "duration": 15.6,
+  "cover_t": 0.6,
+  "tema": "POV: o mercado do mês vira viagem",
+  "shots": [
+   {
+    "start": 0,
+    "img": "IMG_0455",
+    "kb": [
+     1.04,
+     1.12,
+     0,
+     0,
+     0,
+     -30
+    ]
+   },
+   {
+    "start": 1.2,
+    "img": "IMG_9903",
+    "kb": [
+     1.12,
+     1.04,
+     0,
+     0,
+     -20,
+     10
+    ]
+   },
+   {
+    "start": 2.4,
+    "video": "IMG_1914.mov",
+    "from": 0.3
+   },
+   {
+    "start": 3.6,
+    "img": "IMG_9241",
+    "kb": [
+     1.05,
+     1.13,
+     0,
+     0,
+     0,
+     -20
+    ]
+   },
+   {
+    "start": 4.8,
+    "img": "IMG_8930",
+    "kb": [
+     1.12,
+     1.05,
+     -20,
+     20,
+     0,
+     0
+    ]
+   },
+   {
+    "start": 6.0,
+    "img": "IMG_2911",
+    "kb": [
+     1.05,
+     1.13,
+     20,
+     -20,
+     0,
+     0
+    ],
+    "flash": true
+   },
+   {
+    "start": 7.2,
+    "img": "IMG_9974",
+    "kb": [
+     1.12,
+     1.04,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   {
+    "start": 8.4,
+    "img": "IMG_9601",
+    "kb": [
+     1.05,
+     1.14,
+     0,
+     0,
+     0,
+     -30
+    ]
+   },
+   {
+    "start": 9.6,
+    "img": "IMG_1898",
+    "kb": [
+     1.14,
+     1.05,
+     0,
+     0,
+     20,
+     -10
+    ]
+   },
+   {
+    "start": 10.8,
+    "img": "IMG_3627",
+    "kb": [
+     1.04,
+     1.12,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   {
+    "start": 12.0,
+    "img": "IMG_2979",
+    "kb": [
+     1.03,
+     1.12,
+     0,
+     0,
+     0,
+     -40
+    ],
+    "flash": true
+   }
+  ],
+  "caps": [
+   {
+    "start": 0,
+    "end": 2.4,
+    "text": "POV: você descobriu que o [[mercado do mês]] vira viagem"
+   },
+   {
+    "start": 2.4,
+    "end": 3.6,
+    "text": "a farmácia vira ponto"
+   },
+   {
+    "start": 3.6,
+    "end": 4.8,
+    "text": "o streaming vira ponto"
+   },
+   {
+    "start": 4.8,
+    "end": 6.0,
+    "text": "a conta de luz vira ponto"
+   },
+   {
+    "start": 6.0,
+    "end": 8.4,
+    "text": "e os pontos viram [[passagem]]"
+   },
+   {
+    "start": 8.4,
+    "end": 10.8,
+    "text": "sem mudar nada do que você já gasta"
+   },
+   {
+    "start": 10.8,
+    "end": 12.0,
+    "text": "Milha não é sorte."
+   },
+   {
+    "start": 12.0,
+    "end": 15.6,
+    "text": "É [[método]]. E eu ensino no Duplicando Milhas.",
+    "small": "Link na bio",
+    "y": 300
+   }
+  ],
+  "caption": "POV: você descobriu que o mercado do mês vira viagem. Farmácia, streaming, conta de luz: tudo vira ponto, e ponto vira passagem.\n\nO método completo está no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #viagem #viajarbarato #pontos #milhasaereas"
+ },
+ {
+  "id": "C2",
+  "duration": 17.0,
+  "cover_t": 0.6,
+  "tema": "Milha não é coisa de rico",
+  "shots": [
+   {
+    "start": 0,
+    "img": "IMG_8796",
+    "kb": [
+     1.03,
+     1.1,
+     0,
+     0,
+     0,
+     -30
+    ]
+   },
+   {
+    "start": 1.8,
+    "img": "IMG_2434",
+    "kb": [
+     1.12,
+     1.04,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   {
+    "start": 3.0,
+    "img": "IMG_9181",
+    "kb": [
+     1.04,
+     1.12,
+     0,
+     0,
+     0,
+     -20
+    ]
+   },
+   {
+    "start": 4.2,
+    "video": "IMG_1914.mov",
+    "from": 0.2
+   },
+   {
+    "start": 5.4,
+    "img": "IMG_0151",
+    "kb": [
+     1.12,
+     1.04,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   {
+    "start": 6.6,
+    "img": "IMG_5129",
+    "kb": [
+     1.04,
+     1.12,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   {
+    "start": 7.8,
+    "img": "IMG_8549",
+    "kb": [
+     1.12,
+     1.04,
+     0,
+     0,
+     20,
+     -20
+    ]
+   },
+   {
+    "start": 9.0,
+    "img": "IMG_1898",
+    "kb": [
+     1.04,
+     1.13,
+     0,
+     0,
+     0,
+     -20
+    ],
+    "flash": true
+   },
+   {
+    "start": 10.2,
+    "img": "IMG_9601",
+    "kb": [
+     1.12,
+     1.04,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   {
+    "start": 11.4,
+    "img": "IMG_8697",
+    "kb": [
+     1.04,
+     1.12,
+     0,
+     0,
+     0,
+     -20
+    ]
+   },
+   {
+    "start": 12.6,
+    "img": "IMG_9408_jpg",
+    "kb": [
+     1.03,
+     1.11,
+     0,
+     0,
+     0,
+     -30
+    ],
+    "flash": true
+   }
+  ],
+  "caps": [
+   {
+    "start": 0,
+    "end": 1.8,
+    "text": "“Milha é coisa de rico.”",
+    "quote": true
+   },
+   {
+    "start": 1.8,
+    "end": 3.6,
+    "text": "Você já ouviu isso?"
+   },
+   {
+    "start": 3.6,
+    "end": 6.0,
+    "text": "Milha é coisa de quem [[se organiza]]."
+   },
+   {
+    "start": 6.0,
+    "end": 8.4,
+    "text": "Mercado, farmácia, combustível… tudo isso pode virar ponto."
+   },
+   {
+    "start": 8.4,
+    "end": 10.8,
+    "text": "Em setembro, com o bônus máximo da Azul, [[g:10 mil pontos]] viraram [[g:21 mil]]."
+   },
+   {
+    "start": 10.8,
+    "end": 12.6,
+    "text": "Não é sobre ganhar mais."
+   },
+   {
+    "start": 12.6,
+    "end": 14.4,
+    "text": "É sobre [[usar melhor]]."
+   },
+   {
+    "start": 14.4,
+    "end": 17.0,
+    "text": "O caminho completo está no Duplicando Milhas.",
+    "small": "Link na bio",
+    "y": -80
+   }
+  ],
+  "caption": "“Milha é coisa de rico.” Não é. É coisa de quem se organiza. Mercado, farmácia e combustível já podem virar ponto, e com o bônus certo o ponto rende o dobro.\n\nO caminho completo está no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #viagem #educacaofinanceira #pontos #viajarbarato"
+ }
+]

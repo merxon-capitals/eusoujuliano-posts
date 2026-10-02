@@ -1,0 +1,32 @@
+[
+ {"id":"M1","duration":21.6,"cover_t":1.6,"tema":"Estilo de vida: do gasto à passagem",
+  "scenes":[
+   {"t":"hook","start":0,"bg":{"img":"IMG_0455","kb":[1.04,1.14,0,0,0,-40]},"eyebrow":"Advogado que viaja com milhas","title":["Seus gastos","do mês"]},
+   {"t":"text","start":2.4,"bg":{"img":"IMG_9903","kb":[1.16,1.06,0,0,-20,20]},"tag":"Barcelona","title":["podem virar","isto."]},
+   {"t":"text","start":4.8,"bg":{"video":"IMG_1914.mov","from":0},"title":["Mercado,","farmácia,"]},
+   {"t":"text","start":7.2,"bg":{"img":"IMG_8930","kb":[1.06,1.16,-30,30,0,0]},"title":["contas do mês,","streaming..."]},
+   {"t":"text","start":9.6,"bg":{"img":"IMG_2911","kb":[1.14,1.04,40,-20,0,0]},"title":["tudo vira","ponto."]},
+   {"t":"text","start":12.0,"bg":{"img":"IMG_9601","kb":[1.06,1.18,0,0,0,-40]},"title":["Ponto vira","milha."]},
+   {"t":"text","start":14.4,"bg":{"img":"IMG_1898","kb":[1.18,1.06,0,0,30,-10]},"title":["Milha vira","passagem."]},
+   {"t":"cta","start":16.8,"title":["Eu te mostro","o caminho"],"body":"Curso Duplicando Milhas. Link na bio."}
+  ],
+  "caption":"Seus gastos do mês podem virar passagem. Mercado, farmácia, contas: tudo vira ponto, ponto vira milha, milha vira viagem.\n\nQuer aprender o caminho? Link na bio.\n\n#milhas #viagem #viajarbarato #pontos #milhasaereas"},
+ {"id":"M2","duration":21.6,"cover_t":2.4,"tema":"Caso da semana com foto: Madri",
+  "scenes":[
+   {"t":"hook","start":0,"bg":{"img":"IMG_0455","kb":[1.18,1.06,0,0,-30,0]},"eyebrow":"Caso da semana · Internacional","title":["Madri por","58 mil milhas"],"sub":"São Paulo → Madri na LATAM Pass, por trecho, mais taxas."},
+   {"t":"card","start":4.2,"bg":{"img":"IMG_9903","kb":[1.06,1.14,0,0,0,-30]},"sec":"01","label":"Os achados","head":"Econômica, por trecho, mais taxas","rows":[["Rio → Paris",{"num":56591},"pos"],["São Paulo → Madri","58 mil",""],["Roma ou Milão","58 mil",""]],"note":"Valores vistos entre 24 e 25/09/2026."},
+   {"t":"stat","start":9.0,"bg":{"img":"IMG_8930","kb":[1.14,1.04,0,0,0,0]},"sec":"02","label":"Em reais","head":"Madri com pontos comprados a R$ 29,40 o milheiro","value":{"pre":"R$ ","num":1705},"unit":"por trecho, mais taxas"},
+   {"t":"text","start":13.2,"bg":{"img":"IMG_1898","kb":[1.06,1.16,0,0,0,-40]},"num":"03","title":["Busque sempre","ida e volta"],"sub":"Na LATAM, a busca só de ida mostrou preços bem mais altos para os mesmos voos."},
+   {"t":"cta","start":17.4,"title":["Salve este post"],"body":"Quer aprender a fazer essa conta para a sua viagem? Link na bio."}
+  ],
+  "caption":"Madri por 58 mil milhas o trecho, saindo de São Paulo. Com os pontos comprados na promoção da semana, daria cerca de R$ 1.705 por trecho, mais taxas.\n\nSalva para fazer a conta da sua próxima viagem. Os valores são da última semana e mudam rápido.\n\n#milhas #madri #europa #latampass #viajarbarato"},
+ {"id":"M3","duration":20.4,"cover_t":1.6,"tema":"Dica: 3 coisas antes de emitir",
+  "scenes":[
+   {"t":"hook","start":0,"bg":{"img":"IMG_3627","kb":[1.04,1.14,0,0,0,0]},"eyebrow":"Antes de emitir","title":["3 coisas para","conferir"],"sub":"antes de trocar suas milhas por uma passagem."},
+   {"t":"text","start":3.6,"bg":{"img":"IMG_1898","kb":[1.16,1.06,0,0,0,0]},"num":"01","title":["Compare com","o dinheiro"],"sub":"Preço em reais ÷ seu milheiro × 1.000 = o máximo de milhas que vale pagar."},
+   {"t":"text","start":7.8,"bg":{"img":"IMG_9601","kb":[1.06,1.16,0,0,0,-30]},"num":"02","title":["Teste ida e volta","e só ida"],"sub":"O mesmo voo pode sair por valores bem diferentes em cada busca."},
+   {"t":"text","start":12.0,"bg":{"img":"IMG_8697","kb":[1.16,1.06,0,0,30,-20]},"num":"03","title":["Transfira só","com bônus"],"sub":"Sem bônus, você deixa milhas na mesa."},
+   {"t":"cta","start":16.2,"title":["Salve e use","na próxima"],"body":"No curso eu ensino o passo a passo completo. Link na bio."}
+  ],
+  "caption":"3 coisas para conferir antes de trocar suas milhas por uma passagem. A primeira já evita a maioria dos prejuízos.\n\nSalva para usar na próxima emissão.\n\n#milhas #dicasdeviagem #passagens #milhasaereas #viajarbarato"}
+]
