@@ -1,38 +1,307 @@
 [
- {"id":"11","dia":"Ter 06/10","tema":"Curitiba por 5 mil milhas",
-  "slides":[
-   {"t":"cover","eyebrow":"Caso da semana · Curitiba","title":["Curitiba por","5 mil milhas"],"sub":"No fim de setembro, a LATAM abriu voos entre São Paulo e Curitiba a partir de R$ 126 ou 5 mil milhas o trecho. Qual vale mais?"},
-   {"t":"table","sec":"01","label":"Os achados","head":"LATAM Pass, por trecho, mais taxas","rows":[["São Paulo ⇄ Curitiba","R$ 126 ou 5 mil","pos"],["São Paulo → Bonito","R$ 275 ou 11 mil",""],["São Paulo → João Pessoa","R$ 322 ou 13 mil",""],["Rio → Fortaleza","R$ 329 ou 13 mil",""]],"note":"Valores a partir de, vistos em 30/09/2026."},
-   {"t":"stat","sec":"02","label":"A conta","head":"Quanto vale cada milha no voo para Curitiba","value":"R$ 25,20","unit":"por mil milhas","note":"R$ 126 ÷ 5 mil milhas × 1.000. Conta aproximada, sem as taxas."},
-   {"t":"point","sec":"03","label":"A regra","head":"Compare com o que a sua milha custou","body":["Se a sua milha custou menos de R$ 25,20 o milheiro, use milhas. Se custou mais, pague em reais."]},
-   {"t":"table","sec":"04","label":"Na mesma semana","head":"Quanto valeu a milha em cada rota","rows":[["Curitiba","R$ 25,20",""],["Bonito","R$ 25,00",""],["João Pessoa","R$ 24,77",""],["Fortaleza","R$ 25,31",""]],"note":"Preço em reais ÷ milhas × 1.000, por mil milhas."},
-   {"t":"cta","title":["Aprenda a","fazer essa conta"],"body":"O passo a passo está no treinamento Duplicando Milhas. Link na bio."}
+ {
+  "id": "11",
+  "dia": "Ter 06/10",
+  "tema": "Curitiba por 5 mil milhas",
+  "slides": [
+   {
+    "t": "cover",
+    "eyebrow": "Caso da semana · Curitiba",
+    "title": [
+     "Curitiba por",
+     "5 mil milhas"
+    ],
+    "sub": "No fim de setembro, a LATAM Pass abriu voos entre São Paulo e Curitiba por 5 mil milhas o trecho. E quem não tinha milhas também conseguiu."
+   },
+   {
+    "t": "table",
+    "sec": "01",
+    "label": "Os achados",
+    "head": "LATAM Pass, por trecho, mais taxas",
+    "rows": [
+     [
+      "São Paulo ⇄ Curitiba",
+      "5 mil",
+      "pos"
+     ],
+     [
+      "São Paulo → Bonito",
+      "11 mil",
+      ""
+     ],
+     [
+      "São Paulo → João Pessoa",
+      "13 mil",
+      ""
+     ],
+     [
+      "Rio → Fortaleza",
+      "13 mil",
+      ""
+     ]
+    ],
+    "note": "Voos entre dezembro de 2026 e agosto de 2027, conforme a rota. Vistos em 30/09/2026."
+   },
+   {
+    "t": "stat",
+    "sec": "02",
+    "label": "O combo",
+    "head": "Na mesma semana, a LATAM vendeu milhas com até 65% de desconto",
+    "value": "R$ 24,50",
+    "unit": "o milheiro, com cartão LATAM Pass Itaú",
+    "note": "Para os demais clientes, R$ 26,60. Promoção até 02/10/2026."
+   },
+   {
+    "t": "table",
+    "sec": "03",
+    "label": "A conta",
+    "head": "Quanto saiu cada trecho comprando as milhas",
+    "rows": [
+     [
+      "Curitiba · 5 mil",
+      "R$ 122,50",
+      "pos"
+     ],
+     [
+      "Bonito · 11 mil",
+      "R$ 269,50",
+      ""
+     ],
+     [
+      "João Pessoa · 13 mil",
+      "R$ 318,50",
+      ""
+     ],
+     [
+      "Fortaleza · 13 mil",
+      "R$ 318,50",
+      ""
+     ]
+    ],
+    "note": "Milhas × R$ 24,50, sem as taxas de embarque."
+   },
+   {
+    "t": "point",
+    "sec": "04",
+    "label": "A regra",
+    "head": "Antes de comprar milhas, compare",
+    "body": [
+     "Some milhas e taxas e compare com a passagem em dinheiro no mesmo voo. Às vezes vale. Às vezes, não."
+    ]
+   },
+   {
+    "t": "cta",
+    "title": [
+     "Aprenda a",
+     "fazer essa conta"
+    ],
+    "body": "O passo a passo está no treinamento Duplicando Milhas. Link na bio."
+   }
   ],
-  "caption":"Curitiba por 5 mil milhas ou R$ 126 o trecho, saindo de São Paulo. Com esses dois preços na mesa, dá para saber quanto vale cada milha: R$ 25,20 o milheiro.\n\nSe a sua milha custou menos que isso, use milhas. Se custou mais, pague em reais. O passo a passo está no treinamento Duplicando Milhas, link na bio.\n\n#milhas #curitiba #latampass #passagensbaratas #viajarbarato"},
- {"id":"12","dia":"Qui 08/10","tema":"EUA e Europa em milhas",
-  "slides":[
-   {"t":"cover","theme":"light","eyebrow":"Caso da semana · Internacional","title":["EUA e Europa","por 51 a 70 mil"],"sub":"Os voos diretos em milhas que apareceram entre 30/09 e 02/10, e quanto valeu cada milha."},
-   {"t":"table","sec":"01","label":"Os achados","head":"Voos diretos, por trecho, mais taxas","rows":[["Rio → Miami · Smiles","51 mil","pos"],["São Paulo → Nova York · Smiles","58 mil",""],["Lisboa · LATAM Pass","54 mil",""],["São Paulo → Madri · LATAM Pass","58 mil",""],["São Paulo → Cidade do Cabo · Smiles","70 mil",""]],"note":"Lisboa saindo de São Paulo ou Fortaleza. Nova York com bagagem despachada. Valores a partir de, vistos entre 30/09 e 02/10/2026."},
-   {"t":"table","sec":"02","label":"Em reais","head":"Os mesmos voos pagos em dinheiro","rows":[["Rio → Miami","R$ 805",""],["Lisboa","R$ 1.332",""],["São Paulo → Madri","R$ 1.439",""]],"note":"Valores a partir de, por trecho, das mesmas ofertas."},
-   {"t":"stat","sec":"03","label":"A conta","head":"Quanto valeu a milha no voo para Miami","value":"R$ 15,78","unit":"por mil milhas Smiles","note":"R$ 805 ÷ 51 mil × 1.000. Em Lisboa e Madri, a milha LATAM valeu entre R$ 24,67 e R$ 24,81."},
-   {"t":"point","sec":"04","label":"Por que muda","head":"Cada programa tem o seu preço","body":["Nesses voos, a milha Smiles valeu bem menos que a milha LATAM. Por isso a conta é sempre por programa e por voo."]},
-   {"t":"cta","title":["Europa e EUA","com milhas"],"body":"No treinamento Duplicando Milhas eu ensino a achar e a avaliar esses voos. Link na bio."}
+  "caption": "Curitiba por 5 mil milhas o trecho, saindo de São Paulo. Na mesma semana, a LATAM vendeu milhas a R$ 24,50 o milheiro para quem tem o cartão LATAM Pass Itaú, e quem não tinha milhas montou o trecho por cerca de R$ 122,50, mais taxas.\n\nAntes de comprar milhas, compare com a passagem em dinheiro. O passo a passo está no treinamento Duplicando Milhas, link na bio.\n\n#milhas #curitiba #latampass #passagensbaratas #viajarbarato"
+ },
+ {
+  "id": "12",
+  "dia": "Qui 08/10",
+  "tema": "Exterior a partir de 51 mil milhas",
+  "slides": [
+   {
+    "t": "cover",
+    "theme": "light",
+    "eyebrow": "Caso da semana · Internacional",
+    "title": [
+     "Exterior a partir",
+     "de 51 mil milhas"
+    ],
+    "sub": "Os voos diretos em milhas que apareceram entre 30/09 e 02/10, e o que vinha junto."
+   },
+   {
+    "t": "table",
+    "sec": "01",
+    "label": "Os achados",
+    "head": "Voos diretos, por trecho, mais taxas",
+    "rows": [
+     [
+      "Rio → Miami · Smiles",
+      "51 mil",
+      "pos"
+     ],
+     [
+      "São Paulo → Nova York · Smiles",
+      "58 mil",
+      ""
+     ],
+     [
+      "Lisboa · LATAM Pass",
+      "54 mil",
+      ""
+     ],
+     [
+      "São Paulo → Madri · LATAM Pass",
+      "58,8 mil",
+      ""
+     ],
+     [
+      "São Paulo → Cidade do Cabo · Smiles",
+      "70,5 mil",
+      ""
+     ]
+    ],
+    "note": "Lisboa saindo de São Paulo ou Fortaleza. Vistos entre 30/09 e 02/10/2026."
+   },
+   {
+    "t": "point",
+    "sec": "02",
+    "label": "O que vinha junto",
+    "head": "Mala, clube e status",
+    "body": [
+     "Nova York e Miami: 1 mala de 23 kg incluída.",
+     "Cidade do Cabo: 2 malas de 23 kg.",
+     "Na Smiles, os menores preços eram para o Clube Smiles e clientes Diamante e Magno."
+    ]
+   },
+   {
+    "t": "point",
+    "sec": "03",
+    "label": "O truque",
+    "head": "Na LATAM, pesquise ida e volta",
+    "body": [
+     "Para Lisboa e Madri, a busca só de ida mostrava preços bem mais altos."
+    ]
+   },
+   {
+    "t": "stat",
+    "sec": "04",
+    "label": "A conta",
+    "head": "Madri com milhas compradas a R$ 24,50 o milheiro",
+    "value": "R$ 1.439",
+    "unit": "por trecho, mais taxas",
+    "note": "58.769 milhas × R$ 24,50, preço do milheiro para o cartão LATAM Pass Itaú até 02/10/2026."
+   },
+   {
+    "t": "cta",
+    "title": [
+     "Europa e EUA",
+     "com milhas"
+    ],
+    "body": "No treinamento Duplicando Milhas eu ensino a achar e a avaliar esses voos. Link na bio."
+   }
   ],
-  "caption":"Rio–Miami por 51 mil milhas Smiles. Nova York por 58 mil, com bagagem. Lisboa por 54 mil e Madri por 58 mil na LATAM. Todos voos diretos, vistos entre 30/09 e 02/10.\n\nArrasta para ver quanto valeu cada milha e por que a conta muda de um programa para o outro. O método completo está no treinamento Duplicando Milhas, link na bio.\n\n#milhas #smiles #latampass #europa #estadosunidos"},
- {"id":"13","dia":"Sex 09/10","tema":"Número da semana: Clube Azul",
-  "slides":[
-   {"t":"solo","eyebrow":"Número da semana","head":"Clube Azul com bônus","value":"R$ 11,02","unit":"o milheiro, na oferta relâmpago de 01/10","sub":"Assinatura do Clube Azul com até 300% de bônus. Ofertas assim duram pouco: quem já está preparado, aproveita."},
-   {"t":"cta","title":["Esteja pronto","na próxima"],"body":"No treinamento Duplicando Milhas eu mostro como se preparar para essas janelas. Link na bio."}
+  "caption": "Rio–Miami por 51 mil milhas Smiles. Nova York por 58 mil, com mala. Lisboa por 54 mil e Madri por 58,8 mil na LATAM. Todos voos diretos, vistos entre 30/09 e 02/10.\n\nArrasta para ver o que vinha junto e o truque da busca na LATAM. O método completo está no treinamento Duplicando Milhas, link na bio.\n\n#milhas #smiles #latampass #europa #estadosunidos"
+ },
+ {
+  "id": "13",
+  "dia": "Sex 09/10",
+  "tema": "Número da semana: Clube Azul",
+  "slides": [
+   {
+    "t": "solo",
+    "eyebrow": "Número da semana",
+    "head": "Clube Azul com bônus",
+    "value": "R$ 11,02",
+    "unit": "o milheiro no plano 10.000, com cartão Azul Itaú",
+    "sub": "Oferta relâmpago de 01/10: 90 mil pontos em 3 meses por R$ 991,60. Durou um dia. Quem já estava preparado, aproveitou."
+   },
+   {
+    "t": "cta",
+    "title": [
+     "Esteja pronto",
+     "na próxima"
+    ],
+    "body": "No treinamento Duplicando Milhas eu mostro como se preparar para essas janelas. Link na bio."
+   }
   ],
-  "caption":"R$ 11,02 o milheiro. Foi o preço a partir de que apareceu na oferta relâmpago do Clube Azul em 01/10, com até 300% de bônus na assinatura.\n\nOfertas assim duram horas. No treinamento Duplicando Milhas eu mostro como se preparar para a próxima. Link na bio.\n\n#milhas #azulfidelidade #clubeazul #pontos #viajarbarato"},
- {"id":"14","dia":"Dom 11/10","tema":"Bônus de transferência da semana",
-  "slides":[
-   {"t":"cover","eyebrow":"Caso da semana · Transferência","title":["Até 100%","de bônus"],"sub":"No começo de outubro teve bônus para a Azul e para a LATAM Pass. Veja quanto 10 mil pontos podem render."},
-   {"t":"table","sec":"01","label":"A semana","head":"Promoções de 01 e 02/10","rows":[["Inter Loop → Azul Fidelidade","até 100%","pos"],["KMV → LATAM Pass","45%",""],["Compra de milhas LATAM Pass","até 65% off",""]],"note":"Promoções com prazo curto. Confira sempre as regras de cada uma."},
-   {"t":"table","sec":"02","label":"A conta","head":"10 mil pontos transferidos","rows":[["Sem bônus","10 mil",""],["Com 45% de bônus","14.500",""],["Com 100% de bônus","20 mil","pos"]],"note":"Considerando 1 ponto = 1 milha antes do bônus."},
-   {"t":"stat","sec":"03","label":"O milheiro","head":"Comprando milhas LATAM Pass na promoção","value":"R$ 24,50","unit":"o milheiro, a partir de","note":"Promoção com até 65% de desconto, encerrada em 02/10/2026."},
-   {"t":"point","sec":"04","label":"A regra","head":"Ponto parado espera o bônus","body":["Bônus de transferência aparece com frequência. Transferir sem bônus é deixar milhas na mesa."]},
-   {"t":"cta","title":["Transfira na","hora certa"],"body":"No treinamento Duplicando Milhas eu mostro quando transferir e quando esperar. Link na bio."}
+  "caption": "R$ 11,02 o milheiro. Foi o melhor preço da oferta relâmpago do Clube Azul em 01/10: no plano 10.000, pago com o cartão Azul Itaú, 90 mil pontos em 3 meses por R$ 991,60.\n\nOfertas assim duram horas. No treinamento Duplicando Milhas eu mostro como se preparar para a próxima. Link na bio.\n\n#milhas #azulfidelidade #clubeazul #pontos #viajarbarato"
+ },
+ {
+  "id": "14",
+  "dia": "Dom 11/10",
+  "tema": "Bônus de transferência da semana",
+  "slides": [
+   {
+    "t": "cover",
+    "eyebrow": "Caso da semana · Transferência",
+    "title": [
+     "Até 100%",
+     "de bônus"
+    ],
+    "sub": "No começo de outubro teve bônus para a Azul e para a LATAM Pass. Veja quanto uma transferência pode render."
+   },
+   {
+    "t": "table",
+    "sec": "01",
+    "label": "A semana",
+    "head": "Promoções de 01 e 02/10",
+    "rows": [
+     [
+      "Inter Loop → Azul Fidelidade",
+      "40% a 100%",
+      "pos"
+     ],
+     [
+      "KMV → LATAM Pass",
+      "45%",
+      ""
+     ],
+     [
+      "Compra de milhas LATAM Pass",
+      "até 65% off",
+      ""
+     ]
+    ],
+    "note": "Na Azul, o bônus subia com o tempo de Clube Azul: 100% para assinantes há 5 anos ou mais."
+   },
+   {
+    "t": "table",
+    "sec": "02",
+    "label": "A conta",
+    "head": "Uma transferência de 10 mil",
+    "rows": [
+     [
+      "Sem bônus",
+      "10 mil",
+      ""
+     ],
+     [
+      "Com 45% de bônus",
+      "14.500",
+      ""
+     ],
+     [
+      "Com 100% de bônus",
+      "20 mil",
+      "pos"
+     ]
+    ],
+    "note": "O bônus é calculado sobre o que chega ao programa."
+   },
+   {
+    "t": "stat",
+    "sec": "03",
+    "label": "O milheiro",
+    "head": "Comprando milhas LATAM Pass na promoção",
+    "value": "R$ 24,50",
+    "unit": "o milheiro, com cartão LATAM Pass Itaú",
+    "note": "Para os demais clientes, R$ 26,60. Promoção encerrada em 02/10/2026."
+   },
+   {
+    "t": "point",
+    "sec": "04",
+    "label": "A regra",
+    "head": "Ponto parado espera o bônus",
+    "body": [
+     "Bônus de transferência aparece com frequência. Transferir sem bônus é deixar milhas na mesa."
+    ]
+   },
+   {
+    "t": "cta",
+    "title": [
+     "Transfira na",
+     "hora certa"
+    ],
+    "body": "No treinamento Duplicando Milhas eu mostro quando transferir e quando esperar. Link na bio."
+   }
   ],
-  "caption":"10 mil pontos podem virar 10 mil, 14.500 ou 20 mil milhas. Depende só de quando você transfere. No começo de outubro, a Azul pagou até 100% de bônus para pontos do Inter Loop, e a LATAM Pass, 45% para pontos KMV.\n\nNo treinamento Duplicando Milhas eu mostro quando transferir e quando esperar. Link na bio.\n\n#milhas #pontos #azulfidelidade #latampass #bonusdetransferencia"}
+  "caption": "Uma transferência de 10 mil pode virar 14.500 ou até 20 mil. Depende de quando você transfere. No começo de outubro, a Azul pagou de 40% a 100% de bônus para pontos do Inter Loop, e a LATAM Pass, 45% para a KMV.\n\nNo treinamento Duplicando Milhas eu mostro quando transferir e quando esperar. Link na bio.\n\n#milhas #pontos #azulfidelidade #latampass #bonusdetransferencia"
+ }
 ]
