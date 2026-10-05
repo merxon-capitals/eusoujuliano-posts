@@ -1,0 +1,484 @@
+[
+ {
+  "id": "G1",
+  "duration": 20.0,
+  "bpm": 120,
+  "cover_t": 0.5,
+  "cap_lead": 0.15,
+  "word_step": 0.09,
+  "tema": "Quanto custa sair de Curitiba e chegar em Madri",
+  "globe": {
+   "start": 2.0,
+   "end": 12.0,
+   "cy": 930,
+   "tilt": 6,
+   "legs": [
+    {
+     "t0": 2.4,
+     "t1": 3.8,
+     "from": [
+      -49.176,
+      -25.528
+     ],
+     "to": [
+      -46.469,
+      -23.432
+     ]
+    },
+    {
+     "t0": 4.0,
+     "t1": 8.0,
+     "from": [
+      -46.469,
+      -23.432
+     ],
+     "to": [
+      -3.561,
+      40.472
+     ]
+    }
+   ],
+   "pins": [
+    {
+     "name": "Curitiba",
+     "ll": [
+      -49.176,
+      -25.528
+     ],
+     "at": 2.0,
+     "align": "right",
+     "dx": -34
+    },
+    {
+     "name": "São Paulo",
+     "ll": [
+      -46.469,
+      -23.432
+     ],
+     "at": 3.8
+    },
+    {
+     "name": "Madri",
+     "ll": [
+      -3.561,
+      40.472
+     ],
+     "at": 8.0
+    }
+   ],
+   "scale": [
+    [
+     2.0,
+     2600
+    ],
+    [
+     3.9,
+     2600
+    ],
+    [
+     5.0,
+     760
+    ],
+    [
+     7.2,
+     760
+    ],
+    [
+     8.6,
+     2300
+    ],
+    [
+     12.0,
+     2500
+    ]
+   ],
+   "km": {
+    "t0": 2.4,
+    "t1": 8.0,
+    "total": 8737,
+    "y": 1400,
+    "label": "em linha reta"
+   }
+  },
+  "shots": [
+   {
+    "start": 0,
+    "img": "IMG_0455",
+    "kb": [
+     1.03,
+     1.12,
+     0,
+     0,
+     0,
+     -30
+    ]
+   },
+   {
+    "start": 12.0,
+    "video": "IMG_9811.mov",
+    "from": 0.3,
+    "tr": "dissolve",
+    "td": 0.4,
+    "vol": 0.35
+   },
+   {
+    "start": 16.0,
+    "img": "IMG_8075",
+    "kb": [
+     1.03,
+     1.1,
+     0,
+     0,
+     0,
+     -30
+    ],
+    "tr": "dissolve",
+    "td": 0.4
+   }
+  ],
+  "caps": [
+   {
+    "start": 0,
+    "end": 2.0,
+    "tag": "Madri",
+    "text": "Quanto custa sair de Curitiba e chegar aqui?"
+   },
+   {
+    "start": 2.0,
+    "end": 4.0,
+    "text": "Curitiba → São Paulo",
+    "y": -640
+   },
+   {
+    "start": 4.0,
+    "end": 8.0,
+    "text": "São Paulo → Madri, voo direto",
+    "y": -640
+   },
+   {
+    "start": 8.0,
+    "end": 10.0,
+    "text": "Em milhas: [[58 mil]] o trecho, mais taxas.",
+    "y": -640
+   },
+   {
+    "start": 10.0,
+    "end": 12.0,
+    "text": "Comprando os pontos a R$ 29,40 o milheiro: [[g:≈ R$ 1.705]]",
+    "small": "Valores vistos em setembro/2026",
+    "y": -600
+   },
+   {
+    "start": 12.0,
+    "end": 14.0,
+    "text": "Antes de emitir, compare com o preço em reais."
+   },
+   {
+    "start": 14.0,
+    "end": 16.0,
+    "text": "Às vezes a milha ganha. Às vezes, o dinheiro."
+   },
+   {
+    "start": 16.0,
+    "end": 20.0,
+    "text": "Fazer essa conta é o que eu ensino no Duplicando Milhas.",
+    "small": "Link na bio",
+    "y": 260
+   }
+  ],
+  "caption": "Quanto custa sair de Curitiba e chegar em Madri? De São Paulo, o voo direto apareceu por 58 mil milhas o trecho, mais taxas. Comprando os pontos a R$ 29,40 o milheiro, isso dá cerca de R$ 1.705.\n\nAntes de emitir, compare com o preço em reais: às vezes a milha ganha, às vezes o dinheiro. Fazer essa conta é o que eu ensino no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #madri #curitiba #latampass #viajarbarato"
+ },
+ {
+  "id": "S2",
+  "duration": 22.0,
+  "bpm": 120,
+  "cover_t": 0.5,
+  "cap_lead": 0.15,
+  "word_step": 0.09,
+  "tema": "Cada lugar tem uma coisa que só ele tem",
+  "shots": [
+   {
+    "start": 0,
+    "video": "IMG_9994.MOV",
+    "from": 1.0,
+    "vol": 0.3
+   },
+   {
+    "start": 2.0,
+    "video": "IMG_9994.MOV",
+    "from": 6.0,
+    "tr": "zoom",
+    "td": 0.3,
+    "vol": 0.3
+   },
+   {
+    "start": 4.0,
+    "video": "IMG_0118.mov",
+    "from": 2.0,
+    "tr": "whipL",
+    "td": 0.3,
+    "vol": 0.3
+   },
+   {
+    "start": 6.0,
+    "video": "IMG_9224.mov",
+    "from": 3.0,
+    "tr": "whipL",
+    "td": 0.3,
+    "vol": 0.3
+   },
+   {
+    "start": 8.0,
+    "video": "IMG_8772.mov",
+    "from": 1.5,
+    "tr": "whipU",
+    "td": 0.3,
+    "vol": 0.3
+   },
+   {
+    "start": 10.0,
+    "video": "IMG_8684.mov",
+    "from": 0.5,
+    "tr": "whipL",
+    "td": 0.3,
+    "vol": 0.3
+   },
+   {
+    "start": 12.0,
+    "video": "IMG_9401.mov",
+    "from": 1.0,
+    "tr": "whipL",
+    "td": 0.3,
+    "vol": 0.4
+   },
+   {
+    "start": 14.0,
+    "video": "IMG_5058.mov",
+    "from": 1.0,
+    "tr": "zoom",
+    "td": 0.3,
+    "vol": 0.3
+   },
+   {
+    "start": 16.0,
+    "video": "IMG_9094.mov",
+    "from": 1.5,
+    "tr": "dissolve",
+    "td": 0.4,
+    "vol": 0.3
+   },
+   {
+    "start": 18.0,
+    "img": "IMG_8796",
+    "kb": [
+     1.03,
+     1.1,
+     0,
+     0,
+     0,
+     -30
+    ],
+    "tr": "dissolve",
+    "td": 0.4
+   }
+  ],
+  "caps": [
+   {
+    "start": 0,
+    "end": 2.0,
+    "text": "Cada lugar tem uma coisa que só ele tem."
+   },
+   {
+    "start": 2.0,
+    "end": 4.0,
+    "tag": "Barcelona",
+    "text": "Uma igreja em obras desde 1882."
+   },
+   {
+    "start": 4.0,
+    "end": 6.0,
+    "tag": "Montserrat",
+    "text": "Um mosteiro no meio das montanhas."
+   },
+   {
+    "start": 6.0,
+    "end": 8.0,
+    "tag": "Sevilha",
+    "text": "Uma praça feita para a Exposição de 1929."
+   },
+   {
+    "start": 8.0,
+    "end": 10.0,
+    "tag": "Ronda",
+    "text": "Uma ponte sobre um abismo de quase 100 metros."
+   },
+   {
+    "start": 10.0,
+    "end": 12.0,
+    "tag": "Setenil",
+    "text": "Casas construídas embaixo da rocha."
+   },
+   {
+    "start": 12.0,
+    "end": 14.0,
+    "text": "Grutas que só se vê de barco."
+   },
+   {
+    "start": 14.0,
+    "end": 16.0,
+    "tag": "Curaçao",
+    "text": "Casinhas coloridas no meio do Caribe."
+   },
+   {
+    "start": 16.0,
+    "end": 18.0,
+    "text": "E todos esses lugares cabem em [[milhas]]."
+   },
+   {
+    "start": 18.0,
+    "end": 22.0,
+    "text": "Eu te mostro como no Duplicando Milhas.",
+    "small": "Link na bio",
+    "y": 260
+   }
+  ],
+  "caption": "Cada lugar tem uma coisa que só ele tem. Barcelona, com uma igreja em obras desde 1882. Ronda, com uma ponte sobre um abismo de quase 100 metros. Setenil, com casas embaixo da rocha. Curaçao, com casinhas coloridas no Caribe.\n\nE todos cabem em milhas. No treinamento Duplicando Milhas eu mostro como. Link na bio.\n\n#viagem #espanha #curacao #milhas #viajarbarato"
+ },
+ {
+  "id": "S3",
+  "duration": 20.0,
+  "bpm": 120,
+  "cover_t": 0.5,
+  "cap_lead": 0.15,
+  "word_step": 0.09,
+  "tema": "POV: o mercado do mês vira passagem",
+  "shots": [
+   {
+    "start": 0,
+    "video": "IMG_9837.mov",
+    "from": 3.0,
+    "vol": 0.3
+   },
+   {
+    "start": 2.0,
+    "video": "IMG_8854.mov",
+    "from": 1.5,
+    "tr": "whipL",
+    "td": 0.3,
+    "vol": 0.3
+   },
+   {
+    "start": 4.0,
+    "video": "IMG_6915.mov",
+    "from": 1.0,
+    "tr": "zoom",
+    "td": 0.3,
+    "vol": 0.3
+   },
+   {
+    "start": 6.0,
+    "video": "IMG_9913.mov",
+    "from": 2.0,
+    "tr": "whipL",
+    "td": 0.3,
+    "vol": 0.3
+   },
+   {
+    "start": 8.0,
+    "video": "IMG_5030.mov",
+    "from": 1.0,
+    "tr": "whipU",
+    "td": 0.3,
+    "vol": 0.85
+   },
+   {
+    "start": 10.0,
+    "video": "IMG_5481.mov",
+    "from": 0.5,
+    "tr": "whipL",
+    "td": 0.3,
+    "vol": 0.35
+   },
+   {
+    "start": 12.0,
+    "video": "IMG_9545.mov",
+    "from": 2.0,
+    "tr": "zoom",
+    "td": 0.3,
+    "vol": 0.35
+   },
+   {
+    "start": 14.0,
+    "video": "IMG_5223.MOV",
+    "from": 1.0,
+    "tr": "dissolve",
+    "td": 0.4,
+    "vol": 0.35
+   },
+   {
+    "start": 16.0,
+    "img": "IMG_2979",
+    "kb": [
+     1.03,
+     1.1,
+     0,
+     0,
+     0,
+     -30
+    ],
+    "tr": "dissolve",
+    "td": 0.4
+   }
+  ],
+  "caps": [
+   {
+    "start": 0,
+    "end": 2.0,
+    "text": "POV: você descobriu que o [[mercado do mês]] vira passagem"
+   },
+   {
+    "start": 2.0,
+    "end": 4.0,
+    "text": "o combustível vira ponto"
+   },
+   {
+    "start": 4.0,
+    "end": 6.0,
+    "text": "o cafezinho vira ponto"
+   },
+   {
+    "start": 6.0,
+    "end": 8.0,
+    "text": "a conta de luz vira ponto"
+   },
+   {
+    "start": 8.0,
+    "end": 10.0,
+    "text": "e o ponto vira [[passagem]]."
+   },
+   {
+    "start": 10.0,
+    "end": 12.0,
+    "text": "Vira Caribe."
+   },
+   {
+    "start": 12.0,
+    "end": 14.0,
+    "text": "Vira isso aqui."
+   },
+   {
+    "start": 14.0,
+    "end": 16.0,
+    "text": "Sem mudar nada do que você já gasta."
+   },
+   {
+    "start": 16.0,
+    "end": 20.0,
+    "text": "Milha não é sorte. É [[método]]. Eu ensino no Duplicando Milhas.",
+    "small": "Link na bio",
+    "y": 260
+   }
+  ],
+  "caption": "POV: você descobriu que o mercado do mês vira passagem. Combustível, cafezinho, conta de luz: tudo vira ponto, e ponto vira viagem.\n\nMilha não é sorte, é método. Eu ensino no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #viagem #viajarbarato #pontos #milhasaereas"
+ }
+]
