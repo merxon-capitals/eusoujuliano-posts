@@ -33,12 +33,40 @@ body{width:1080px;height:1920px;overflow:hidden;font-family:Barlow;-webkit-font-
 .cap .small{display:inline-block;margin-top:40px;font-family:BarlowC;font-weight:700;font-size:38px;letter-spacing:.22em;text-transform:uppercase;padding:16px 30px;background:var(--carbon);color:#fff}
 #grain{position:absolute;inset:0;width:1080px;height:1920px;z-index:110;mix-blend-mode:overlay;opacity:.11;image-rendering:pixelated;pointer-events:none}
 #globe{position:absolute;inset:0;z-index:60;display:none}
+
+#wall{position:absolute;inset:-40px;z-index:-1;display:none;background:radial-gradient(ellipse 70% 45% at 50% 50%,#30353C 0%,#1C1F23 55%,#111315 100%);transform-origin:50% 50%}
+#wall:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,0) 0 178px,rgba(255,255,255,.035) 178px 180px,rgba(0,0,0,.25) 180px 183px)}
+#bezel{position:absolute;z-index:65;display:none;border-style:solid;border-color:#2C3036;box-shadow:0 40px 120px rgba(0,0,0,.7),inset 0 0 0 3px rgba(196,200,206,.25),inset 0 18px 40px rgba(0,0,0,.65);pointer-events:none}
+#bezel:before{content:"";position:absolute;inset:-14px;border-radius:inherit;border:3px solid rgba(196,200,206,.12)}
+.shade{position:absolute;display:none;background:linear-gradient(180deg,#E9EBEE 0%,#CDD1D6 88%,#AEB3BA 100%);box-shadow:0 10px 26px rgba(0,0,0,.45)}
+.shade:after{content:"";position:absolute;left:38%;right:38%;bottom:16px;height:16px;border-radius:8px;background:#9BA1A9}
+.glare{position:absolute;inset:0;display:none;background:linear-gradient(120deg,rgba(255,255,255,0) 30%,rgba(255,255,255,.16) 42%,rgba(255,255,255,0) 52%);mix-blend-mode:screen}
+#gfx{position:absolute;inset:0;z-index:80;pointer-events:none}
+#tags{position:absolute;inset:0;z-index:85;pointer-events:none}
+#tags .tg{position:absolute;display:none;transform-origin:0 50%;font-family:BarlowC;font-weight:700;font-size:40px;letter-spacing:.2em;color:#fff;background:rgba(21,23,26,.9);padding:12px 22px 12px 18px;border-left:7px solid #E0484E;white-space:nowrap}
+#pass{position:absolute;left:110px;width:860px;top:820px;z-index:84;display:none;transform-origin:50% 0%}
+.bp{background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 60px 140px rgba(0,0,0,.6);position:relative}
+.bph{display:flex;justify-content:space-between;background:#15171A;color:#C4C8CE;padding:26px 40px;font-family:BarlowC;font-weight:700;font-size:30px;letter-spacing:.22em}
+.bpb{display:flex;justify-content:space-between;align-items:center;padding:36px 48px 18px}
+.bpb .col{text-align:left}.bpb .col.r{text-align:right}
+.lb{font-family:BarlowC;font-weight:700;font-size:26px;letter-spacing:.22em;color:#8B9098}
+.code{font-family:BarlowC;font-weight:800;font-size:150px;line-height:1;color:#15171A;letter-spacing:.02em;display:inline-block;transform-origin:50% 50%}
+.city{font-size:32px;color:#3B4048;margin-top:4px;min-height:40px}
+.bpl{flex:1;margin:0 28px;height:4px;background:repeating-linear-gradient(90deg,#C4C8CE 0 14px,transparent 14px 26px);position:relative;top:-20px}
+.bpl svg{position:absolute;left:50%;top:-34px;width:72px;height:72px;margin-left:-36px}
+.bpf{display:flex;gap:50px;padding:22px 48px 40px;border-top:3px dashed #C4C8CE;margin-top:18px}
+.bpf .v{font-family:BarlowC;font-weight:800;font-size:56px;color:#15171A}
+.stamp{position:absolute;right:46px;bottom:34px;font-family:BarlowC;font-weight:800;font-size:38px;letter-spacing:.12em;color:#2F6B4F;border:6px solid #2F6B4F;border-radius:12px;padding:6px 18px;opacity:0;transform-origin:50% 50%}
+.cap mark.x{background:none;color:#fff;padding:0 .06em;position:relative}.cap mark.x:after{content:'';position:absolute;left:-4%;top:50%;height:.13em;width:calc(var(--sw,0) * 108%);background:#E0484E;transform:rotate(-5deg);transform-origin:0 50%;box-shadow:0 3px 14px rgba(0,0,0,.45);border-radius:4px}
+.cap p.x3d{font-family:BarlowC;font-weight:800;font-size:170px;line-height:1;text-transform:uppercase}
+.cap p.x3d .ch{text-shadow:1px 1px 0 #C4C8CE,2px 2px 0 #B5BAC1,3px 3px 0 #A3A9B1,4px 4px 0 #8B9098,5px 5px 0 #767C85,6px 6px 0 #636972,7px 7px 0 #50565E,8px 8px 0 #3B4048,9px 9px 0 #2C3036,10px 10px 0 #1C1F23,14px 22px 40px rgba(0,0,0,.6)}
 </style>/*EXTRA*/</head><body>
 <svg id="defs" width="0" height="0" style="position:absolute"></svg>
 <div id="rig">
 <div id="shots"></div>
 <canvas id="globe" width="1080" height="1920"></canvas>
 <div id="slab"></div><div id="stripe"></div>
+<canvas id="gfx" width="1080" height="1920"></canvas><div id="tags"></div><div id="pass"></div>
 </div>
 <div id="grade"></div>
 <div id="shade"></div>
@@ -83,13 +111,13 @@ document.getElementById('shots').innerHTML = SH.map((s, i) => {
 // ---------- build: captions (letters for 3D flip, marks as counters) ----------
 const NUM = /(\d{1,3}(?:\.\d{3})+|\d+)(,\d+)?/;
 function tok(w){
-  const m = w.match(/^\[\[(g:)?(.+?)\]\]([^ \n]*)$/);
-  if (m) return `<span class="w mk"><mark class="${m[1]?'g':''}" data-t="${esc(m[2])}">${esc(m[2])}</mark>${esc(m[3])}</span>`;
+  const m = w.match(/^\[\[(g:|x:)?(.+?)\]\]([^ \n]*)$/);
+  if (m) return `<span class="w mk"><mark class="${m[1]?m[1][0]:''}" data-t="${esc(m[2])}">${esc(m[2])}</mark>${esc(m[3])}</span>`;
   return `<span class="w">${[...w].map(c => `<span class="ch">${esc(c)}</span>`).join('')}</span>`;
 }
-const words = t => (t.match(/\[\[(?:g:)?.+?\]\][^ \n]*|[^ \n]+/g) || []).map(tok).join(' ');
+const words = t => (t.match(/\[\[(?:g:|x:)?.+?\]\][^ \n]*|[^ \n]+/g) || []).map(tok).join(' ');
 document.getElementById('caps').innerHTML = CP.map((c, i) =>
-  `<div class="cap" id="c${i}">${c.tag ? `<span class="tag">${esc(c.tag)}</span><br>` : ''}<p class="${c.start===0?'hook':''}">${words(c.text)}</p>${c.small ? `<br><span class="small">${esc(c.small)}</span>` : ''}</div>`).join('');
+  `<div class="cap" id="c${i}">${c.tag ? `<span class="tag">${esc(c.tag)}</span><br>` : ''}<p class="${c.start===0?'hook':''} ${c.x3d?'x3d':''}">${words(c.text)}</p>${c.small ? `<br><span class="small">${esc(c.small)}</span>` : ''}</div>`).join('');
 
 async function ready(){ await Promise.all([...document.images].map(i => i.decode().catch(()=>{}))); return true; }
 function fit(){
@@ -235,6 +263,187 @@ function grain(t){
   gctx.putImageData(gimg, 0, 0);
 }
 
+
+// ================= motion-graphics scenes =================
+const GFX = document.getElementById('gfx'), gc = GFX.getContext('2d');
+const SC = R.scenes || {};
+const PHs = SH.findIndex(s => s.porthole);
+if (PHs >= 0) {
+  const wall = document.createElement('div'); wall.id = 'wall'; document.getElementById('shots').prepend(wall);
+  const bz = document.createElement('div'); bz.id = 'bezel'; document.getElementById('rig').appendChild(bz);
+  const h = document.getElementById('h' + PHs);
+  h.insertAdjacentHTML('beforeend', '<div class="glare"></div><div class="shade"></div>');
+}
+const TAGS = (SC.plane && SC.plane.hazards) || [];
+document.getElementById('tags').innerHTML = TAGS.map((z, i) => `<div class="tg" id="tg${i}">${esc(z.label)}</div>`).join('');
+const PLANE_SVG = '<svg viewBox="-16 -12 32 24"><path d="M14 0 L11 1 L2 1.5 L-3.5 9 L-5.5 9 L-2 1.5 L-9 1 L-11 4 L-12.5 4 L-11.5 0 L-12.5 -4 L-11 -4 L-9 -1 L-2 -1.5 L-5.5 -9 L-3.5 -9 L2 -1.5 L11 -1 Z" fill="#15171A"/></svg>';
+if (SC.pass) document.getElementById('pass').innerHTML = `<div class="bp"><div class="bph"><span>CARTÃO DE EMBARQUE</span><span>DUPLICANDO MILHAS</span></div>
+  <div class="bpb"><div class="col"><div class="lb">DE</div><div class="code">${esc(SC.pass.from[0])}</div><div class="city">${esc(SC.pass.from[1])}</div></div>
+  <div class="bpl">${PLANE_SVG}</div>
+  <div class="col r"><div class="lb">PARA</div><div class="code" id="flap">???</div><div class="city" id="flapc"></div></div></div>
+  <div class="bpf"><div><div class="lb">PASSAGEIRO</div><div class="v">VOCÊ</div></div><div><div class="lb">PAGAMENTO</div><div class="v">MILHAS</div></div></div>
+  <div class="stamp">PAGO COM MILHAS</div></div>`;
+
+function porthole(t){
+  if (PHs < 0) return;
+  const P = SH[PHs].porthole, W = P.w || 600, H = P.h || 860, cx = 540, cy = P.cy || 1010, r = P.r || 250, b = 34;
+  const z0 = P.zoom || 1.45, z1 = z0 + .6;
+  const h0 = document.getElementById('h' + PHs), wall = document.getElementById('wall'), bz = document.getElementById('bezel');
+  const shade = h0.querySelector('.shade'), glare = h0.querySelector('.glare');
+  if (t >= z1 || t < SH[PHs].start) { wall.style.display = bz.style.display = shade.style.display = glare.style.display = 'none'; return; }
+  const zq = cl((t - z0) / (z1 - z0));
+  const k = (1 + .05 * cl(t / z0)) * (1 + 2.8 * Math.pow(zq, 2.2));
+  const w = W*k, h = H*k, L = cx - w/2, T = cy - h/2;
+  h0.style.clipPath = `inset(${Math.max(T,0)}px ${Math.max(1080-L-w,0)}px ${Math.max(1920-T-h,0)}px ${Math.max(L,0)}px round ${r*k}px)`;
+  if (zq > .05) h0.style.filter = `blur(${(Math.sin(Math.PI*zq)*10).toFixed(1)}px)`;
+  wall.style.display = 'block'; wall.style.transform = `scale(${k})`; wall.style.filter = zq > 0 ? `blur(${zq*16}px)` : 'none';
+  bz.style.display = 'block'; bz.style.left = (L - b*k) + 'px'; bz.style.top = (T - b*k) + 'px';
+  bz.style.width = (w + 2*b*k) + 'px'; bz.style.height = (h + 2*b*k) + 'px';
+  bz.style.borderWidth = (b*k) + 'px'; bz.style.borderRadius = ((r + b)*k) + 'px'; bz.style.opacity = 1 - zq;
+  const open = .32 + .68 * expo((t - .2) / .9);
+  shade.style.display = 'block'; shade.style.left = L + 'px'; shade.style.width = w + 'px';
+  shade.style.top = T + 'px'; shade.style.height = (h * (1 - open)) + 'px';
+  glare.style.display = 'block'; glare.style.opacity = .9 * (1 - zq); glare.style.transform = `translateX(${(t - .7) * 160}px)`;
+}
+
+function P3(x, y, C){
+  const c = Math.cos(C.rot), s = Math.sin(C.rot); const X = x*c - y*s, Y = x*s + y*c;
+  const Yp = Y * Math.cos(C.tilt), Z = Y * Math.sin(C.tilt), k = 1700 / (1700 + Z) * C.sc;
+  return [C.cx + X*k, C.cy + Yp*k];
+}
+function poly(pts, C){ gc.beginPath(); pts.forEach((p, i) => { const q = P3(p[0], p[1], C); i ? gc.lineTo(q[0], q[1]) : gc.moveTo(q[0], q[1]); }); gc.closePath(); }
+function ring(x, y, r, C, n = 48){ const pts = []; for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2; pts.push([x + r*Math.cos(a), y + r*Math.sin(a)]); } poly(pts, C); }
+const FUSE = (() => { const pts = []; for (let i = 0; i <= 12; i++) { const a = Math.PI + i/12*Math.PI; pts.push([56*Math.cos(a), -330 + 56*Math.sin(a)*1.6]); }
+  pts.push([56, 330], [30, 400], [-30, 400], [-56, 330]); return pts; })();
+const WING_R = [[56,-40],[440,110],[440,150],[56,95]], WING_L = WING_R.map(p => [-p[0], p[1]]);
+const TAIL_R = [[50,290],[175,360],[175,385],[40,370]], TAIL_L = TAIL_R.map(p => [-p[0], p[1]]);
+
+function scenePlane(t){
+  const S = SC.plane; if (!S || t < S.t0 - .3 || t >= S.t1) { TAGS.forEach((z, i) => document.getElementById('tg'+i).style.display = 'none'); return false; }
+  const a = Math.min(cl((t - (S.t0 - .3)) / .4), 1 - cl((t - (S.t1 - .2)) / .2));
+  const u = cl((t - S.t0) / (S.t1 - S.t0));
+  const C = { rot: (-24 + 30*eio(u)) * Math.PI/180, tilt: (74 - 24*expo((t - S.t0 + .2) / 1.0)) * Math.PI/180, sc: .92 + .14*u, cx: 540, cy: S.cy || 1160 };
+  gc.globalAlpha = a;
+  // ground grid
+  gc.lineWidth = 2;
+  for (let g = -1200; g <= 1200; g += 150) {
+    gc.strokeStyle = 'rgba(196,200,206,.10)'; gc.beginPath(); let q = P3(g, -1400, C); gc.moveTo(...q); q = P3(g, 1400, C); gc.lineTo(...q); gc.stroke();
+    gc.beginPath(); q = P3(-1400, g, C); gc.moveTo(...q); q = P3(1400, g, C); gc.lineTo(...q); gc.stroke();
+  }
+  // runway
+  poly([[-170,-1500],[170,-1500],[170,1500],[-170,1500]], C); gc.fillStyle = 'rgba(40,44,50,.75)'; gc.fill();
+  gc.setLineDash([26, 30]); gc.strokeStyle = 'rgba(255,255,255,.55)'; gc.lineWidth = 4;
+  gc.beginPath(); let q = P3(0, -1500, C); gc.moveTo(...q); q = P3(0, 1500, C); gc.lineTo(...q); gc.stroke(); gc.setLineDash([]);
+  // scan cones from the windows
+  const scan = cl((t - S.scan) / .5);
+  if (scan > 0) for (const side of [-1, 1]) for (let i = 0; i < 4; i++) {
+    const y0 = -230 + i*140, pulse = .5 + .5*Math.sin(t*5 + i);
+    const L = 520 + 200*pulse;
+    poly([[side*56, y0 - 10], [side*(56 + L), y0 - 170], [side*(56 + L), y0 + 150], [side*56, y0 + 10]], C);
+    const p0 = P3(side*56, y0, C), p1 = P3(side*(56 + L), y0, C);
+    const gr = gc.createLinearGradient(p0[0], p0[1], p1[0], p1[1]);
+    gr.addColorStop(0, `rgba(111,191,147,${.38*scan})`); gr.addColorStop(1, 'rgba(111,191,147,0)');
+    gc.fillStyle = gr; gc.fill();
+  }
+  // aircraft
+  gc.save(); gc.shadowColor = 'rgba(0,0,0,.6)'; gc.shadowBlur = 40;
+  for (const sh of [WING_L, WING_R, TAIL_L, TAIL_R]) { poly(sh, C); gc.fillStyle = '#3B4048'; gc.fill(); }
+  poly(FUSE, C); gc.fillStyle = '#4A5059'; gc.fill(); gc.restore();
+  for (const sh of [WING_L, WING_R, TAIL_L, TAIL_R, FUSE]) { poly(sh, C); gc.strokeStyle = '#C4C8CE'; gc.lineWidth = 2.5; gc.stroke(); }
+  for (const x of [-190, 190]) { poly([[x-22, 10],[x+22, 10],[x+22, 95],[x-22, 95]], C); gc.fillStyle = '#2C3036'; gc.fill(); gc.strokeStyle = '#8B9098'; gc.stroke(); }
+  // windows lighting up one by one
+  for (let i = 0; i < 15; i++) for (const side of [-1, 1]) {
+    const lit = cl((t - S.lit - i*.05) / .15), p = P3(side*40, -260 + i*36, C);
+    gc.beginPath(); gc.arc(p[0], p[1], 6, 0, Math.PI*2);
+    gc.fillStyle = lit > 0 ? `rgba(111,191,147,${.35 + .65*lit})` : '#23272C'; gc.fill();
+    if (lit > 0) { gc.save(); gc.shadowColor = '#6FBF93'; gc.shadowBlur = 18*lit; gc.fill(); gc.restore(); }
+  }
+  // hazards
+  TAGS.forEach((z, i) => {
+    const el = document.getElementById('tg'+i), hq = cl((t - z.at) / .3);
+    if (t < z.at) { el.style.display = 'none'; return; }
+    const pulse = (t - z.at) % .9 / .9;
+    for (const rr of [70 + 120*pulse]) { ring(z.x, z.y, rr, C); gc.strokeStyle = `rgba(224,72,78,${.9*(1-pulse)})`; gc.lineWidth = 5; gc.stroke(); }
+    ring(z.x, z.y, 34*back(hq), C); gc.fillStyle = '#E0484E'; gc.fill();
+    const p = P3(z.x, z.y, C);
+    el.style.display = 'block'; el.style.left = (p[0] + (z.dx ?? 50)) + 'px'; el.style.top = (p[1] + (z.dy ?? -40)) + 'px';
+    el.style.opacity = a; el.style.transform = `scale(${back(hq)})`; el.style.clipPath = `inset(0 ${(1-expo(hq))*100}% 0 0)`;
+  });
+  gc.globalAlpha = 1;
+  return true;
+}
+
+function sceneEye(t){
+  const S = SC.eye; if (!S || t < S.t0 - .2 || t >= S.t1) return;
+  const a = Math.min(cl((t - (S.t0 - .2)) / .3), 1 - cl((t - (S.t1 - .2)) / .2)), cx = 540, cy = S.cy || 1180;
+  const q = eio((t - S.t0 - .2) / 1.3), sc = .85 + .15*expo((t - S.t0 + .2) / .5);
+  gc.save(); gc.globalAlpha = a; gc.translate(cx, cy); gc.scale(sc, sc);
+  gc.beginPath(); gc.arc(0, 0, 340, 0, Math.PI*2); gc.fillStyle = 'rgba(14,15,17,.55)'; gc.fill();
+  // brackets
+  gc.strokeStyle = '#C4C8CE'; gc.lineWidth = 5; const B = 380, l = 70;
+  for (const [sx, sy] of [[-1,-1],[1,-1],[1,1],[-1,1]]) { gc.beginPath(); gc.moveTo(sx*B, sy*(B - l)); gc.lineTo(sx*B, sy*B); gc.lineTo(sx*(B - l), sy*B); gc.stroke(); }
+  // rotating rings
+  gc.save(); gc.rotate(t * .9); gc.setLineDash([18, 14]); gc.strokeStyle = 'rgba(196,200,206,.6)'; gc.lineWidth = 3; gc.beginPath(); gc.arc(0, 0, 305, 0, Math.PI*2); gc.stroke(); gc.restore();
+  gc.save(); gc.rotate(-t * .5); for (let i = 0; i < 72; i++) { gc.rotate(Math.PI*2/72); gc.fillStyle = i % 6 ? 'rgba(196,200,206,.35)' : '#6FBF93'; gc.fillRect(272, -1.5, i % 6 ? 12 : 22, 3); } gc.restore();
+  // iris
+  const ir = gc.createRadialGradient(0, 0, 40, 0, 0, 205); ir.addColorStop(0, '#2F6B4F'); ir.addColorStop(.55, '#6FBF93'); ir.addColorStop(.85, '#3B4048'); ir.addColorStop(1, '#15171A');
+  gc.beginPath(); gc.arc(0, 0, 205, 0, Math.PI*2); gc.fillStyle = ir; gc.fill();
+  gc.strokeStyle = 'rgba(255,255,255,.18)'; gc.lineWidth = 2; for (let i = 0; i < 48; i++) { const an = i/48*Math.PI*2; gc.beginPath(); gc.moveTo(Math.cos(an)*60, Math.sin(an)*60); gc.lineTo(Math.cos(an)*195, Math.sin(an)*195); gc.stroke(); }
+  const pr = 132 - 84*q; gc.beginPath(); gc.arc(0, 0, pr, 0, Math.PI*2); gc.fillStyle = '#070809'; gc.fill();
+  gc.beginPath(); gc.arc(-pr*.35 - 20, -pr*.35 - 20, 22, 0, Math.PI*2); gc.fillStyle = 'rgba(255,255,255,.85)'; gc.fill();
+  // light flooding in
+  const lg = gc.createRadialGradient(260, -320, 10, 260, -320, 520); lg.addColorStop(0, `rgba(255,244,220,${.55*q})`); lg.addColorStop(1, 'rgba(255,244,220,0)');
+  gc.fillStyle = lg; gc.fillRect(-540, -700, 1080, 1100);
+  // meter
+  gc.font = '700 38px BarlowC'; gc.textAlign = 'left'; gc.fillStyle = '#FFFFFF'; gc.letterSpacing = '8px';
+  gc.fillText('ADAPTAÇÃO À LUZ', -300, 470); gc.textAlign = 'right'; gc.fillText(Math.round(q*100) + '%', 300, 470); gc.letterSpacing = '0px';
+  gc.fillStyle = 'rgba(196,200,206,.25)'; gc.fillRect(-300, 495, 600, 10); gc.fillStyle = '#6FBF93'; gc.fillRect(-300, 495, 600*q, 10);
+  gc.restore();
+}
+
+function sceneLights(t){
+  const S = SC.lights; if (!S || t < S.t0 - .2 || t >= S.t1) return;
+  const a = Math.min(cl((t - (S.t0 - .2)) / .3), 1 - cl((t - (S.t1 - .2)) / .2)), y = S.y || 1500;
+  gc.save(); gc.globalAlpha = a;
+  gc.fillStyle = 'rgba(14,15,17,.6)'; gc.fillRect(90, y - 150, 900, 300);
+  gc.font = '700 38px BarlowC'; gc.textAlign = 'center'; gc.fillStyle = '#C4C8CE'; gc.letterSpacing = '10px';
+  gc.fillText('LUZES DA CABINE', 540, y - 80); gc.letterSpacing = '0px';
+  let tot = 0;
+  for (let i = 0; i < 5; i++) {
+    const x = 220 + i*160, lv = 1 - .82*ease((t - S.dim - i*.16) / .35); tot += lv;
+    const gl = gc.createRadialGradient(x, y + 10, 4, x, y + 10, 90); gl.addColorStop(0, `rgba(255,243,214,${.9*lv})`); gl.addColorStop(1, 'rgba(255,243,214,0)');
+    gc.fillStyle = gl; gc.fillRect(x - 90, y - 80, 180, 180);
+    gc.beginPath(); gc.arc(x, y + 10, 30, 0, Math.PI*2); gc.fillStyle = `rgba(255,243,214,${.15 + .85*lv})`; gc.fill(); gc.strokeStyle = '#C4C8CE'; gc.lineWidth = 3; gc.stroke();
+  }
+  gc.fillStyle = 'rgba(196,200,206,.25)'; gc.fillRect(220, y + 80, 640, 8); gc.fillStyle = '#FFF3D6'; gc.fillRect(220, y + 80, 640*tot/5, 8);
+  gc.restore();
+}
+
+const FLAPS = ['GRU','MIA','MAD','NYC','FOR','SCL','BCN','LIS'];
+function scenePass(t){
+  const S = SC.pass, el = document.getElementById('pass'); if (!S) return;
+  if (t < S.t0 || t >= S.t1) { el.style.display = 'none'; return; }
+  el.style.display = 'block';
+  const q = expo((t - S.t0) / .7), out = cl((t - (S.t1 - .25)) / .25);
+  el.style.transform = `perspective(1500px) translateY(${(1-q)*-120 - out*80}px) rotateX(${-100*(1-q) + 3*Math.sin(t*1.7)}deg) rotateY(${4*Math.sin(t*1.1)}deg) scale(${.9 + .1*q})`;
+  el.style.opacity = cl(q*3) * (1 - out);
+  const fl = document.getElementById('flap'), fc = document.getElementById('flapc');
+  const fq = (t - S.flap) / .7;
+  if (fq < 0) { fl.textContent = '???'; fc.textContent = ''; fl.style.transform = 'none'; }
+  else if (fq < 1) { const k = Math.floor(fq * FLAPS.length); fl.textContent = FLAPS[Math.min(k, FLAPS.length - 1)]; fc.textContent = '';
+    const ph = (fq * FLAPS.length) % 1; fl.style.transform = `scaleY(${Math.abs(Math.cos(ph*Math.PI))*.7 + .3})`; }
+  else { fl.textContent = S.to[0]; fc.textContent = S.to[1]; fl.style.transform = `scale(${1 + .12*(1 - expo((fq - 1) * 3))})`; }
+  const st = el.querySelector('.stamp'), sq = cl((t - S.stamp) / .18);
+  st.style.opacity = t >= S.stamp ? 1 : 0;
+  st.style.transform = `rotate(-12deg) scale(${2.4 - 1.4*expo(sq)})`;
+}
+
+function scenes(t){
+  porthole(t);
+  gc.clearRect(0, 0, 1080, 1920);
+  scenePlane(t); sceneEye(t); sceneLights(t); scenePass(t);
+}
+
 // ---------- render one frame ----------
 function render(t){
   drawGlobe(t);
@@ -285,6 +494,10 @@ function render(t){
       const z0 = c.z ? c.z[0] : 1.07, z1 = c.z ? c.z[1] : 1.15;
       const ry = (c.ry ?? 2.2) * dir * (p*2 - 1), rx = (c.rx ?? .8) * (1 - 2*p), tx = (c.tx ?? 24) * dir * (p - .5);
       cam.style.transform = `translateX(${tx}px) rotateY(${ry}deg) rotateX(${rx}deg) scale(${z0 + (z1 - z0) * ease(p)})`;
+      let pf = '';
+      if (s.plate) pf += `blur(${s.plate[0]}px) brightness(${s.plate[1]}) `;
+      if (s.dim) pf += `brightness(${1 - (1 - s.dim[2]) * eio((t - s.dim[0]) / (s.dim[1] - s.dim[0]))})`;
+      cam.style.filter = pf || 'none';
       if (s.frames) {
         const fr = cam.querySelectorAll('.fr');
         const k = Math.min(fr.length - 1, Math.max(0, Math.floor(srcTime(s, u, L) * FPS)));
@@ -337,11 +550,14 @@ function render(t){
       if (mk) {
         const q = hook ? 1 : cl((t - w0) / .16), sw = hook ? 1 : expo((t - w0 - .08) / .35), cn = hook ? 1 : ease((t - w0) / .7);
         w.style.opacity = q; w.style.transform = `translateY(${(1-ease(q))*40}px) scale(${.8 + .2*back(q)})`;
+        if (mk.classList.contains('x')) { mk.style.setProperty('--sw', expo((t - w0 - .35) / .3).toFixed(3)); }
+        else {
         mk.style.backgroundSize = `${sw*100}% 100%`;
         mk.style.color = sw > .55 ? 'var(--carbon)' : '#fff';
         mk.style.textShadow = sw > .55 ? 'none' : '';
-        mk.textContent = countText(mk.dataset.t, cn);
+        mk.textContent = countText(mk.dataset.t, cn); }
       } else {
+        if (c.x3d) { w.querySelectorAll('.ch').forEach(ch => { ch.style.opacity = 1; ch.style.transform = 'none'; }); return; }
         w.querySelectorAll('.ch').forEach((ch, ci) => {
           const q = hook ? 1 : cl((t - w0 - ci * .012) / .2);
           ch.style.opacity = cl(q * 1.6);
@@ -349,11 +565,14 @@ function render(t){
         });
       }
     });
+    if (c.x3d) { const q = expo((t - cs) / .7), pp = n.querySelector('p');
+      pp.style.transform = `perspective(1200px) rotateY(${-80*(1-q) + 6*Math.sin((t-cs)*1.6)}deg) rotateX(${14*(1-q) - 4*Math.sin((t-cs)*1.2)}deg) scale(${.7 + .3*q})`; }
     const tg = n.querySelector('.tag');
     if (tg) { const tq = hook ? 1 : expo((t - cs) / .35); tg.style.clipPath = `inset(0 ${(1-tq)*100}% 0 0)`; tg.style.letterSpacing = `${.26 + .3*(1-tq)}em`; }
     const sm = n.querySelector('.small');
     if (sm) { const sq = expo((t - cs - .45) / .4); sm.style.clipPath = `inset(0 ${(1-sq)*100}% 0 0)`; }
   });
+  scenes(t);
   grain(t);
 }
 </script></body></html>

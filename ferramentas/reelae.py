@@ -75,6 +75,7 @@ def render(reel):
     if g:
         fx += [{"t": g["start"] - .4, "dur": .4, "kind": "zoom"}, {"t": g["end"], "dur": .4, "kind": "zoom"}]
         fx += [{"t": p["at"], "dur": .2, "kind": "pin"} for p in g["pins"]]
+    fx += reel.get("sfx", [])
     cfg = {"duration": reel["duration"], "bpm": reel.get("bpm", 120), "cta": reel["caps"][-1]["start"], "clips": clips, "fx": fx}
     cj = OUT / f"reel{rid}_audio.json"; cj.write_text(json.dumps(cfg))
     wav = OUT / f"reel{rid}.wav"

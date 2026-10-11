@@ -152,6 +152,16 @@ for e in cfg.get("fx", []):
         add(fxbus, t0, glitch_snd(d + .1), .5)
     elif kd == "pin":
         add(fxbus, t0, blip(), .45)
+    elif kd == "flap":
+        for j in range(int(d / .085)):
+            L = int(.03 * SR); kk = np.arange(L) / SR
+            add(fxbus, t0 + j * .085, (rng.standard_normal(L) * .6 + np.sin(2*np.pi*2400*kk)) * np.exp(-kk * 160), .35)
+    elif kd == "stamp":
+        add(fxbus, t0, impact()[:int(.45 * SR)], .7)
+        L = int(.08 * SR); kk = np.arange(L) / SR
+        add(fxbus, t0, onepole(rng.standard_normal(L), 1800) * np.exp(-kk * 45) * 2.5, .6)
+    elif kd == "tick":
+        add(fxbus, t0, blip()[:int(.06 * SR)], .3)
     elif kd in ("leak", "dissolve"):
         add(fxbus, t0 - .3, swell(d + .3), .35)
 music = music + fxbus
