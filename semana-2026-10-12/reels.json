@@ -1,0 +1,435 @@
+[
+ {
+  "id": "S1",
+  "duration": 20.0,
+  "bpm": 120,
+  "cover_t": 0.5,
+  "cap_lead": 0.15,
+  "word_step": 0.06,
+  "tema": "Por que pedem pra abrir a janela na decolagem?",
+  "shots": [
+   {
+    "start": 0,
+    "video": "IMG_1890.mov",
+    "from": 1.0,
+    "vol": 0.95
+   },
+   {
+    "start": 4.0,
+    "video": "IMG_2675.mov",
+    "from": 2.0,
+    "vol": 0.25,
+    "tr": "whipU",
+    "td": 0.32
+   },
+   {
+    "start": 6.0,
+    "video": "IMG_5025.MOV",
+    "from": 2.0,
+    "vol": 0.25,
+    "tr": "cube",
+    "td": 0.5
+   },
+   {
+    "start": 8.0,
+    "video": "IMG_1889.mov",
+    "from": 2.0,
+    "vol": 0.25,
+    "tr": "leak",
+    "td": 0.6
+   },
+   {
+    "start": 10.0,
+    "video": "IMG_5784.mov",
+    "from": 5.0,
+    "vol": 0.25,
+    "tr": "spin",
+    "td": 0.4
+   },
+   {
+    "start": 12.0,
+    "video": "IMG_2675.mov",
+    "from": 8.0,
+    "vol": 0.2,
+    "tr": "zoom",
+    "td": 0.4
+   },
+   {
+    "start": 14.0,
+    "video": "IMG_9812.mov",
+    "from": 1.5,
+    "vol": 0.25,
+    "tr": "glitch",
+    "td": 0.3
+   },
+   {
+    "start": 16.0,
+    "img": "IMG_9181",
+    "tr": "slab",
+    "td": 0.55,
+    "card": true
+   }
+  ],
+  "caps": [
+   {
+    "start": 0,
+    "end": 2.0,
+    "text": "Por que pedem pra abrir a janela na decolagem?"
+   },
+   {
+    "start": 2.0,
+    "end": 4.0,
+    "text": "Não é pra você ver a vista."
+   },
+   {
+    "start": 4.0,
+    "end": 6.0,
+    "text": "Se algo der errado, a tripulação precisa enxergar lá fora."
+   },
+   {
+    "start": 6.0,
+    "end": 8.0,
+    "text": "Fogo, fumaça, algo na pista."
+   },
+   {
+    "start": 8.0,
+    "end": 10.0,
+    "text": "E seus olhos já ficam acostumados com a luz de fora."
+   },
+   {
+    "start": 10.0,
+    "end": 12.0,
+    "text": "Por isso, à noite, as luzes da cabine também diminuem."
+   },
+   {
+    "start": 12.0,
+    "end": 14.0,
+    "text": "Agora você sabe."
+   },
+   {
+    "start": 14.0,
+    "end": 16.0,
+    "text": "Só falta a [[passagem]]."
+   },
+   {
+    "start": 16.0,
+    "end": 20.0,
+    "text": "E eu te ensino a pagar com milhas no Duplicando Milhas.",
+    "small": "Link na bio",
+    "y": 380
+   }
+  ],
+  "caption": "Por que pedem pra abrir a janela na decolagem e no pouso? Não é pela vista. Se algo der errado, a tripulação precisa enxergar o lado de fora, e os seus olhos já ficam acostumados com a luz. Por isso as luzes da cabine diminuem nos pousos e decolagens à noite.\n\nAgora só falta a passagem. No treinamento Duplicando Milhas eu ensino a pagar com milhas. Link na bio.\n\n#aviacao #curiosidades #viagem #milhas #viajarbarato",
+  "pulse_bar": 0.022
+ },
+ {
+  "id": "G2",
+  "duration": 20.0,
+  "bpm": 120,
+  "cover_t": 0.5,
+  "cap_lead": 0.15,
+  "word_step": 0.06,
+  "tema": "Dá pra chegar ao Algarve com milhas saindo de Curitiba?",
+  "globe": {
+   "start": 2.0,
+   "end": 12.0,
+   "cy": 930,
+   "tilt": 6,
+   "legs": [
+    {
+     "t0": 2.4,
+     "t1": 3.8,
+     "from": [
+      -49.176,
+      -25.528
+     ],
+     "to": [
+      -46.469,
+      -23.432
+     ]
+    },
+    {
+     "t0": 4.0,
+     "t1": 8.0,
+     "from": [
+      -46.469,
+      -23.432
+     ],
+     "to": [
+      -9.1359,
+      38.7742
+     ]
+    }
+   ],
+   "pins": [
+    {
+     "name": "Curitiba",
+     "ll": [
+      -49.176,
+      -25.528
+     ],
+     "at": 2.0,
+     "align": "right",
+     "dx": -34
+    },
+    {
+     "name": "São Paulo",
+     "ll": [
+      -46.469,
+      -23.432
+     ],
+     "at": 3.8
+    },
+    {
+     "name": "Lisboa",
+     "ll": [
+      -9.1359,
+      38.7742
+     ],
+     "at": 8.0,
+     "align": "right",
+     "dx": -34
+    }
+   ],
+   "scale": [
+    [
+     2.0,
+     2600
+    ],
+    [
+     3.9,
+     2600
+    ],
+    [
+     5.0,
+     760
+    ],
+    [
+     7.2,
+     760
+    ],
+    [
+     8.6,
+     2300
+    ],
+    [
+     12.0,
+     2500
+    ]
+   ],
+   "km": {
+    "t0": 2.4,
+    "t1": 8.0,
+    "total": 8294,
+    "y": 1690,
+    "label": "em linha reta"
+   }
+  },
+  "shots": [
+   {
+    "start": 0,
+    "video": "IMG_9526.mov",
+    "from": 1.0,
+    "vol": 0.4
+   },
+   {
+    "start": 12.0,
+    "video": "IMG_9384.mov",
+    "from": 1.0,
+    "vol": 0.4,
+    "tr": "leak",
+    "td": 0.6
+   },
+   {
+    "start": 16.0,
+    "img": "IMG_9408_jpg",
+    "tr": "slab",
+    "td": 0.55,
+    "card": true
+   }
+  ],
+  "caps": [
+   {
+    "start": 0,
+    "end": 2.0,
+    "tag": "Algarve",
+    "text": "Dá pra chegar aqui com milhas saindo de Curitiba?"
+   },
+   {
+    "start": 2.0,
+    "end": 4.0,
+    "text": "Curitiba → São Paulo",
+    "y": -640
+   },
+   {
+    "start": 4.0,
+    "end": 8.0,
+    "text": "São Paulo → Lisboa, voo direto",
+    "y": -640
+   },
+   {
+    "start": 8.0,
+    "end": 10.0,
+    "text": "Em milhas: [[54 mil]] o trecho, mais taxas.",
+    "y": -640
+   },
+   {
+    "start": 10.0,
+    "end": 12.0,
+    "text": "Com o milheiro a R$ 24,50: [[g:≈ R$ 1.323]]",
+    "small": "Cartão LATAM Pass Itaú · 30/09 a 02/10/2026",
+    "y": -600
+   },
+   {
+    "start": 12.0,
+    "end": 14.0,
+    "text": "Dica: na LATAM, pesquise ida e volta."
+   },
+   {
+    "start": 14.0,
+    "end": 16.0,
+    "text": "Só de ida, os preços apareciam bem mais altos."
+   },
+   {
+    "start": 16.0,
+    "end": 20.0,
+    "text": "Achar e calcular esse voo é o que eu ensino no Duplicando Milhas.",
+    "small": "Link na bio",
+    "y": 380
+   }
+  ],
+  "caption": "Dá pra sair de Curitiba e chegar ao Algarve com milhas? Até Lisboa, o voo direto da LATAM saindo de São Paulo apareceu por 54 mil milhas o trecho, mais taxas. Comprando os pontos a R$ 24,50 o milheiro (preço para quem tinha o cartão LATAM Pass Itaú, até 02/10), isso dá cerca de R$ 1.323.\n\nDica: na LATAM, pesquise ida e volta. Só de ida, os preços apareciam bem mais altos. Achar e calcular voos assim é o que eu ensino no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #algarve #portugal #lisboa #latampass",
+  "pulse_bar": 0.022
+ },
+ {
+  "id": "S4",
+  "duration": 20.0,
+  "bpm": 120,
+  "cover_t": 0.5,
+  "cap_lead": 0.15,
+  "word_step": 0.06,
+  "tema": "4 coisas que ninguém te conta sobre milhas",
+  "shots": [
+   {
+    "start": 0,
+    "video": "IMG_0073.mov",
+    "from": 1.0,
+    "vol": 0.35
+   },
+   {
+    "start": 2.0,
+    "video": "IMG_5486.mov",
+    "from": 1.0,
+    "vol": 0.3,
+    "tr": "whipL",
+    "td": 0.32
+   },
+   {
+    "start": 4.0,
+    "video": "IMG_9632.mov",
+    "from": 1.0,
+    "vol": 0.3,
+    "tr": "cube",
+    "td": 0.5
+   },
+   {
+    "start": 6.0,
+    "video": "IMG_5174.mov",
+    "from": 1.0,
+    "vol": 0.35,
+    "tr": "whipU",
+    "td": 0.32
+   },
+   {
+    "start": 8.0,
+    "video": "IMG_0123.mov",
+    "from": 1.0,
+    "vol": 0.3,
+    "tr": "glitch",
+    "td": 0.3
+   },
+   {
+    "start": 10.0,
+    "video": "IMG_0139.mov",
+    "from": 1.0,
+    "vol": 0.3,
+    "tr": "spin",
+    "td": 0.4
+   },
+   {
+    "start": 12.0,
+    "video": "IMG_9060.mov",
+    "from": 2.0,
+    "vol": 0.3,
+    "tr": "zoom",
+    "td": 0.4
+   },
+   {
+    "start": 14.0,
+    "video": "IMG_9225.mov",
+    "from": 1.0,
+    "vol": 0.3,
+    "tr": "whipR",
+    "td": 0.32
+   },
+   {
+    "start": 16.0,
+    "img": "IMG_9241",
+    "tr": "slab",
+    "td": 0.55,
+    "card": true
+   }
+  ],
+  "caps": [
+   {
+    "start": 0,
+    "end": 2.0,
+    "text": "4 coisas que ninguém te conta sobre [[milhas]]"
+   },
+   {
+    "start": 2.0,
+    "end": 4.0,
+    "text": "1. Milha tem validade."
+   },
+   {
+    "start": 4.0,
+    "end": 6.0,
+    "text": "Na Azul, ponto de bônus dura cerca de 6 meses."
+   },
+   {
+    "start": 6.0,
+    "end": 8.0,
+    "text": "2. O preço muda o tempo todo."
+   },
+   {
+    "start": 8.0,
+    "end": 10.0,
+    "text": "Miami já saiu por 37 mil e por 45 mil milhas no mesmo ano."
+   },
+   {
+    "start": 10.0,
+    "end": 12.0,
+    "text": "3. Promoção boa costuma durar um dia."
+   },
+   {
+    "start": 12.0,
+    "end": 14.0,
+    "text": "4. Transferir sem bônus é deixar milhas na mesa."
+   },
+   {
+    "start": 14.0,
+    "end": 16.0,
+    "text": "Em outubro, teve bônus de até [[g:100%]]."
+   },
+   {
+    "start": 16.0,
+    "end": 20.0,
+    "text": "O método completo eu ensino no Duplicando Milhas.",
+    "small": "Link na bio",
+    "y": 380
+   }
+  ],
+  "caption": "4 coisas que ninguém te conta sobre milhas:\n\n1. Milha tem validade. Na Azul, os pontos de bônus duram cerca de 6 meses.\n2. O preço muda o tempo todo. Miami pela LATAM já saiu por 37 mil e por 45 mil milhas o trecho em 2026.\n3. Promoção boa costuma durar um dia.\n4. Transferir sem bônus é deixar milhas na mesa. Em outubro, a Azul pagou até 100% de bônus na transferência.\n\nO método completo está no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #viagem #viajarbarato #pontos #milhasaereas",
+  "pulse_bar": 0.022
+ }
+]
