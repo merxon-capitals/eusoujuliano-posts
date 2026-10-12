@@ -1,32 +1,32 @@
 [
  {
   "id": "S1",
-  "duration": 20.0,
-  "bpm": 120,
+  "duration": 30.0,
+  "bpm": 80,
   "cover_t": 0.5,
   "cap_lead": 0.15,
-  "word_step": 0.06,
+  "word_step": 0.08,
   "pulse_bar": 0.022,
   "tema": "Por que pedem pra abrir a janela na decolagem?",
   "drops": [
-   2.0,
-   4.0,
-   15.3,
-   16.0
+   3.0,
+   6.0,
+   22.95,
+   24.0
   ],
   "shots": [
    {
-    "start": 0,
+    "start": 0.0,
     "video": "IMG_1890.mov",
     "from": 1.0,
     "vol": 0.95,
     "porthole": {
      "cy": 1010,
-     "zoom": 1.4
+     "zoom": 2.1
     }
    },
    {
-    "start": 4.0,
+    "start": 6.0,
     "video": "IMG_5025.MOV",
     "from": 2.0,
     "vol": 0.25,
@@ -38,7 +38,7 @@
     ]
    },
    {
-    "start": 8.0,
+    "start": 12.0,
     "video": "IMG_1889.mov",
     "from": 2.0,
     "vol": 0.25,
@@ -50,20 +50,20 @@
     ]
    },
    {
-    "start": 10.0,
+    "start": 15.0,
     "video": "IMG_5784.mov",
     "from": 5.0,
     "vol": 0.25,
     "tr": "cube",
     "td": 0.5,
     "dim": [
-     10.3,
-     11.4,
+     15.45,
+     17.1,
      0.5
     ]
    },
    {
-    "start": 12.0,
+    "start": 18.0,
     "video": "IMG_2675.mov",
     "from": 8.0,
     "vol": 0.25,
@@ -71,7 +71,7 @@
     "td": 0.4
    },
    {
-    "start": 14.0,
+    "start": 21.0,
     "video": "IMG_9812.mov",
     "from": 1.5,
     "vol": 0.25,
@@ -83,7 +83,7 @@
     ]
    },
    {
-    "start": 16.0,
+    "start": 24.0,
     "img": "IMG_9181",
     "card": true,
     "tr": "slab",
@@ -92,17 +92,17 @@
   ],
   "scenes": {
    "plane": {
-    "t0": 4.0,
-    "t1": 8.0,
+    "t0": 6.0,
+    "t1": 12.0,
     "cy": 1160,
-    "lit": 4.5,
-    "scan": 5.2,
+    "lit": 6.75,
+    "scan": 7.8,
     "hazards": [
      {
       "label": "FOGO",
       "x": -380,
       "y": 300,
-      "at": 6.0,
+      "at": 9.0,
       "dx": 50,
       "dy": 30
      },
@@ -110,7 +110,7 @@
       "label": "FUMAÇA",
       "x": 380,
       "y": -160,
-      "at": 6.35,
+      "at": 9.52,
       "dx": -250,
       "dy": -110
      },
@@ -118,28 +118,28 @@
       "label": "ALGO NA PISTA",
       "x": 0,
       "y": -620,
-      "at": 6.7,
+      "at": 10.05,
       "dx": 50,
       "dy": -50
      }
     ]
    },
    "eye": {
-    "t0": 8.0,
-    "t1": 10.0,
+    "t0": 12.0,
+    "t1": 15.0,
     "cy": 1180
    },
    "lights": {
-    "t0": 10.0,
-    "t1": 12.0,
+    "t0": 15.0,
+    "t1": 18.0,
     "y": 1500,
-    "dim": 10.35
+    "dim": 15.52
    },
    "pass": {
-    "t0": 13.95,
-    "t1": 16.0,
-    "flap": 14.6,
-    "stamp": 15.3,
+    "t0": 20.92,
+    "t1": 24.0,
+    "flap": 21.9,
+    "stamp": 22.95,
     "from": [
      "CWB",
      "Curitiba"
@@ -152,157 +152,157 @@
   },
   "sfx": [
    {
-    "t": 1.4,
+    "t": 2.1,
     "dur": 0.6,
     "kind": "zoom"
    },
    {
-    "t": 4.5,
+    "t": 6.75,
     "dur": 0.1,
     "kind": "tick"
    },
    {
-    "t": 4.6,
+    "t": 6.9,
     "dur": 0.1,
     "kind": "tick"
    },
    {
-    "t": 4.7,
+    "t": 7.05,
     "dur": 0.1,
     "kind": "tick"
    },
    {
-    "t": 4.8,
+    "t": 7.2,
     "dur": 0.1,
     "kind": "tick"
    },
    {
-    "t": 4.9,
+    "t": 7.35,
     "dur": 0.1,
     "kind": "tick"
    },
    {
-    "t": 5.0,
+    "t": 7.5,
     "dur": 0.1,
     "kind": "tick"
    },
    {
-    "t": 5.1,
+    "t": 7.65,
     "dur": 0.1,
     "kind": "tick"
    },
    {
-    "t": 5.2,
+    "t": 7.8,
     "dur": 0.1,
     "kind": "tick"
    },
    {
-    "t": 6.0,
+    "t": 9.0,
     "dur": 0.2,
     "kind": "pin"
    },
    {
-    "t": 6.35,
+    "t": 9.52,
     "dur": 0.2,
     "kind": "pin"
    },
    {
-    "t": 6.7,
+    "t": 10.05,
     "dur": 0.2,
     "kind": "pin"
    },
    {
-    "t": 8.2,
+    "t": 12.3,
     "dur": 0.2,
     "kind": "pin"
    },
    {
-    "t": 10.35,
+    "t": 15.52,
     "dur": 0.1,
     "kind": "tick"
    },
    {
-    "t": 10.51,
+    "t": 15.77,
     "dur": 0.1,
     "kind": "tick"
    },
    {
-    "t": 10.67,
+    "t": 16.0,
     "dur": 0.1,
     "kind": "tick"
    },
    {
-    "t": 10.83,
+    "t": 16.25,
     "dur": 0.1,
     "kind": "tick"
    },
    {
-    "t": 10.99,
+    "t": 16.48,
     "dur": 0.1,
     "kind": "tick"
    },
    {
-    "t": 14.6,
+    "t": 21.9,
     "dur": 0.7,
     "kind": "flap"
    },
    {
-    "t": 15.3,
+    "t": 22.95,
     "dur": 0.3,
     "kind": "stamp"
    }
   ],
   "caps": [
    {
-    "start": 0,
-    "end": 2.0,
+    "start": 0.0,
+    "end": 3.0,
     "text": "Por que pedem pra abrir a janela na decolagem?",
     "y": -700
    },
    {
-    "start": 2.0,
-    "end": 4.0,
+    "start": 3.0,
+    "end": 6.0,
     "text": "Não é pra você ver a [[x:vista]]."
    },
    {
-    "start": 4.0,
-    "end": 6.0,
+    "start": 6.0,
+    "end": 9.0,
     "text": "Se algo der errado, a tripulação precisa enxergar lá fora.",
     "y": -660
    },
    {
-    "start": 6.0,
-    "end": 8.0,
+    "start": 9.0,
+    "end": 12.0,
     "text": "Fogo, fumaça, algo na pista.",
     "y": -660
    },
    {
-    "start": 8.0,
-    "end": 10.0,
+    "start": 12.0,
+    "end": 15.0,
     "text": "E seus olhos já ficam acostumados com a luz de fora.",
     "y": -660
    },
    {
-    "start": 10.0,
-    "end": 12.0,
+    "start": 15.0,
+    "end": 18.0,
     "text": "Por isso, à noite, as luzes da cabine também diminuem.",
     "y": -250
    },
    {
-    "start": 12.0,
-    "end": 14.0,
+    "start": 18.0,
+    "end": 21.0,
     "text": "Agora você sabe.",
     "x3d": true
    },
    {
-    "start": 14.0,
-    "end": 16.0,
+    "start": 21.0,
+    "end": 24.0,
     "text": "Só falta a [[passagem]].",
     "y": -660
    },
    {
-    "start": 16.0,
-    "end": 20.0,
+    "start": 24.0,
+    "end": 30.0,
     "text": "E eu te ensino a pagar com milhas no Duplicando Milhas.",
     "small": "Link na bio",
     "y": 380
