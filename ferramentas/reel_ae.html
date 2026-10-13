@@ -60,6 +60,13 @@ body{width:1080px;height:1920px;overflow:hidden;font-family:Barlow;-webkit-font-
 .cap mark.x{background:none;color:#fff;padding:0 .06em;position:relative}.cap mark.x:after{content:'';position:absolute;left:-4%;top:50%;height:.13em;width:calc(var(--sw,0) * 108%);background:#E0484E;transform:rotate(-5deg);transform-origin:0 50%;box-shadow:0 3px 14px rgba(0,0,0,.45);border-radius:4px}
 .cap p.x3d{font-family:BarlowC;font-weight:800;font-size:170px;line-height:1;text-transform:uppercase}
 .cap p.x3d .ch{text-shadow:1px 1px 0 #C4C8CE,2px 2px 0 #B5BAC1,3px 3px 0 #A3A9B1,4px 4px 0 #8B9098,5px 5px 0 #767C85,6px 6px 0 #636972,7px 7px 0 #50565E,8px 8px 0 #3B4048,9px 9px 0 #2C3036,10px 10px 0 #1C1F23,14px 22px 40px rgba(0,0,0,.6)}
+
+#bezel.post{border-color:#F4F5F7;box-shadow:0 50px 140px rgba(0,0,0,.75),inset 0 0 0 2px rgba(0,0,0,.08)}
+#bezel.post:before{display:none}
+#bezel .pstamp{position:absolute;top:26px;right:26px;width:170px;height:206px;background:#F4F5F7;outline:6px dotted #F4F5F7;outline-offset:-3px;padding:12px;transform-origin:100% 0;display:none}
+#bezel .pstamp div{width:100%;height:100%;border:3px solid #2F6B4F;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:BarlowC;font-weight:800;color:#15171A;letter-spacing:.12em}
+#bezel .pstamp b{font-size:34px}#bezel .pstamp i{font-style:normal;font-size:22px;color:#8B9098;margin-top:4px}
+#bezel .pmark{position:absolute;top:150px;right:150px;width:190px;height:190px;border-radius:50%;border:4px solid rgba(21,23,26,.55);display:none;align-items:center;justify-content:center;font-family:BarlowC;font-weight:800;font-size:28px;letter-spacing:.14em;color:rgba(21,23,26,.6);transform:rotate(-14deg);transform-origin:100% 0}
 </style>/*EXTRA*/</head><body>
 <svg id="defs" width="0" height="0" style="position:absolute"></svg>
 <div id="rig">
@@ -286,7 +293,7 @@ if (SC.pass) document.getElementById('pass').innerHTML = `<div class="bp"><div c
 
 function porthole(t){
   if (PHs < 0) return;
-  const P = SH[PHs].porthole, W = P.w || 600, H = P.h || 860, cx = 540, cy = P.cy || 1010, r = P.r || 250, b = 34;
+  const P = SH[PHs].porthole, post = P.style === 'postcard', W = P.w || (post ? 700 : 600), H = P.h || (post ? 940 : 860), cx = 540, cy = P.cy || 1010, r = P.r || (post ? 20 : 250), b = post ? 30 : 34;
   const z0 = P.zoom || 1.45, z1 = z0 + .6;
   const h0 = document.getElementById('h' + PHs), wall = document.getElementById('wall'), bz = document.getElementById('bezel');
   const shade = h0.querySelector('.shade'), glare = h0.querySelector('.glare');
@@ -297,11 +304,15 @@ function porthole(t){
   h0.style.clipPath = `inset(${Math.max(T,0)}px ${Math.max(1080-L-w,0)}px ${Math.max(1920-T-h,0)}px ${Math.max(L,0)}px round ${r*k}px)`;
   if (zq > .05) h0.style.filter = `blur(${(Math.sin(Math.PI*zq)*10).toFixed(1)}px)`;
   wall.style.display = 'block'; wall.style.transform = `scale(${k})`; wall.style.filter = zq > 0 ? `blur(${zq*16}px)` : 'none';
+  if (post && !bz.classList.contains('post')) { bz.classList.add('post'); bz.innerHTML = `<div class="pstamp"><div><b>${esc(P.stamp || '')}</b><i>${esc(P.stamp2 || '')}</i></div></div><div class="pmark">${esc(P.mark || '')}</div>`; }
+  if (post) { const ps = bz.querySelector('.pstamp'), pm = bz.querySelector('.pmark'), sq = back((t - .35) / .35), mq = expo((t - .8) / .25);
+    ps.style.display = 'block'; ps.style.transform = `scale(${k * (t < .35 ? 0 : sq)}) rotate(4deg)`;
+    pm.style.display = t >= .8 ? 'flex' : 'none'; pm.style.transform = `scale(${k * (2 - mq)}) rotate(-14deg)`; pm.style.opacity = mq; }
   bz.style.display = 'block'; bz.style.left = (L - b*k) + 'px'; bz.style.top = (T - b*k) + 'px';
   bz.style.width = (w + 2*b*k) + 'px'; bz.style.height = (h + 2*b*k) + 'px';
   bz.style.borderWidth = (b*k) + 'px'; bz.style.borderRadius = ((r + b)*k) + 'px'; bz.style.opacity = 1 - zq;
-  const open = .32 + .68 * expo((t - .2) / .9);
-  shade.style.display = 'block'; shade.style.left = L + 'px'; shade.style.width = w + 'px';
+  const open = post ? 1 : .32 + .68 * expo((t - .2) / .9);
+  shade.style.display = post ? 'none' : 'block'; shade.style.left = L + 'px'; shade.style.width = w + 'px';
   shade.style.top = T + 'px'; shade.style.height = (h * (1 - open)) + 'px';
   glare.style.display = 'block'; glare.style.opacity = .9 * (1 - zq); glare.style.transform = `translateX(${(t - .7) * 160}px)`;
 }
@@ -438,10 +449,263 @@ function scenePass(t){
   st.style.transform = `rotate(-12deg) scale(${2.4 - 1.4*expo(sq)})`;
 }
 
+
+// ---------- infographic scenes (canvas) ----------
+function rr(x, y, w, h, r){ gc.beginPath(); gc.moveTo(x + r, y); gc.arcTo(x + w, y, x + w, y + h, r); gc.arcTo(x + w, y + h, x, y + h, r); gc.arcTo(x, y + h, x, y, r); gc.arcTo(x, y, x + w, y, r); gc.closePath(); }
+function tx(str, x, y, font, color, align = 'center', ls = 0){ gc.font = font; gc.fillStyle = color; gc.textAlign = align; gc.letterSpacing = ls + 'px'; gc.fillText(str, x, y); gc.letterSpacing = '0px'; }
+function win(S, t){ if (!S || t < S.t0 - .25 || t >= S.t1) return null; return { a: Math.min(cl((t - (S.t0 - .25)) / .3), 1 - cl((t - (S.t1 - .2)) / .2)), u: t - S.t0 }; }
+function enter(w, cx, cy){ const k = .82 + .18 * back(cl((w.u + .25) / .55)); gc.save(); gc.globalAlpha = w.a; gc.translate(cx, cy); gc.scale(k, k); }
+function darkPanel(x, y, w, h){ rr(x, y, w, h, 36); gc.fillStyle = 'rgba(14,15,17,.86)'; gc.fill(); gc.strokeStyle = 'rgba(196,200,206,.22)'; gc.lineWidth = 3; gc.stroke(); }
+const GREEN = '#6FBF93', RED = '#E0484E', SILVER = '#C4C8CE', CARBON = '#15171A';
+
+function sceneOdo(t){
+  const S = SC.odo, w = win(S, t); if (!w) return;
+  enter(w, 540, S.cy || 1150);
+  darkPanel(-450, -230, 900, 470);
+  const chars = [...S.value]; let tw = 0; chars.forEach(c => tw += c === '.' ? 46 : 128);
+  let x = -tw / 2, di = 0;
+  for (const c of chars) {
+    if (c === '.') { tx('.', x + 23, 60, '800 150px BarlowC', '#fff'); x += 46; continue; }
+    const target = +c, roll = eio((w.u - .1 - di * .14) / 1.25), disp = roll * (target + 20), d0 = Math.floor(disp), f = disp - d0;
+    gc.save(); rr(x + 6, -120, 116, 200, 16); gc.fillStyle = '#1C1F23'; gc.fill(); gc.clip();
+    for (const [dv, off] of [[d0 % 10, -f], [(d0 + 1) % 10, 1 - f], [(d0 + 9) % 10, -1 - f]]) {
+      const yy = -20 + off * 170, sc = Math.cos(Math.max(-1.4, Math.min(1.4, off * 1.2)));
+      gc.save(); gc.translate(x + 64, yy); gc.scale(1, Math.max(.05, sc)); tx(String(dv), 0, 55, '800 150px BarlowC', '#fff'); gc.restore();
+    }
+    const sh = gc.createLinearGradient(0, -120, 0, 80); sh.addColorStop(0, 'rgba(0,0,0,.75)'); sh.addColorStop(.3, 'rgba(0,0,0,0)'); sh.addColorStop(.7, 'rgba(0,0,0,0)'); sh.addColorStop(1, 'rgba(0,0,0,.75)');
+    gc.fillStyle = sh; gc.fillRect(x, -120, 128, 200); gc.restore();
+    gc.fillStyle = 'rgba(111,191,147,.9)'; gc.fillRect(x + 6, -22, 4, 4); gc.fillRect(x + 118, -22, 4, 4);
+    x += 128; di++;
+  }
+  tx(S.label || 'MILHAS', 0, 150, '800 56px BarlowC', '#fff', 'center', 14);
+  tx(S.sub || '', 0, 200, '700 32px BarlowC', SILVER, 'center', 8);
+  const lw = 360 * expo((w.u - 1.3) / .5); gc.fillStyle = GREEN; gc.fillRect(-lw / 2, 222, lw, 6);
+  gc.restore();
+}
+
+function sceneReceipt(t){
+  const S = SC.receipt, w = win(S, t); if (!w) return;
+  const top = S.y || 640, H = S.h || 640, cx = 540;
+  gc.save(); gc.globalAlpha = w.a;
+  const ph = H * eio((w.u - .1) / 1.5), py = top + 10 + ph - H;
+  gc.save(); gc.beginPath(); gc.rect(cx - 340, top + 10, 680, H + 60); gc.clip();
+  gc.save(); gc.shadowColor = 'rgba(0,0,0,.55)'; gc.shadowBlur = 50; gc.shadowOffsetY = 20;
+  gc.beginPath(); gc.moveTo(cx - 290, py); gc.lineTo(cx + 290, py); gc.lineTo(cx + 290, py + H);
+  for (let i = 0; i <= 20; i++) gc.lineTo(cx + 290 - i * 29, py + H + (i % 2 ? 18 : 0));
+  gc.closePath(); gc.fillStyle = '#F4F5F7'; gc.fill(); gc.restore();
+  let y = py + 80;
+  for (const L of S.lines) {
+    if (L.k === 'title') { tx(L.t, cx, y, '800 38px BarlowC', '#8B9098', 'center', 10); y += 60; }
+    else if (L.k === 'dash') { gc.setLineDash([12, 10]); gc.strokeStyle = '#B5BAC1'; gc.lineWidth = 3; gc.beginPath(); gc.moveTo(cx - 250, y - 18); gc.lineTo(cx + 250, y - 18); gc.stroke(); gc.setLineDash([]); y += 34; }
+    else if (L.k === 'row') { tx(L.l, cx - 250, y, '500 38px Barlow', '#3B4048', 'left'); tx(L.r, cx + 250, y, '700 42px Barlow', CARBON, 'right'); y += 66; }
+    else if (L.k === 'total') { tx(L.l, cx - 250, y + 10, '800 52px BarlowC', CARBON, 'left', 4); tx(L.r, cx + 250, y + 10, '800 70px BarlowC', '#2F6B4F', 'right'); y += 92; }
+    else if (L.k === 'note') { tx(L.t, cx, y, '500 26px Barlow', '#8B9098'); y += 38; }
+  }
+  gc.restore();
+  rr(cx - 370, top - 34, 740, 52, 26); gc.fillStyle = CARBON; gc.fill(); gc.strokeStyle = 'rgba(196,200,206,.35)'; gc.lineWidth = 3; gc.stroke();
+  gc.save(); gc.shadowColor = GREEN; gc.shadowBlur = 24; gc.fillStyle = GREEN; gc.fillRect(cx - 320, top - 12, 640, 6); gc.restore();
+  gc.restore();
+}
+
+function sceneToggle(t){
+  const S = SC.toggle, w = win(S, t); if (!w) return;
+  enter(w, 540, S.cy || 1160);
+  gc.save(); gc.shadowColor = 'rgba(0,0,0,.6)'; gc.shadowBlur = 60; gc.shadowOffsetY = 24; rr(-430, -300, 860, 600, 44); gc.fillStyle = '#FFFFFF'; gc.fill(); gc.restore();
+  tx('BUSCAR VOO', -370, -215, '800 32px BarlowC', '#8B9098', 'left', 10);
+  tx(S.route || '', -370, -130, '800 66px BarlowC', CARBON, 'left', 2);
+  const tq = eio((w.u - (S.tap - S.t0)) / .35);
+  rr(-370, -60, 740, 116, 58); gc.fillStyle = '#F1F2F4'; gc.fill();
+  rr(-362 + 362 * tq, -52, 362, 100, 50); gc.fillStyle = CARBON; gc.fill();
+  tx('SÓ IDA', -185, 16, '800 40px BarlowC', tq < .5 ? '#fff' : '#3B4048', 'center', 6);
+  tx('IDA E VOLTA', 185, 16, '800 40px BarlowC', tq >= .5 ? '#fff' : '#3B4048', 'center', 6);
+  rr(-370, 110, 740, 110, 55); gc.fillStyle = '#2F6B4F'; gc.fill(); tx('PESQUISAR', 0, 180, '800 44px BarlowC', '#fff', 'center', 10);
+  const tap = S.tap - S.t0, mv = eio((w.u - (tap - .75)) / .7), hx = 300 - 115 * mv, hy = 300 - 290 * mv;
+  if (w.u >= tap) { const rq = cl((w.u - tap) / .5); gc.beginPath(); gc.arc(185, 0, 30 + 120 * rq, 0, Math.PI * 2); gc.strokeStyle = `rgba(111,191,147,${1 - rq})`; gc.lineWidth = 8; gc.stroke(); }
+  const press = w.u >= tap && w.u < tap + .15 ? .85 : 1;
+  gc.save(); gc.translate(hx, hy); gc.scale(press, press); gc.beginPath(); gc.arc(0, 0, 34, 0, Math.PI * 2); gc.fillStyle = 'rgba(21,23,26,.35)'; gc.fill(); gc.lineWidth = 6; gc.strokeStyle = '#fff'; gc.stroke(); gc.restore();
+  gc.restore();
+}
+
+function sceneBars(t){
+  const S = SC.bars, w = win(S, t); if (!w) return;
+  enter(w, 540, S.cy || 1180);
+  darkPanel(-430, -380, 860, 700);
+  const base = 220, h1 = 480 * ease((w.u - .15) / 1.0), h2 = 250 * ease((w.u - .35) / 1.0);
+  gc.save(); gc.shadowColor = 'rgba(224,72,78,.6)'; gc.shadowBlur = 30; rr(-300, base - h1, 230, h1, 16); gc.fillStyle = RED; gc.fill(); gc.restore();
+  gc.save(); gc.shadowColor = 'rgba(111,191,147,.6)'; gc.shadowBlur = 30; rr(70, base - h2, 230, h2, 16); gc.fillStyle = GREEN; gc.fill(); gc.restore();
+  gc.fillStyle = 'rgba(196,200,206,.5)'; gc.fillRect(-360, base, 720, 4);
+  tx('SÓ IDA', -185, base + 64, '800 42px BarlowC', '#fff', 'center', 8);
+  tx('IDA E VOLTA', 185, base + 64, '800 42px BarlowC', '#fff', 'center', 8);
+  const lq = back((w.u - 1.2) / .35);
+  if (w.u > 1.2) { gc.save(); gc.translate(-185, base - h1 - 50); gc.scale(lq, lq); rr(-150, -36, 300, 64, 12); gc.fillStyle = CARBON; gc.fill(); gc.strokeStyle = RED; gc.lineWidth = 3; gc.stroke(); tx('BEM MAIS ALTO', 0, 12, '800 32px BarlowC', '#fff', 'center', 6); gc.restore(); }
+  gc.restore();
+}
+
+function sceneProgress(t){
+  const S = SC.progress; if (!S || t < S.t0 - .3 || t >= S.t1) return;
+  const a = Math.min(cl((t - (S.t0 - .3)) / .3), 1 - cl((t - (S.t1 - .2)) / .2));
+  gc.save(); gc.globalAlpha = a;
+  S.marks.forEach((m, i) => {
+    const x = 540 + (i - 1.5) * 116, y = S.y || 112, on = t >= m, cur = on && (i === S.marks.length - 1 || t < S.marks[i + 1]);
+    const pop = on ? 1 + .35 * (1 - expo((t - m) / .4)) : 1;
+    gc.save(); gc.translate(x, y); gc.scale(pop, pop);
+    rr(-42, -42, 84, 84, 18); gc.fillStyle = on ? (cur ? GREEN : '#2F6B4F') : 'rgba(21,23,26,.8)'; gc.fill();
+    gc.strokeStyle = cur ? '#fff' : 'rgba(196,200,206,.5)'; gc.lineWidth = cur ? 5 : 3; gc.stroke();
+    tx(String(i + 1), 0, 18, '800 50px BarlowC', on ? CARBON : SILVER); gc.restore();
+  });
+  gc.restore();
+}
+
+function sceneCards(t){
+  const S = SC.cards, w = win(S, t); if (!w) return;
+  gc.save(); gc.globalAlpha = w.a; gc.translate(540, S.cy || 1250);
+  const flipT = S.flip - S.t0, fq = cl((w.u - flipT) / .45), fly = expo((w.u - flipT - .3) / .5);
+  for (let i = 3; i >= 0; i--) {
+    const ang = (-27 + i * 18) * Math.PI / 180 + .02 * Math.sin(t * 2 + i), bob = 10 * Math.sin(t * 2.2 + i * 1.3);
+    gc.save(); gc.rotate(ang * (i === 0 ? 1 - fly : 1)); gc.translate(0, -320 + bob - (i === 0 ? fly * 120 : 0));
+    let sx = 1, face = false;
+    if (i === 0 && fq > 0) { sx = Math.abs(Math.cos(Math.PI * fq)); face = fq > .5; const zz = 1 + 1.6 * fly; gc.scale(zz, zz); }
+    gc.scale(sx, 1);
+    gc.save(); gc.shadowColor = 'rgba(0,0,0,.6)'; gc.shadowBlur = 40; gc.shadowOffsetY = 18; rr(-150, -215, 300, 430, 26); gc.fillStyle = face ? '#F4F5F7' : CARBON; gc.fill(); gc.restore();
+    rr(-150, -215, 300, 430, 26); gc.strokeStyle = face ? CARBON : GREEN; gc.lineWidth = 5; gc.stroke();
+    if (face) tx(String(i + 1), 0, 70, '800 220px BarlowC', CARBON);
+    else { rr(-120, -185, 240, 370, 18); gc.strokeStyle = 'rgba(111,191,147,.35)'; gc.lineWidth = 2; gc.stroke(); tx('?', 0, 60, '800 170px BarlowC', GREEN); tx(String(i + 1), 0, 170, '800 34px BarlowC', SILVER, 'center', 6); }
+    gc.restore();
+  }
+  gc.restore();
+}
+
+function sceneHourglass(t){
+  const S = SC.hourglass, w = win(S, t); if (!w) return;
+  enter(w, 540, S.cy || 1180);
+  darkPanel(-330, -400, 660, 760);
+  const rot = (1 - expo(w.u / .7)) * Math.PI; gc.save(); gc.rotate(rot);
+  const q = cl((w.u - .5) / 2.2), Wd = 190, Hh = 260;
+  gc.save(); gc.beginPath(); gc.moveTo(-Wd, -Hh); gc.lineTo(Wd, -Hh); gc.lineTo(14, 0); gc.lineTo(-14, 0); gc.closePath(); gc.clip();
+  const topLevel = -Hh + (Hh) * q; gc.fillStyle = GREEN; gc.fillRect(-Wd, topLevel, 2 * Wd, Hh); gc.restore();
+  gc.save(); gc.beginPath(); gc.moveTo(-14, 0); gc.lineTo(14, 0); gc.lineTo(Wd, Hh); gc.lineTo(-Wd, Hh); gc.closePath(); gc.clip();
+  gc.beginPath(); gc.moveTo(-Wd, Hh); gc.lineTo(0, Hh - Hh * .95 * q); gc.lineTo(Wd, Hh); gc.closePath(); gc.fillStyle = GREEN; gc.fill(); gc.restore();
+  if (q > 0 && q < 1) { gc.fillStyle = GREEN; gc.fillRect(-3, 0, 6, Hh - Hh * .95 * q); }
+  gc.beginPath(); gc.moveTo(-Wd, -Hh); gc.lineTo(Wd, -Hh); gc.lineTo(14, 0); gc.lineTo(Wd, Hh); gc.lineTo(-Wd, Hh); gc.lineTo(-14, 0); gc.closePath(); gc.strokeStyle = SILVER; gc.lineWidth = 6; gc.stroke();
+  gc.fillStyle = SILVER; gc.fillRect(-Wd - 30, -Hh - 26, 2 * Wd + 60, 22); gc.fillRect(-Wd - 30, Hh + 4, 2 * Wd + 60, 22);
+  gc.restore();
+  tx('VALIDADE', 0, 340, '800 46px BarlowC', '#fff', 'center', 14);
+  gc.restore();
+}
+
+function sceneCalendar(t){
+  const S = SC.calendar, w = win(S, t); if (!w) return;
+  enter(w, 540, S.cy || 1170);
+  const n = S.months || 6, per = .28, cur = Math.min(n, 1 + Math.floor(Math.max(0, w.u - .2) / per)), fp = ((Math.max(0, w.u - .2)) % per) / per;
+  const Wd = 520, Hd = 560;
+  gc.save(); gc.shadowColor = 'rgba(0,0,0,.6)'; gc.shadowBlur = 50; gc.shadowOffsetY = 20; rr(-Wd/2, -Hd/2, Wd, Hd, 30); gc.fillStyle = '#F4F5F7'; gc.fill(); gc.restore();
+  rr(-Wd/2, -Hd/2, Wd, 120, 30); gc.fillStyle = CARBON; gc.fill(); gc.fillRect(-Wd/2, -Hd/2 + 60, Wd, 60);
+  for (const x of [-140, 140]) { rr(x - 14, -Hd/2 - 30, 28, 70, 14); gc.fillStyle = SILVER; gc.fill(); }
+  tx('PONTOS DE BÔNUS', 0, -Hd/2 + 78, '800 38px BarlowC', '#fff', 'center', 8);
+  tx(String(cur), 0, 120, '800 300px BarlowC', CARBON);
+  tx(cur === 1 ? 'MÊS' : 'MESES', 0, 210, '800 46px BarlowC', '#8B9098', 'center', 12);
+  if (cur < n && w.u > .2) { const fy = -Hd/2 + 120; gc.save(); gc.translate(0, fy); gc.scale(1, Math.cos(fp * Math.PI / 2)); gc.globalAlpha *= 1 - fp; rr(-Wd/2, 0, Wd, Hd - 120, 0); gc.fillStyle = '#E4E6E9'; gc.fill(); gc.restore(); }
+  const sq = cl((w.u - (.25 + n * per)) / .22);
+  if (sq > 0) { gc.save(); gc.translate(10, 40); gc.rotate(-.22); const k = 2.3 - 1.3 * expo(sq); gc.scale(k, k); gc.globalAlpha *= cl(sq * 3); rr(-200, -62, 400, 124, 16); gc.lineWidth = 9; gc.strokeStyle = RED; gc.stroke(); tx('EXPIRA', 0, 30, '800 92px BarlowC', RED, 'center', 10); gc.restore(); }
+  gc.restore();
+}
+
+function sceneTicker(t){
+  const S = SC.ticker, w = win(S, t); if (!w) return;
+  enter(w, 540, S.cy || 1170);
+  darkPanel(-450, -330, 900, 640);
+  gc.strokeStyle = 'rgba(196,200,206,.10)'; gc.lineWidth = 2;
+  for (let i = -3; i <= 3; i++) { gc.beginPath(); gc.moveTo(-400, i * 80); gc.lineTo(400, i * 80); gc.stroke(); }
+  tx('PREÇO EM MILHAS', -400, -260, '800 36px BarlowC', SILVER, 'left', 10);
+  const pts = [], N = 70, sh = t * 9;
+  for (let i = 0; i <= N; i++) { const k = i + sh, v = Math.sin(k * .37) * 90 + Math.sin(k * .113 + 2) * 110 + (hash(Math.floor(k)) - .5) * 40; pts.push([-400 + i * 800 / N, v]); }
+  const shown = Math.floor(N * expo(w.u / .8));
+  gc.save(); gc.shadowColor = GREEN; gc.shadowBlur = 18; gc.beginPath(); pts.slice(0, shown + 1).forEach((p, i) => i ? gc.lineTo(...p) : gc.moveTo(...p)); gc.strokeStyle = GREEN; gc.lineWidth = 7; gc.lineJoin = 'round'; gc.stroke(); gc.restore();
+  const hp = pts[shown]; gc.beginPath(); gc.arc(hp[0], hp[1], 14, 0, Math.PI * 2); gc.fillStyle = '#fff'; gc.fill();
+  const up = Math.sin(t * 6) > 0; tx(up ? '▲' : '▼', 380, -250, '800 54px Barlow', up ? GREEN : RED, 'right');
+  gc.restore();
+}
+
+function sceneChart(t){
+  const S = SC.chart, w = win(S, t); if (!w) return;
+  enter(w, 540, S.cy || 1180);
+  darkPanel(-470, -390, 940, 800);
+  tx(S.title || '', -410, -310, '800 34px BarlowC', SILVER, 'left', 8);
+  const X0 = -380, X1 = 400, Y0 = 250, Y1 = -200, vmin = S.min, vmax = S.max, months = S.months;
+  const xp = i => X0 + (X1 - X0) * i / (months.length - 1), yp = v => Y0 + (Y1 - Y0) * (v - vmin) / (vmax - vmin);
+  gc.strokeStyle = 'rgba(196,200,206,.12)'; gc.lineWidth = 2;
+  for (let v = vmin; v <= vmax; v += 5) { gc.beginPath(); gc.moveTo(X0, yp(v)); gc.lineTo(X1, yp(v)); gc.stroke(); tx(v + ' mil', X0 - 16, yp(v) + 10, '600 26px Barlow', '#8B9098', 'right'); }
+  months.forEach((m, i) => tx(m, xp(i), Y0 + 56, '800 30px BarlowC', '#8B9098', 'center', 4));
+  const P = S.points.map(p => [xp(p.i), yp(p.v), p]), q = eio((w.u - .2) / 1.4);
+  let segs = (P.length - 1) * q;
+  gc.save(); gc.shadowColor = GREEN; gc.shadowBlur = 16; gc.beginPath(); gc.moveTo(P[0][0], P[0][1]);
+  for (let i = 1; i < P.length; i++) { const f = cl(segs - (i - 1)); if (f <= 0) break; gc.lineTo(P[i-1][0] + (P[i][0] - P[i-1][0]) * f, P[i-1][1] + (P[i][1] - P[i-1][1]) * f); }
+  gc.strokeStyle = '#fff'; gc.lineWidth = 6; gc.stroke(); gc.restore();
+  P.forEach(([x, y, p], i) => {
+    const at = i / (P.length - 1) * 1.4 + .2, pq = back((w.u - at) / .3); if (w.u < at) return;
+    const col = p.hl === 'min' ? GREEN : p.hl === 'max' ? RED : '#fff';
+    gc.beginPath(); gc.arc(x, y, 14 * pq, 0, Math.PI * 2); gc.fillStyle = col; gc.fill();
+    gc.save(); gc.translate(x, y - 46); gc.scale(pq, pq); rr(-78, -34, 156, 58, 12); gc.fillStyle = p.hl ? col : 'rgba(21,23,26,.95)'; gc.fill();
+    tx(p.v + ' mil', 0, 8, '800 34px BarlowC', p.hl ? CARBON : '#fff'); gc.restore();
+    if (p.note) tx(p.note, x, y + 50, '700 24px BarlowC', '#8B9098', 'center', 4);
+  });
+  if (S.foot) tx(S.foot, 0, 370, '500 26px Barlow', '#8B9098');
+  gc.restore();
+}
+
+function sceneCountdown(t){
+  const S = SC.countdown, w = win(S, t); if (!w) return;
+  enter(w, 540, S.cy || 1170);
+  const q = eio((w.u - .2) / 2.0), rem = Math.max(0, 86400 * (1 - q)), done = q >= 1;
+  gc.beginPath(); gc.arc(0, 0, 300, 0, Math.PI * 2); gc.fillStyle = 'rgba(14,15,17,.86)'; gc.fill();
+  gc.beginPath(); gc.arc(0, 0, 270, 0, Math.PI * 2); gc.strokeStyle = 'rgba(196,200,206,.15)'; gc.lineWidth = 22; gc.stroke();
+  gc.save(); gc.shadowColor = done ? RED : GREEN; gc.shadowBlur = 24; gc.beginPath(); gc.arc(0, 0, 270, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * (1 - q)); gc.strokeStyle = done ? RED : GREEN; gc.lineWidth = 22; gc.lineCap = 'round'; gc.stroke(); gc.restore();
+  for (let i = 0; i < 24; i++) { const a = i / 24 * Math.PI * 2; gc.fillStyle = 'rgba(196,200,206,.4)'; gc.fillRect(Math.cos(a) * 215 - 3, Math.sin(a) * 215 - 3, 6, 6); }
+  const h = Math.floor(rem / 3600), m = Math.floor(rem % 3600 / 60), s2 = Math.floor(rem % 60), pad = n => String(n).padStart(2, '0');
+  if (!done) tx(`${pad(h)}:${pad(m)}:${pad(s2)}`, 0, 40, '800 120px BarlowC', '#fff', 'center', 2);
+  else { const k = 1 + .3 * (1 - expo((w.u - 2.2) / .3)); gc.save(); gc.scale(k, k); tx('ACABOU', 0, 40, '800 130px BarlowC', RED, 'center', 8); gc.restore(); }
+  tx('PROMOÇÃO', 0, -110, '800 36px BarlowC', SILVER, 'center', 12);
+  gc.restore();
+}
+
+function coin(x, y, edge, face){ gc.beginPath(); gc.ellipse(x, y + 14, 110, 34, 0, 0, Math.PI * 2); gc.fillStyle = edge; gc.fill(); gc.beginPath(); gc.ellipse(x, y, 110, 34, 0, 0, Math.PI * 2); gc.fillStyle = face; gc.fill(); gc.strokeStyle = 'rgba(0,0,0,.25)'; gc.lineWidth = 2; gc.stroke(); }
+function sceneCoins(t){
+  const S = SC.coins, w = win(S, t); if (!w) return;
+  enter(w, 540, S.cy || 1200);
+  darkPanel(-460, -440, 920, 820);
+  const base = 230, n1 = 5, n2 = 10, g2 = Math.floor(n1 + (n2 - n1) * ease((w.u - .9) / 1.0));
+  for (let i = 0; i < n1; i++) { const dq = back(cl((w.u - i * .07) / .3)); if (w.u < i * .07) continue; coin(-220, base - i * 30 - (1 - dq) * 60, '#8B9098', '#C4C8CE'); }
+  for (let i = 0; i < Math.max(n1, g2) && w.u >= .3; i++) { const extra = i >= n1, at = extra ? .9 + (i - n1) * .2 : .3 + i * .07, dq = back(cl((w.u - at) / .3)); if (w.u < at) continue;
+    coin(220, base - i * 30 - (1 - dq) * 90, extra ? '#2F6B4F' : '#8B9098', extra ? GREEN : '#C4C8CE'); }
+  const v2 = Math.round(10000 + 10000 * ease((w.u - .9) / 1.0));
+  tx('10.000', -220, base + 110, '800 64px BarlowC', '#fff'); tx('SEM BÔNUS', -220, base + 160, '800 30px BarlowC', '#8B9098', 'center', 8);
+  tx(v2.toLocaleString('pt-BR'), 220, base + 110, '800 64px BarlowC', v2 > 10000 ? GREEN : '#fff'); tx('COM 100% DE BÔNUS', 220, base + 160, '800 30px BarlowC', '#8B9098', 'center', 6);
+  tx('A MESMA TRANSFERÊNCIA', 0, -360, '800 36px BarlowC', SILVER, 'center', 10);
+  gc.restore();
+}
+
+function sceneGauge(t){
+  const S = SC.gauge, w = win(S, t); if (!w) return;
+  enter(w, 540, S.cy || 1240);
+  darkPanel(-450, -420, 900, 640);
+  const q = eio((w.u - .2) / 1.3), R0 = 300;
+  gc.beginPath(); gc.arc(0, 80, R0, Math.PI, 2 * Math.PI); gc.strokeStyle = 'rgba(196,200,206,.15)'; gc.lineWidth = 46; gc.stroke();
+  gc.save(); gc.shadowColor = GREEN; gc.shadowBlur = 30; gc.beginPath(); gc.arc(0, 80, R0, Math.PI, Math.PI + Math.PI * q); gc.strokeStyle = GREEN; gc.lineWidth = 46; gc.stroke(); gc.restore();
+  for (let i = 0; i <= 10; i++) { const a = Math.PI + Math.PI * i / 10; gc.fillStyle = 'rgba(196,200,206,.6)'; gc.save(); gc.translate(Math.cos(a) * (R0 - 50), 80 + Math.sin(a) * (R0 - 50)); gc.rotate(a); gc.fillRect(-10, -2, 20, 4); gc.restore(); }
+  const na = Math.PI + Math.PI * q; gc.save(); gc.translate(0, 80); gc.rotate(na); gc.fillStyle = '#fff'; gc.fillRect(0, -5, R0 - 70, 10); gc.restore();
+  gc.beginPath(); gc.arc(0, 80, 26, 0, Math.PI * 2); gc.fillStyle = '#fff'; gc.fill();
+  tx(Math.round(100 * q) + '%', 0, 30, '800 150px BarlowC', '#fff');
+  tx(S.label || '', 0, 170, '800 34px BarlowC', SILVER, 'center', 8);
+  if (S.note) tx(S.note, 0, 216, '500 26px Barlow', '#8B9098');
+  gc.restore();
+}
+
 function scenes(t){
   porthole(t);
   gc.clearRect(0, 0, 1080, 1920);
   scenePlane(t); sceneEye(t); sceneLights(t); scenePass(t);
+  sceneOdo(t); sceneReceipt(t); sceneToggle(t); sceneBars(t);
+  sceneCards(t); sceneHourglass(t); sceneCalendar(t); sceneTicker(t); sceneChart(t); sceneCountdown(t); sceneCoins(t); sceneGauge(t); sceneProgress(t);
 }
 
 // ---------- render one frame ----------

@@ -312,21 +312,26 @@
  },
  {
   "id": "G2",
-  "duration": 20.0,
-  "bpm": 120,
+  "duration": 30.0,
+  "bpm": 80,
   "cover_t": 0.5,
   "cap_lead": 0.15,
-  "word_step": 0.06,
+  "word_step": 0.08,
+  "pulse_bar": 0.02,
   "tema": "Dá pra chegar ao Algarve com milhas saindo de Curitiba?",
+  "drops": [
+   3.0,
+   24.0
+  ],
   "globe": {
-   "start": 2.0,
-   "end": 12.0,
+   "start": 3.0,
+   "end": 9.0,
    "cy": 930,
    "tilt": 6,
    "legs": [
     {
-     "t0": 2.4,
-     "t1": 3.8,
+     "t0": 3.4,
+     "t1": 4.9,
      "from": [
       -49.176,
       -25.528
@@ -337,8 +342,8 @@
      ]
     },
     {
-     "t0": 4.0,
-     "t1": 8.0,
+     "t0": 5.6,
+     "t1": 8.4,
      "from": [
       -46.469,
       -23.432
@@ -356,7 +361,7 @@
       -49.176,
       -25.528
      ],
-     "at": 2.0,
+     "at": 3.0,
      "align": "right",
      "dx": -34
     },
@@ -366,7 +371,7 @@
       -46.469,
       -23.432
      ],
-     "at": 3.8
+     "at": 4.9
     },
     {
      "name": "Lisboa",
@@ -374,26 +379,26 @@
       -9.1359,
       38.7742
      ],
-     "at": 8.0,
+     "at": 8.4,
      "align": "right",
      "dx": -34
     }
    ],
    "scale": [
     [
-     2.0,
+     3.0,
      2600
     ],
     [
-     3.9,
+     4.9,
      2600
     ],
     [
-     5.0,
+     5.9,
      760
     ],
     [
-     7.2,
+     7.6,
      760
     ],
     [
@@ -401,13 +406,13 @@
      2300
     ],
     [
-     12.0,
-     2500
+     9.0,
+     2400
     ]
    ],
    "km": {
-    "t0": 2.4,
-    "t1": 8.0,
+    "t0": 3.4,
+    "t1": 8.4,
     "total": 8294,
     "y": 1690,
     "label": "em linha reta"
@@ -418,206 +423,704 @@
     "start": 0,
     "video": "IMG_9526.mov",
     "from": 1.0,
-    "vol": 0.4
-   },
-   {
-    "start": 12.0,
-    "video": "IMG_9384.mov",
-    "from": 1.0,
     "vol": 0.4,
-    "tr": "leak",
-    "td": 0.6
+    "porthole": {
+     "style": "postcard",
+     "cy": 1100,
+     "zoom": 1.9,
+     "stamp": "ALGARVE",
+     "stamp2": "PORTUGAL",
+     "mark": "CWB · LIS"
+    }
    },
    {
-    "start": 16.0,
-    "img": "IMG_9408_jpg",
-    "tr": "slab",
-    "td": 0.55,
-    "card": true
-   }
-  ],
-  "caps": [
-   {
-    "start": 0,
-    "end": 2.0,
-    "tag": "Algarve",
-    "text": "Dá pra chegar aqui com milhas saindo de Curitiba?"
-   },
-   {
-    "start": 2.0,
-    "end": 4.0,
-    "text": "Curitiba → São Paulo",
-    "y": -640
-   },
-   {
-    "start": 4.0,
-    "end": 8.0,
-    "text": "São Paulo → Lisboa, voo direto",
-    "y": -640
-   },
-   {
-    "start": 8.0,
-    "end": 10.0,
-    "text": "Em milhas: [[54 mil]] o trecho, mais taxas.",
-    "y": -640
-   },
-   {
-    "start": 10.0,
-    "end": 12.0,
-    "text": "Com o milheiro a R$ 24,50: [[g:≈ R$ 1.323]]",
-    "small": "Cartão LATAM Pass Itaú · 30/09 a 02/10/2026",
-    "y": -600
-   },
-   {
-    "start": 12.0,
-    "end": 14.0,
-    "text": "Dica: na LATAM, pesquise ida e volta."
-   },
-   {
-    "start": 14.0,
-    "end": 16.0,
-    "text": "Só de ida, os preços apareciam bem mais altos."
-   },
-   {
-    "start": 16.0,
-    "end": 20.0,
-    "text": "Achar e calcular esse voo é o que eu ensino no Duplicando Milhas.",
-    "small": "Link na bio",
-    "y": 380
-   }
-  ],
-  "caption": "Dá pra sair de Curitiba e chegar ao Algarve com milhas? Até Lisboa, o voo direto da LATAM saindo de São Paulo apareceu por 54 mil milhas o trecho, mais taxas. Comprando os pontos a R$ 24,50 o milheiro (preço para quem tinha o cartão LATAM Pass Itaú, até 02/10), isso dá cerca de R$ 1.323.\n\nDica: na LATAM, pesquise ida e volta. Só de ida, os preços apareciam bem mais altos. Achar e calcular voos assim é o que eu ensino no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #algarve #portugal #lisboa #latampass",
-  "pulse_bar": 0.022
- },
- {
-  "id": "S4",
-  "duration": 20.0,
-  "bpm": 120,
-  "cover_t": 0.5,
-  "cap_lead": 0.15,
-  "word_step": 0.06,
-  "tema": "4 coisas que ninguém te conta sobre milhas",
-  "shots": [
-   {
-    "start": 0,
-    "video": "IMG_0073.mov",
+    "start": 3.0,
+    "video": "IMG_9315.mov",
     "from": 1.0,
-    "vol": 0.35
-   },
-   {
-    "start": 2.0,
-    "video": "IMG_5486.mov",
-    "from": 1.0,
-    "vol": 0.3,
-    "tr": "whipL",
-    "td": 0.32
-   },
-   {
-    "start": 4.0,
-    "video": "IMG_9632.mov",
-    "from": 1.0,
-    "vol": 0.3,
-    "tr": "cube",
-    "td": 0.5
-   },
-   {
-    "start": 6.0,
-    "video": "IMG_5174.mov",
-    "from": 1.0,
-    "vol": 0.35,
-    "tr": "whipU",
-    "td": 0.32
-   },
-   {
-    "start": 8.0,
-    "video": "IMG_0123.mov",
-    "from": 1.0,
-    "vol": 0.3,
-    "tr": "glitch",
-    "td": 0.3
-   },
-   {
-    "start": 10.0,
-    "video": "IMG_0139.mov",
-    "from": 1.0,
-    "vol": 0.3,
-    "tr": "spin",
-    "td": 0.4
-   },
-   {
-    "start": 12.0,
-    "video": "IMG_9060.mov",
-    "from": 2.0,
     "vol": 0.3,
     "tr": "zoom",
     "td": 0.4
    },
    {
-    "start": 14.0,
-    "video": "IMG_9225.mov",
+    "start": 9.0,
+    "video": "IMG_9632.mov",
     "from": 1.0,
     "vol": 0.3,
-    "tr": "whipR",
-    "td": 0.32
+    "tr": "glitch",
+    "td": 0.3,
+    "plate": [
+     16,
+     0.32
+    ]
    },
    {
-    "start": 16.0,
-    "img": "IMG_9241",
+    "start": 12.0,
+    "video": "IMG_9526.mov",
+    "from": 4.0,
+    "vol": 0.3,
+    "tr": "whipL",
+    "td": 0.32,
+    "plate": [
+     16,
+     0.32
+    ]
+   },
+   {
+    "start": 15.0,
+    "video": "IMG_9315.mov",
+    "from": 3.0,
+    "vol": 0.3,
+    "tr": "cube",
+    "td": 0.5,
+    "plate": [
+     16,
+     0.32
+    ]
+   },
+   {
+    "start": 18.0,
+    "video": "IMG_9632.mov",
+    "from": 4.0,
+    "vol": 0.3,
+    "tr": "spin",
+    "td": 0.4,
+    "plate": [
+     16,
+     0.32
+    ]
+   },
+   {
+    "start": 21.0,
+    "video": "IMG_9384.mov",
+    "from": 1.0,
+    "vol": 0.45,
+    "tr": "zoom",
+    "td": 0.4
+   },
+   {
+    "start": 24.0,
+    "img": "IMG_9408_jpg",
+    "card": true,
     "tr": "slab",
-    "td": 0.55,
-    "card": true
+    "td": 0.55
+   }
+  ],
+  "scenes": {
+   "odo": {
+    "t0": 9.0,
+    "t1": 12.0,
+    "cy": 1150,
+    "value": "54.000",
+    "label": "MILHAS",
+    "sub": "O TRECHO, MAIS TAXAS"
+   },
+   "receipt": {
+    "t0": 12.0,
+    "t1": 15.0,
+    "y": 640,
+    "h": 600,
+    "lines": [
+     {
+      "k": "title",
+      "t": "SIMULAÇÃO"
+     },
+     {
+      "k": "dash"
+     },
+     {
+      "k": "row",
+      "l": "Milhas, o trecho",
+      "r": "54.000"
+     },
+     {
+      "k": "row",
+      "l": "Milheiro",
+      "r": "R$ 24,50"
+     },
+     {
+      "k": "dash"
+     },
+     {
+      "k": "total",
+      "l": "TOTAL",
+      "r": "≈ R$ 1.323"
+     },
+     {
+      "k": "note",
+      "t": "Milheiro com cartão LATAM Pass Itaú, 30/09 a 02/10/2026"
+     },
+     {
+      "k": "note",
+      "t": "+ taxas de embarque"
+     }
+    ]
+   },
+   "toggle": {
+    "t0": 15.0,
+    "t1": 18.0,
+    "cy": 1160,
+    "route": "SÃO PAULO → LISBOA",
+    "tap": 16.3
+   },
+   "bars": {
+    "t0": 18.0,
+    "t1": 21.0,
+    "cy": 1180
+   }
+  },
+  "sfx": [
+   {
+    "t": 9.1,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 9.2,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 9.299999999999999,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 9.4,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 9.5,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 9.6,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 9.7,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 9.799999999999999,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 9.9,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 10.0,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 10.1,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 10.2,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 10.3,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 10.4,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 12.1,
+    "dur": 1.5,
+    "kind": "flap"
+   },
+   {
+    "t": 16.3,
+    "dur": 0.2,
+    "kind": "pin"
+   },
+   {
+    "t": 19.2,
+    "dur": 0.2,
+    "kind": "pin"
    }
   ],
   "caps": [
    {
     "start": 0,
-    "end": 2.0,
-    "text": "4 coisas que ninguém te conta sobre [[milhas]]"
+    "end": 3.0,
+    "tag": "Algarve",
+    "text": "Dá pra chegar aqui com milhas saindo de Curitiba?",
+    "y": -690
    },
    {
-    "start": 2.0,
-    "end": 4.0,
-    "text": "1. Milha tem validade."
-   },
-   {
-    "start": 4.0,
+    "start": 3.0,
     "end": 6.0,
-    "text": "Na Azul, ponto de bônus dura cerca de 6 meses."
+    "text": "Curitiba → São Paulo",
+    "y": -640
    },
    {
     "start": 6.0,
-    "end": 8.0,
-    "text": "2. O preço muda o tempo todo."
+    "end": 9.0,
+    "text": "São Paulo → Lisboa, voo direto",
+    "y": -640
    },
    {
-    "start": 8.0,
-    "end": 10.0,
-    "text": "Miami já saiu por 37 mil e por 45 mil milhas no mesmo ano."
-   },
-   {
-    "start": 10.0,
+    "start": 9.0,
     "end": 12.0,
-    "text": "3. Promoção boa costuma durar um dia."
+    "text": "Em milhas: [[54 mil]] o trecho, mais taxas.",
+    "y": -640
    },
    {
     "start": 12.0,
-    "end": 14.0,
-    "text": "4. Transferir sem bônus é deixar milhas na mesa."
+    "end": 15.0,
+    "text": "E se você comprar os pontos?",
+    "y": -700
    },
    {
-    "start": 14.0,
-    "end": 16.0,
-    "text": "Em outubro, teve bônus de até [[g:100%]]."
+    "start": 15.0,
+    "end": 18.0,
+    "text": "Dica: na LATAM, pesquise ida e volta.",
+    "y": -640
    },
    {
-    "start": 16.0,
-    "end": 20.0,
+    "start": 18.0,
+    "end": 21.0,
+    "text": "Só de ida, os preços apareciam bem mais altos.",
+    "y": -640
+   },
+   {
+    "start": 21.0,
+    "end": 24.0,
+    "tag": "Algarve",
+    "text": "Resposta: [[g:dá]]."
+   },
+   {
+    "start": 24.0,
+    "end": 30.0,
+    "text": "Achar e calcular esse voo é o que eu ensino no Duplicando Milhas.",
+    "small": "Link na bio",
+    "y": 380
+   }
+  ],
+  "caption": "Dá pra sair de Curitiba e chegar ao Algarve com milhas? Até Lisboa, o voo direto da LATAM saindo de São Paulo apareceu por 54 mil milhas o trecho, mais taxas. Comprando os pontos a R$ 24,50 o milheiro (preço para quem tinha o cartão LATAM Pass Itaú, até 02/10), isso dá cerca de R$ 1.323.\n\nDica: na LATAM, pesquise ida e volta. Só de ida, os preços apareciam bem mais altos. Achar e calcular voos assim é o que eu ensino no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #algarve #portugal #lisboa #latampass"
+ },
+ {
+  "id": "S4",
+  "duration": 30.0,
+  "bpm": 80,
+  "cover_t": 0.5,
+  "cap_lead": 0.15,
+  "word_step": 0.08,
+  "pulse_bar": 0.02,
+  "tema": "4 coisas que ninguém te conta sobre milhas",
+  "drops": [
+   3.0,
+   24.0
+  ],
+  "shots": [
+   {
+    "start": 0,
+    "video": "IMG_0073.mov",
+    "from": 1.0,
+    "vol": 0.35,
+    "plate": [
+     8,
+     0.5
+    ]
+   },
+   {
+    "start": 3.0,
+    "video": "IMG_5486.mov",
+    "from": 1.0,
+    "vol": 0.3,
+    "tr": "zoom",
+    "td": 0.4,
+    "plate": [
+     12,
+     0.36
+    ]
+   },
+   {
+    "start": 6.0,
+    "video": "IMG_9632.mov",
+    "from": 5.0,
+    "vol": 0.3,
+    "tr": "whipL",
+    "td": 0.32,
+    "plate": [
+     12,
+     0.36
+    ]
+   },
+   {
+    "start": 9.0,
+    "video": "IMG_5174.mov",
+    "from": 1.0,
+    "vol": 0.3,
+    "tr": "cube",
+    "td": 0.5,
+    "plate": [
+     12,
+     0.36
+    ]
+   },
+   {
+    "start": 12.0,
+    "video": "IMG_0123.mov",
+    "from": 1.0,
+    "vol": 0.3,
+    "tr": "glitch",
+    "td": 0.3,
+    "plate": [
+     12,
+     0.36
+    ]
+   },
+   {
+    "start": 15.0,
+    "video": "IMG_0139.mov",
+    "from": 1.0,
+    "vol": 0.3,
+    "tr": "spin",
+    "td": 0.4,
+    "plate": [
+     12,
+     0.36
+    ]
+   },
+   {
+    "start": 18.0,
+    "video": "IMG_9060.mov",
+    "from": 2.0,
+    "vol": 0.3,
+    "tr": "whipU",
+    "td": 0.32,
+    "plate": [
+     12,
+     0.36
+    ]
+   },
+   {
+    "start": 21.0,
+    "video": "IMG_9225.mov",
+    "from": 1.0,
+    "vol": 0.3,
+    "tr": "leak",
+    "td": 0.6,
+    "plate": [
+     12,
+     0.36
+    ]
+   },
+   {
+    "start": 24.0,
+    "img": "IMG_9241",
+    "card": true,
+    "tr": "slab",
+    "td": 0.55
+   }
+  ],
+  "scenes": {
+   "cards": {
+    "t0": 0,
+    "t1": 3.2,
+    "flip": 2.25,
+    "cy": 1300
+   },
+   "hourglass": {
+    "t0": 3.0,
+    "t1": 6.0,
+    "cy": 1170
+   },
+   "calendar": {
+    "t0": 6.0,
+    "t1": 9.0,
+    "cy": 1190,
+    "months": 6
+   },
+   "ticker": {
+    "t0": 9.0,
+    "t1": 12.0,
+    "cy": 1170
+   },
+   "chart": {
+    "t0": 12.0,
+    "t1": 15.0,
+    "cy": 1190,
+    "title": "MIAMI · LATAM · MENOR TRECHO ANUNCIADO",
+    "months": [
+     "MAR",
+     "ABR",
+     "MAI",
+     "JUN",
+     "JUL",
+     "AGO",
+     "SET"
+    ],
+    "min": 35,
+    "max": 50,
+    "points": [
+     {
+      "i": 0,
+      "v": 37,
+      "hl": "min",
+      "note": "BH"
+     },
+     {
+      "i": 3,
+      "v": 40
+     },
+     {
+      "i": 4,
+      "v": 45,
+      "hl": "max"
+     },
+     {
+      "i": 6,
+      "v": 42
+     }
+    ],
+    "foot": "Março saindo de BH; junho, julho e setembro, de São Paulo."
+   },
+   "countdown": {
+    "t0": 15.0,
+    "t1": 18.0,
+    "cy": 1170
+   },
+   "coins": {
+    "t0": 18.0,
+    "t1": 21.0,
+    "cy": 1200
+   },
+   "gauge": {
+    "t0": 21.0,
+    "t1": 24.0,
+    "cy": 1240,
+    "label": "BÔNUS NA TRANSFERÊNCIA · AZUL",
+    "note": "100% para quem assina o Clube Azul há 5 anos ou mais"
+   },
+   "progress": {
+    "t0": 3.0,
+    "t1": 24.0,
+    "marks": [
+     3.0,
+     9.0,
+     15.0,
+     18.0
+    ],
+    "y": 112
+   }
+  },
+  "sfx": [
+   {
+    "t": 2.25,
+    "dur": 0.45,
+    "kind": "spin"
+   },
+   {
+    "t": 6.2,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 6.48,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 6.76,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 7.04,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 7.32,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 7.6000000000000005,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 7.93,
+    "dur": 0.3,
+    "kind": "stamp"
+   },
+   {
+    "t": 12.2,
+    "dur": 0.2,
+    "kind": "pin"
+   },
+   {
+    "t": 12.667,
+    "dur": 0.2,
+    "kind": "pin"
+   },
+   {
+    "t": 13.133999999999999,
+    "dur": 0.2,
+    "kind": "pin"
+   },
+   {
+    "t": 13.600999999999999,
+    "dur": 0.2,
+    "kind": "pin"
+   },
+   {
+    "t": 15.2,
+    "dur": 2.0,
+    "kind": "flap"
+   },
+   {
+    "t": 17.2,
+    "dur": 0.3,
+    "kind": "stamp"
+   },
+   {
+    "t": 18.0,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 18.07,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 18.14,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 18.21,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 18.28,
+    "dur": 0.1,
+    "kind": "tick"
+   },
+   {
+    "t": 18.9,
+    "dur": 0.2,
+    "kind": "pin"
+   },
+   {
+    "t": 19.099999999999998,
+    "dur": 0.2,
+    "kind": "pin"
+   },
+   {
+    "t": 19.299999999999997,
+    "dur": 0.2,
+    "kind": "pin"
+   },
+   {
+    "t": 19.5,
+    "dur": 0.2,
+    "kind": "pin"
+   },
+   {
+    "t": 19.7,
+    "dur": 0.2,
+    "kind": "pin"
+   },
+   {
+    "t": 3.0,
+    "dur": 0.2,
+    "kind": "pin"
+   },
+   {
+    "t": 9.0,
+    "dur": 0.2,
+    "kind": "pin"
+   },
+   {
+    "t": 15.0,
+    "dur": 0.2,
+    "kind": "pin"
+   },
+   {
+    "t": 18.0,
+    "dur": 0.2,
+    "kind": "pin"
+   }
+  ],
+  "caps": [
+   {
+    "start": 0,
+    "end": 3.0,
+    "text": "4 coisas que ninguém te conta sobre [[milhas]]",
+    "y": -650
+   },
+   {
+    "start": 3.0,
+    "end": 6.0,
+    "text": "1. Milha tem validade.",
+    "y": -600
+   },
+   {
+    "start": 6.0,
+    "end": 9.0,
+    "text": "Na Azul, ponto de bônus dura cerca de 6 meses.",
+    "y": -600
+   },
+   {
+    "start": 9.0,
+    "end": 12.0,
+    "text": "2. O preço muda o tempo todo.",
+    "y": -600
+   },
+   {
+    "start": 12.0,
+    "end": 15.0,
+    "text": "Miami já saiu por 37 mil e por 45 mil milhas no mesmo ano.",
+    "y": -600
+   },
+   {
+    "start": 15.0,
+    "end": 18.0,
+    "text": "3. Promoção boa costuma durar um dia.",
+    "y": -600
+   },
+   {
+    "start": 18.0,
+    "end": 21.0,
+    "text": "4. Transferir sem bônus é deixar milhas na mesa.",
+    "y": -600
+   },
+   {
+    "start": 21.0,
+    "end": 24.0,
+    "text": "Em outubro, teve bônus de até [[g:100%]].",
+    "y": -600
+   },
+   {
+    "start": 24.0,
+    "end": 30.0,
     "text": "O método completo eu ensino no Duplicando Milhas.",
     "small": "Link na bio",
     "y": 380
    }
   ],
-  "caption": "4 coisas que ninguém te conta sobre milhas:\n\n1. Milha tem validade. Na Azul, os pontos de bônus duram cerca de 6 meses.\n2. O preço muda o tempo todo. Miami pela LATAM já saiu por 37 mil e por 45 mil milhas o trecho em 2026.\n3. Promoção boa costuma durar um dia.\n4. Transferir sem bônus é deixar milhas na mesa. Em outubro, a Azul pagou até 100% de bônus na transferência.\n\nO método completo está no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #viagem #viajarbarato #pontos #milhasaereas",
-  "pulse_bar": 0.022
+  "caption": "4 coisas que ninguém te conta sobre milhas:\n\n1. Milha tem validade. Na Azul, os pontos de bônus duram cerca de 6 meses.\n2. O preço muda o tempo todo. Miami pela LATAM já saiu por 37 mil e por 45 mil milhas o trecho em 2026.\n3. Promoção boa costuma durar um dia.\n4. Transferir sem bônus é deixar milhas na mesa. Em outubro, a Azul pagou até 100% de bônus na transferência.\n\nO método completo está no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #viagem #viajarbarato #pontos #milhasaereas"
  }
 ]
