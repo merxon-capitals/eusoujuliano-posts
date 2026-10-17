@@ -1,0 +1,782 @@
+[
+ {
+  "id": "N1",
+  "tema": "O ponto mais caro é o que você já tem",
+  "bpm": 96,
+  "videos": [
+   [
+    "IMG_5481.mov",
+    0.5
+   ],
+   [
+    "IMG_9837.mov",
+    2.0
+   ],
+   [
+    "IMG_8854.mov",
+    1.0
+   ],
+   [
+    "IMG_6915.mov",
+    1.0
+   ],
+   [
+    "IMG_5030.mov",
+    1.0
+   ],
+   [
+    "IMG_9913.mov",
+    1.0
+   ],
+   [
+    "IMG_0118.mov",
+    1.0
+   ],
+   [
+    "IMG_2675.mov",
+    3.0
+   ],
+   [
+    "IMG_9224.mov",
+    2.0
+   ],
+   [
+    "IMG_9811.mov",
+    0.5
+   ],
+   [
+    "IMG_5784.mov",
+    3.0
+   ],
+   [
+    "IMG_9094.mov",
+    1.0
+   ],
+   [
+    "IMG_8772.mov",
+    1.0
+   ],
+   [
+    "IMG_5223.MOV",
+    1.0
+   ]
+  ],
+  "lines": [
+   {
+    "text": "O ponto mais caro é o que já está parado na sua conta.",
+    "card": {
+     "type": "text",
+     "icon": "clock",
+     "iconColor": "#E0484E",
+     "title": [
+      "PONTO",
+      "PARADO"
+     ],
+     "hl": 1,
+     "hlColor": "#E0484E",
+     "sub": "o mais caro que existe"
+    }
+   },
+   {
+    "text": "E não é por causa do preço.",
+    "card": {
+     "type": "big",
+     "value": "R$",
+     "fs": 260,
+     "strike": true,
+     "strikeAt": "preço",
+     "h": 380
+    }
+   },
+   {
+    "text": "Pense em quantas pessoas você conhece que gastam todo mês no cartão e nunca emitiram uma passagem.",
+    "card": {
+     "type": "people",
+     "label": "QUANTAS PESSOAS VOCÊ CONHECE",
+     "lit": "nunca",
+     "litColor": "red",
+     "ratio": 7,
+     "badge": "NUNCA EMITIRAM"
+    }
+   },
+   {
+    "text": "O que junta pontos há anos, esperando a viagem certa.",
+    "card": {
+     "type": "text",
+     "tag": "PERFIL 01",
+     "icon": "hourglass",
+     "title": [
+      "Junta pontos",
+      "há anos"
+     ],
+     "sub": "esperando a viagem certa"
+    }
+   },
+   {
+    "text": "A que transferiu tudo num dia sem bônus.",
+    "card": {
+     "type": "text",
+     "tag": "PERFIL 02",
+     "icon": "transfer",
+     "title": [
+      "Transferiu",
+      "sem bônus"
+     ],
+     "hl": 1,
+     "hlColor": "#E0484E",
+     "sub": "tudo num dia só"
+    }
+   },
+   {
+    "text": "O que descobriu que os pontos tinham vencido na hora de usar.",
+    "card": {
+     "type": "text",
+     "tag": "PERFIL 03",
+     "icon": "calx",
+     "iconColor": "#E0484E",
+     "title": [
+      "Os pontos",
+      "venceram"
+     ],
+     "stamp": "VENCIDO",
+     "stampAt": "vencido"
+    }
+   },
+   {
+    "text": "Nenhum deles tem problema de pontos.",
+    "card": {
+     "type": "text",
+     "title": [
+      "Problema",
+      "de pontos?"
+     ],
+     "strike": true,
+     "strikeAt": "pontos"
+    }
+   },
+   {
+    "text": "Todos têm problema de método: saber quando transferir, quando emitir e quanto a milha vale.",
+    "card": {
+     "type": "checks",
+     "label": "O PROBLEMA REAL É MÉTODO",
+     "labelColor": "#6FBF93",
+     "items": [
+      {
+       "icon": "transfer",
+       "label": "QUANDO",
+       "label2": "TRANSFERIR"
+      },
+      {
+       "icon": "plane",
+       "label": "QUANDO",
+       "label2": "EMITIR"
+      },
+      {
+       "icon": "tag",
+       "label": "QUANTO",
+       "label2": "VALE"
+      }
+     ],
+     "at": [
+      "transferir",
+      "emitir",
+      "vale"
+     ]
+    }
+   },
+   {
+    "text": "Porque a mesma transferência de dez mil pontos pode virar vinte mil, com bônus de cem por cento.",
+    "scene": {
+     "type": "coins",
+     "cy": 640
+    }
+   },
+   {
+    "text": "O mesmo voo para Miami já saiu por trinta e sete mil e por quarenta e cinco mil milhas no mesmo ano.",
+    "scene": {
+     "type": "chart",
+     "cy": 640,
+     "title": "MIAMI · LATAM · MENOR TRECHO ANUNCIADO",
+     "months": [
+      "MAR",
+      "ABR",
+      "MAI",
+      "JUN",
+      "JUL",
+      "AGO",
+      "SET"
+     ],
+     "min": 35,
+     "max": 50,
+     "points": [
+      {
+       "i": 0,
+       "v": 37,
+       "hl": "min",
+       "note": "BH"
+      },
+      {
+       "i": 3,
+       "v": 40
+      },
+      {
+       "i": 4,
+       "v": 45,
+       "hl": "max"
+      },
+      {
+       "i": 6,
+       "v": 42
+      }
+     ],
+     "foot": "Março saindo de BH; junho, julho e setembro, de São Paulo."
+    }
+   },
+   {
+    "text": "E a melhor promoção do mês costuma durar um dia.",
+    "scene": {
+     "type": "countdown",
+     "cy": 640
+    }
+   },
+   {
+    "text": "A maioria dos conteúdos de milhas te dá informação: cartão, programa, promoção.",
+    "card": {
+     "type": "list",
+     "title": "CONTEÚDO DE MILHAS",
+     "icon": "chart",
+     "items": [
+      {
+       "t": "Cartão"
+      },
+      {
+       "t": "Programa"
+      },
+      {
+       "t": "Promoção"
+      }
+     ],
+     "at": [
+      "cartão",
+      "programa",
+      "promoção"
+     ]
+    }
+   },
+   {
+    "text": "E informação qualquer um copia.",
+    "card": {
+     "type": "list",
+     "title": "CONTEÚDO DE MILHAS",
+     "icon": "chart",
+     "items": [
+      {
+       "t": "Cartão"
+      },
+      {
+       "t": "Programa"
+      },
+      {
+       "t": "Promoção"
+      }
+     ],
+     "at": [
+      -1,
+      -1,
+      -1
+     ],
+     "stamp": "QUALQUER UM COPIA",
+     "stampAt": "informação"
+    }
+   },
+   {
+    "text": "Quem tem método gasta o mesmo e viaja mais.",
+    "card": {
+     "type": "bars",
+     "label": "COM MÉTODO",
+     "bars": [
+      {
+       "l": "GASTO",
+       "v": 0.5,
+       "c": "silver",
+       "t": "O MESMO"
+      },
+      {
+       "l": "VIAGENS",
+       "v": 1,
+       "c": "green",
+       "t": "MAIS"
+      }
+     ]
+    }
+   },
+   {
+    "text": "É isso que eu ensino no Duplicando Milhas. Link na bio.",
+    "card": {
+     "type": "cta"
+    }
+   }
+  ],
+  "caption": "O ponto mais caro é o que está parado na sua conta. Não por causa do preço, mas porque quem junta sem método transfere sem bônus, emite na alta e deixa vencer. A mesma transferência de 10 mil pode virar 20 mil com bônus de 100%. Miami já saiu por 37 mil e por 45 mil milhas no mesmo ano.\n\nQuem tem método gasta o mesmo e viaja mais. É isso que eu ensino no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #pontos #viajarbarato #milhasaereas #viagem"
+ },
+ {
+  "id": "N2",
+  "tema": "Milha não é desconto, é dinheiro",
+  "bpm": 96,
+  "videos": [
+   [
+    "IMG_9994.MOV",
+    1.0
+   ],
+   [
+    "IMG_0123.mov",
+    1.0
+   ],
+   [
+    "IMG_9811.mov",
+    2.0
+   ],
+   [
+    "IMG_9225.mov",
+    1.0
+   ],
+   [
+    "IMG_8684.mov",
+    0.5
+   ],
+   [
+    "IMG_1889.mov",
+    3.0
+   ],
+   [
+    "IMG_5784.mov",
+    2.0
+   ],
+   [
+    "IMG_9060.mov",
+    3.0
+   ],
+   [
+    "IMG_5058.mov",
+    1.0
+   ],
+   [
+    "IMG_0139.mov",
+    1.0
+   ]
+  ],
+  "lines": [
+   {
+    "text": "Milha não é desconto. É dinheiro.",
+    "card": {
+     "type": "text",
+     "title": [
+      "Milha não é desconto.",
+      "É dinheiro."
+     ],
+     "hl": 1,
+     "fs": 96,
+     "w": 960
+    }
+   },
+   {
+    "text": "E quem trata milha como brinde perde dos dois jeitos.",
+    "card": {
+     "type": "text",
+     "icon": "gift",
+     "iconColor": "#E0484E",
+     "title": [
+      "Milha como",
+      "brinde"
+     ],
+     "stamp": "PERDE",
+     "stampAt": "perde"
+    }
+   },
+   {
+    "text": "Pense em quem vê \"Madri por cinquenta e oito mil milhas\" e acha que é de graça.",
+    "card": {
+     "type": "list",
+     "title": "MADRI",
+     "icon": "plane",
+     "items": [
+      {
+       "t": "58.000 milhas",
+       "icon": "plane"
+      },
+      {
+       "t": "\"De graça\"",
+       "icon": "gift"
+      }
+     ],
+     "at": [
+      "madri",
+      "graça"
+     ],
+     "stamp": "SERÁ?",
+     "stampAt": "graça"
+    }
+   },
+   {
+    "text": "Se esses pontos fossem comprados a vinte e nove reais e quarenta o milheiro, essa passagem custaria cerca de mil setecentos e cinco reais, mais taxas.",
+    "scene": {
+     "type": "receipt",
+     "y": 300,
+     "h": 600,
+     "lines": [
+      {
+       "k": "title",
+       "t": "SIMULAÇÃO · MADRI"
+      },
+      {
+       "k": "dash"
+      },
+      {
+       "k": "row",
+       "l": "Milhas, o trecho",
+       "r": "58.000"
+      },
+      {
+       "k": "row",
+       "l": "Milheiro",
+       "r": "R$ 29,40"
+      },
+      {
+       "k": "dash"
+      },
+      {
+       "k": "total",
+       "l": "TOTAL",
+       "r": "≈ R$ 1.705"
+      },
+      {
+       "k": "note",
+       "t": "Preço do milheiro visto em setembro/2026"
+      },
+      {
+       "k": "note",
+       "t": "+ taxas de embarque"
+      }
+     ]
+    }
+   },
+   {
+    "text": "Às vezes isso é barato. Às vezes, a passagem em dinheiro sai por menos.",
+    "card": {
+     "type": "text",
+     "icon": "scale",
+     "title": [
+      "Milhas",
+      "ou dinheiro?"
+     ],
+     "hl": 1,
+     "sub": "depende do voo"
+    }
+   },
+   {
+    "text": "Já teve semana em que Rio–Curitiba saía por trezentos e dezenove reais ida e volta, em dinheiro.",
+    "card": {
+     "type": "big",
+     "label": "RIO ⇄ CURITIBA · EM DINHEIRO",
+     "value": "R$ 319",
+     "count": true,
+     "unit": "IDA E VOLTA",
+     "color": "#6FBF93",
+     "fs": 200
+    }
+   },
+   {
+    "text": "Gastar milha num voo assim é jogar milha fora.",
+    "card": {
+     "type": "text",
+     "icon": "cross",
+     "iconColor": "#E0484E",
+     "title": [
+      "Jogar milha",
+      "fora"
+     ],
+     "hl": 1,
+     "hlColor": "#E0484E"
+    }
+   },
+   {
+    "text": "A diferença não está na quantidade de milhas. Está em saber quanto cada uma vale antes de gastar.",
+    "card": {
+     "type": "text",
+     "icon": "tag",
+     "title": [
+      "Quanto vale",
+      "cada milha?"
+     ],
+     "hl": 1,
+     "sub": "antes de gastar"
+    }
+   },
+   {
+    "text": "Quem faz essa conta guarda a milha para o voo que realmente vale: o internacional, a data de férias, a promoção relâmpago.",
+    "card": {
+     "type": "checks",
+     "label": "ONDE A MILHA VALE MAIS",
+     "labelColor": "#6FBF93",
+     "items": [
+      {
+       "icon": "plane",
+       "label": "VOO",
+       "label2": "INTERNACIONAL"
+      },
+      {
+       "icon": "calendar",
+       "label": "DATA DE",
+       "label2": "FÉRIAS"
+      },
+      {
+       "icon": "bell",
+       "label": "PROMOÇÃO",
+       "label2": "RELÂMPAGO"
+      }
+     ],
+     "at": [
+      "internacional",
+      "férias",
+      "relâmpago"
+     ]
+    }
+   },
+   {
+    "text": "No Duplicando Milhas, eu te ensino a fazer essa conta. Link na bio.",
+    "card": {
+     "type": "cta"
+    }
+   }
+  ],
+  "caption": "Milha não é desconto, é dinheiro. Madri por 58 mil milhas parece de graça, mas com os pontos comprados a R$ 29,40 o milheiro essa passagem sairia por cerca de R$ 1.705, mais taxas. E já teve semana em que Rio–Curitiba saía por R$ 319 ida e volta em dinheiro.\n\nQuem sabe quanto cada milha vale guarda para o voo que vale a pena. No treinamento Duplicando Milhas eu ensino a fazer essa conta. Link na bio.\n\n#milhas #pontos #viajarbarato #latampass #viagem"
+ },
+ {
+  "id": "N3",
+  "tema": "A próxima data dupla é 11/11",
+  "bpm": 96,
+  "videos": [
+   [
+    "IMG_1890.mov",
+    1.0
+   ],
+   [
+    "IMG_9913.mov",
+    2.0
+   ],
+   [
+    "IMG_5025.MOV",
+    2.0
+   ],
+   [
+    "IMG_9812.mov",
+    1.5
+   ],
+   [
+    "IMG_5486.mov",
+    1.0
+   ],
+   [
+    "IMG_8854.mov",
+    3.0
+   ],
+   [
+    "IMG_9837.mov",
+    4.0
+   ],
+   [
+    "IMG_6915.mov",
+    3.0
+   ],
+   [
+    "IMG_9401.mov",
+    1.0
+   ],
+   [
+    "IMG_0073.mov",
+    3.0
+   ],
+   [
+    "IMG_5174.mov",
+    3.0
+   ],
+   [
+    "IMG_9545.mov",
+    1.0
+   ]
+  ],
+  "lines": [
+   {
+    "text": "A melhor passagem do mês costuma aparecer num dia só.",
+    "card": {
+     "type": "big",
+     "label": "A MELHOR PASSAGEM DO MÊS",
+     "value": "1 DIA",
+     "fs": 220,
+     "color": "#6FBF93"
+    }
+   },
+   {
+    "text": "E quase ninguém está pronto para ela.",
+    "card": {
+     "type": "people",
+     "label": "QUEM ESTÁ PRONTO?",
+     "lit": "pronto",
+     "ratio": 1,
+     "badge": "QUASE NINGUÉM"
+    }
+   },
+   {
+    "text": "Em 2026, a LATAM Pass deu até quarenta por cento de desconto em voos com milhas em junho, julho, agosto, setembro e outubro.",
+    "card": {
+     "type": "months",
+     "label": "LATAM PASS · ATÉ 40% OFF COM MILHAS",
+     "months": [
+      {
+       "l": "JUN",
+       "d": "06/06"
+      },
+      {
+       "l": "JUL",
+       "d": "06/07"
+      },
+      {
+       "l": "AGO",
+       "d": "09/08"
+      },
+      {
+       "l": "SET",
+       "d": "08/09"
+      },
+      {
+       "l": "OUT",
+       "d": "09/10"
+      }
+     ],
+     "foot": "DATAS DAS OFERTAS EM 2026"
+    }
+   },
+   {
+    "text": "No 10.10, Curitiba–Londrina saiu por dois mil novecentos e trinta e nove milhas o trecho.",
+    "card": {
+     "type": "big",
+     "label": "CURITIBA → LONDRINA · 10.10",
+     "value": "2.939",
+     "count": true,
+     "unit": "MILHAS O TRECHO, MAIS TAXAS",
+     "color": "#6FBF93"
+    }
+   },
+   {
+    "text": "A maioria dessas promoções valeu por um dia.",
+    "scene": {
+     "type": "countdown",
+     "cy": 640
+    }
+   },
+   {
+    "text": "Agora pense em quem viu no dia seguinte.",
+    "card": {
+     "type": "text",
+     "tag": "PERFIL 01",
+     "icon": "calendar",
+     "title": [
+      "Viu no dia",
+      "seguinte"
+     ],
+     "stamp": "ACABOU",
+     "stampAt": "seguinte"
+    }
+   },
+   {
+    "text": "Em quem tinha os pontos, mas no banco, e não na companhia.",
+    "card": {
+     "type": "text",
+     "tag": "PERFIL 02",
+     "icon": "bank",
+     "title": [
+      "Pontos no banco,",
+      "não na companhia"
+     ],
+     "fs": 88,
+     "w": 960
+    }
+   },
+   {
+    "text": "Em quem nem sabia se o preço estava bom.",
+    "card": {
+     "type": "text",
+     "tag": "PERFIL 03",
+     "icon": "tag",
+     "title": [
+      "O preço",
+      "estava bom?"
+     ],
+     "hl": 1
+    }
+   },
+   {
+    "text": "Nenhum deles perdeu por falta de pontos. Perdeu por falta de preparo.",
+    "card": {
+     "type": "text",
+     "title": [
+      "Falta de pontos",
+      "Falta de preparo"
+     ],
+     "hl": 1,
+     "strike": true,
+     "strikeY": -40,
+     "strikeAt": "perdeu",
+     "w": 860
+    }
+   },
+   {
+    "text": "Quem se prepara já sabe três coisas antes da promoção: quanto custa o destino que quer, onde estão os pontos e quanto vale cada milha.",
+    "card": {
+     "type": "checks",
+     "label": "QUEM SE PREPARA SABE",
+     "labelColor": "#6FBF93",
+     "items": [
+      {
+       "icon": "plane",
+       "label": "QUANTO CUSTA",
+       "label2": "O DESTINO"
+      },
+      {
+       "icon": "wallet",
+       "label": "ONDE ESTÃO",
+       "label2": "OS PONTOS"
+      },
+      {
+       "icon": "tag",
+       "label": "QUANTO VALE",
+       "label2": "CADA MILHA"
+      }
+     ],
+     "at": [
+      "custa",
+      "onde",
+      "vale"
+     ]
+    }
+   },
+   {
+    "text": "A próxima data dupla é onze de novembro.",
+    "card": {
+     "type": "big",
+     "label": "PRÓXIMA DATA DUPLA",
+     "value": "11.11",
+     "fs": 250,
+     "color": "#6FBF93"
+    }
+   },
+   {
+    "text": "Se você quiser chegar pronto, o método está no Duplicando Milhas. Link na bio.",
+    "card": {
+     "type": "cta"
+    }
+   }
+  ],
+  "caption": "A melhor passagem do mês costuma aparecer num dia só. Em 2026, a LATAM Pass deu até 40% de desconto em voos com milhas em junho, julho, agosto, setembro e outubro, e no 10.10 Curitiba–Londrina saiu por 2.939 milhas o trecho. A maioria dessas ofertas durou um dia.\n\nA próxima data dupla é 11/11. Para chegar pronto, o método está no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #latampass #promocao #curitiba #viajarbarato"
+ }
+]

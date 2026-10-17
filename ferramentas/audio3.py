@@ -186,6 +186,14 @@ for c in cfg.get("clips", []):
 duck = np.convolve(duck, np.ones(2205) / 2205, mode="same")
 mix = music * duck + clipbus
 mix[-int(.8 * SR):] *= np.linspace(1, 0, int(.8 * SR))
+if cfg.get("voice"):
+    vr = subprocess.run(["ffmpeg", "-v", "error", "-i", cfg["voice"], "-af", "highpass=f=80,acompressor=threshold=-20dB:ratio=3:attack=5:release=120",
+                         "-ac", "1", "-ar", str(SR), "-f", "s16le", "-"], capture_output=True).stdout
+    v = np.frombuffer(vr, dtype=np.int16).astype(np.float32) / 32768
+    v = v / (np.sqrt(np.mean(v[np.abs(v) > .01] ** 2)) + 1e-6) * .22
+    vb = np.zeros(N); vb[:min(N, len(v))] = v[:N]
+    env = np.convolve(np.abs(vb), np.ones(4410) / 4410, mode="same"); duckv = 1 - .55 * np.clip(env / .05, 0, 1)
+    mix = mix / (np.max(np.abs(mix)) + 1e-6) * .9 * cfg.get("bed", .22) * duckv + vb
 mix = np.tanh(mix * 1.4) / np.tanh(1.4)
 mix /= np.max(np.abs(mix)) / .9
 st = np.stack([mix, np.roll(mix, int(.011 * SR))], 1)
