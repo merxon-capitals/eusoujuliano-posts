@@ -653,7 +653,14 @@
        "d": "09/10"
       }
      ],
-     "foot": "DATAS DAS OFERTAS EM 2026"
+     "foot": "DATAS DAS OFERTAS EM 2026",
+     "at": [
+      "junho",
+      "julho",
+      "agosto",
+      "setembro",
+      "outubro"
+     ]
     }
    },
    {

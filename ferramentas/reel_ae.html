@@ -828,8 +828,12 @@ function cardMonths(C, u){
   if (C.label) tx(C.label, 0, -180, '800 32px BarlowC', SILVER, 'center', 8);
   const n = C.months.length, x0 = -380, dx = 760 / (n - 1);
   gc.fillStyle = 'rgba(196,200,206,.25)'; gc.fillRect(x0, 0, 760, 6);
-  const prog = ease((u - .15) / 1.4); gc.fillStyle = GREEN; gc.fillRect(x0, 0, 760 * prog, 6);
-  C.months.forEach((m, i) => { const x = x0 + i * dx, on = prog >= i / (n - 1) - .001, q = on ? popq(u, .15 + 1.4 * i / (n - 1)) : 0;
+  // with C.at (seconds per dot, keyed to the spoken month) each dot lights when its month is said
+  const AT = C.at && C.at.length === n ? C.at : C.months.map((_, i) => .15 + 1.4 * i / (n - 1));
+  let prog = 0;
+  if (u >= AT[0]) { const i = AT.filter(a => u >= a).length - 1; const nxt = i < n - 1 ? AT[i + 1] : AT[i] + 1; prog = (i + ease(cl((u - AT[i]) / Math.max(.15, nxt - AT[i])) ) * (i < n - 1 ? 1 : 0)) / (n - 1); }
+  gc.fillStyle = GREEN; gc.fillRect(x0, 0, 760 * Math.min(1, prog), 6);
+  C.months.forEach((m, i) => { const x = x0 + i * dx, on = u >= AT[i], q = on ? popq(u, AT[i]) : 0;
     gc.beginPath(); gc.arc(x, 3, on ? 22 * q : 12, 0, Math.PI * 2); gc.fillStyle = on ? GREEN : '#3B4048'; gc.fill();
     tx(m.l, x, 80, '800 34px BarlowC', '#fff', 'center', 4); if (m.d && on) { gc.save(); gc.globalAlpha *= cl(q); tx(m.d, x, -46, '800 30px BarlowC', GREEN, 'center', 2); gc.restore(); } });
   if (C.foot) tx(C.foot, 0, 180, '700 30px BarlowC', SILVER, 'center', 6);
