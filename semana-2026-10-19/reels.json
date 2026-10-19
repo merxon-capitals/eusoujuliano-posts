@@ -1,0 +1,934 @@
+[
+ {
+  "id": "M1",
+  "duration": 30.0,
+  "bpm": 80,
+  "cover_t": 0.5,
+  "cap_lead": 0.15,
+  "word_step": 0.08,
+  "pulse_bar": 0.022,
+  "tema": "O ponto mais caro é o que já está parado na sua conta",
+  "drops": [
+   3.0,
+   24.0
+  ],
+  "shots": [
+   {
+    "start": 0.0,
+    "video": "IMG_5481.mov",
+    "from": 0.5,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ]
+   },
+   {
+    "start": 3.0,
+    "video": "IMG_9837.mov",
+    "from": 2.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "zoom",
+    "td": 0.4
+   },
+   {
+    "start": 6.0,
+    "video": "IMG_8854.mov",
+    "from": 1.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "whipL",
+    "td": 0.4
+   },
+   {
+    "start": 9.0,
+    "video": "IMG_6915.mov",
+    "from": 1.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "cube",
+    "td": 0.4
+   },
+   {
+    "start": 12.0,
+    "video": "IMG_5030.mov",
+    "from": 1.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "glitch",
+    "td": 0.4
+   },
+   {
+    "start": 15.0,
+    "video": "IMG_9913.mov",
+    "from": 1.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "spin",
+    "td": 0.4
+   },
+   {
+    "start": 18.0,
+    "video": "IMG_2675.mov",
+    "from": 3.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "whipU",
+    "td": 0.4
+   },
+   {
+    "start": 21.0,
+    "video": "IMG_9094.mov",
+    "from": 1.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "leak",
+    "td": 0.6
+   },
+   {
+    "start": 24.0,
+    "img": "IMG_9903",
+    "card": true,
+    "tr": "slab",
+    "td": 0.55
+   }
+  ],
+  "scenes": {
+   "coins": {
+    "t0": 18.0,
+    "t1": 21.0,
+    "cy": 1200
+   }
+  },
+  "cards": [
+   {
+    "type": "text",
+    "icon": "clock",
+    "iconColor": "#E0484E",
+    "title": [
+     "PONTO",
+     "PARADO"
+    ],
+    "hl": 1,
+    "hlColor": "#E0484E",
+    "sub": "o mais caro que existe",
+    "t0": -1,
+    "t1": 3.0,
+    "cy": 1250
+   },
+   {
+    "type": "people",
+    "label": "QUANTAS PESSOAS VOCÊ CONHECE",
+    "lit": 3.2,
+    "litColor": "red",
+    "ratio": 7,
+    "badge": "NUNCA EMITIRAM",
+    "t0": 3.0,
+    "t1": 9.0,
+    "cy": 1250
+   },
+   {
+    "type": "text",
+    "title": [
+     "Problema",
+     "de pontos?"
+    ],
+    "strike": true,
+    "strikeAt": 1.0,
+    "t0": 9.0,
+    "t1": 12.0,
+    "cy": 1250
+   },
+   {
+    "type": "checks",
+    "label": "O PROBLEMA REAL É MÉTODO",
+    "labelColor": "#6FBF93",
+    "at": [
+     0.8,
+     1.6,
+     2.4
+    ],
+    "items": [
+     {
+      "icon": "transfer",
+      "label": "QUANDO",
+      "label2": "TRANSFERIR"
+     },
+     {
+      "icon": "plane",
+      "label": "QUANDO",
+      "label2": "EMITIR"
+     },
+     {
+      "icon": "tag",
+      "label": "QUANTO",
+      "label2": "VALE A MILHA"
+     }
+    ],
+    "t0": 12.0,
+    "t1": 18.0,
+    "cy": 1250
+   },
+   {
+    "type": "list",
+    "title": "CONTEÚDO DE MILHAS",
+    "icon": "chart",
+    "items": [
+     {
+      "t": "Cartão"
+     },
+     {
+      "t": "Programa"
+     },
+     {
+      "t": "Promoção"
+     }
+    ],
+    "at": [
+     0.2,
+     0.5,
+     0.8
+    ],
+    "stamp": "QUALQUER UM COPIA",
+    "stampAt": 1.5,
+    "t0": 21.0,
+    "t1": 24.0,
+    "cy": 1250
+   }
+  ],
+  "sfx": [
+   {
+    "t": 22.5,
+    "dur": 0.3,
+    "kind": "stamp"
+   },
+   {
+    "t": 10.0,
+    "dur": 0.2,
+    "kind": "glitch"
+   }
+  ],
+  "caps": [
+   {
+    "start": 0.0,
+    "end": 3.0,
+    "text": "O ponto mais caro é o que está [[parado]] na sua conta.",
+    "y": -650
+   },
+   {
+    "start": 3.0,
+    "end": 6.0,
+    "text": "Muita gente gasta todo mês no cartão…",
+    "y": -600
+   },
+   {
+    "start": 6.0,
+    "end": 9.0,
+    "text": "…e nunca emitiu uma passagem.",
+    "y": -600
+   },
+   {
+    "start": 9.0,
+    "end": 12.0,
+    "text": "Não é falta de pontos.",
+    "y": -600
+   },
+   {
+    "start": 12.0,
+    "end": 15.0,
+    "text": "É falta de [[método]].",
+    "y": -600
+   },
+   {
+    "start": 15.0,
+    "end": 18.0,
+    "text": "Quando transferir, quando emitir e quanto vale cada milha.",
+    "y": -600
+   },
+   {
+    "start": 18.0,
+    "end": 21.0,
+    "text": "A mesma transferência de 10 mil pontos pode virar [[g:20 mil]].",
+    "y": -600
+   },
+   {
+    "start": 21.0,
+    "end": 24.0,
+    "text": "Informação qualquer um copia. Método, não.",
+    "y": -600
+   },
+   {
+    "start": 24.0,
+    "end": 30.0,
+    "text": "O método eu ensino no Duplicando Milhas.",
+    "small": "Link na bio",
+    "y": 380
+   }
+  ],
+  "caption": "O ponto mais caro é o que está parado na sua conta. Não por causa do preço, mas porque quem junta sem método transfere sem bônus, emite na alta e deixa vencer. A mesma transferência de 10 mil pode virar 20 mil com bônus de 100%. Miami já saiu por 37 mil e por 45 mil milhas no mesmo ano.\n\nQuem tem método gasta o mesmo e viaja mais. É isso que eu ensino no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #pontos #viajarbarato #milhasaereas #viagem"
+ },
+ {
+  "id": "M2",
+  "duration": 30.0,
+  "bpm": 80,
+  "cover_t": 0.5,
+  "cap_lead": 0.15,
+  "word_step": 0.08,
+  "pulse_bar": 0.022,
+  "tema": "Milha não é desconto, é dinheiro",
+  "drops": [
+   3.0,
+   24.0
+  ],
+  "shots": [
+   {
+    "start": 0.0,
+    "video": "IMG_9994.MOV",
+    "from": 1.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ]
+   },
+   {
+    "start": 3.0,
+    "video": "IMG_0123.mov",
+    "from": 1.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "zoom",
+    "td": 0.4
+   },
+   {
+    "start": 6.0,
+    "video": "IMG_9811.mov",
+    "from": 2.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "whipL",
+    "td": 0.4
+   },
+   {
+    "start": 9.0,
+    "video": "IMG_9225.mov",
+    "from": 1.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "cube",
+    "td": 0.4
+   },
+   {
+    "start": 12.0,
+    "video": "IMG_8684.mov",
+    "from": 0.5,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "glitch",
+    "td": 0.4
+   },
+   {
+    "start": 15.0,
+    "video": "IMG_1889.mov",
+    "from": 3.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "spin",
+    "td": 0.4
+   },
+   {
+    "start": 18.0,
+    "video": "IMG_9060.mov",
+    "from": 3.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "whipU",
+    "td": 0.4
+   },
+   {
+    "start": 21.0,
+    "video": "IMG_0139.mov",
+    "from": 1.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "leak",
+    "td": 0.6
+   },
+   {
+    "start": 24.0,
+    "img": "IMG_9601",
+    "card": true,
+    "tr": "slab",
+    "td": 0.55
+   }
+  ],
+  "scenes": {
+   "receipt": {
+    "type": "receipt",
+    "y": 600,
+    "h": 600,
+    "lines": [
+     {
+      "k": "title",
+      "t": "SIMULAÇÃO · MADRI"
+     },
+     {
+      "k": "dash"
+     },
+     {
+      "k": "row",
+      "l": "Milhas, o trecho",
+      "r": "58.000"
+     },
+     {
+      "k": "row",
+      "l": "Milheiro",
+      "r": "R$ 29,40"
+     },
+     {
+      "k": "dash"
+     },
+     {
+      "k": "total",
+      "l": "TOTAL",
+      "r": "≈ R$ 1.705"
+     },
+     {
+      "k": "note",
+      "t": "Preço do milheiro visto em setembro/2026"
+     },
+     {
+      "k": "note",
+      "t": "+ taxas de embarque"
+     }
+    ],
+    "t0": 6.0,
+    "t1": 12.0
+   }
+  },
+  "cards": [
+   {
+    "type": "text",
+    "title": [
+     "Desconto",
+     "Dinheiro"
+    ],
+    "hl": 1,
+    "strike": true,
+    "strikeY": -40,
+    "strikeAt": 1.0,
+    "w": 860,
+    "t0": -1,
+    "t1": 3.0,
+    "cy": 1250
+   },
+   {
+    "type": "list",
+    "title": "MADRI",
+    "icon": "plane",
+    "items": [
+     {
+      "t": "58.000 milhas",
+      "icon": "plane"
+     },
+     {
+      "t": "\"De graça\"",
+      "icon": "gift"
+     }
+    ],
+    "at": [
+     0.3,
+     1.0
+    ],
+    "stamp": "SERÁ?",
+    "stampAt": 1.8,
+    "stampX": 250,
+    "stampY": 70,
+    "t0": 3.0,
+    "t1": 6.0,
+    "cy": 1250
+   },
+   {
+    "type": "text",
+    "icon": "scale",
+    "title": [
+     "Milhas",
+     "ou dinheiro?"
+    ],
+    "hl": 1,
+    "sub": "depende do voo",
+    "t0": 12.0,
+    "t1": 15.0,
+    "cy": 1250
+   },
+   {
+    "type": "big",
+    "label": "RIO ⇄ CURITIBA · EM DINHEIRO",
+    "value": "R$ 319",
+    "count": true,
+    "unit": "IDA E VOLTA",
+    "color": "#6FBF93",
+    "fs": 200,
+    "t0": 15.0,
+    "t1": 18.0,
+    "cy": 1250
+   },
+   {
+    "type": "text",
+    "icon": "cross",
+    "iconColor": "#E0484E",
+    "title": [
+     "Jogar milha",
+     "fora"
+    ],
+    "hl": 1,
+    "hlColor": "#E0484E",
+    "t0": 18.0,
+    "t1": 21.0,
+    "cy": 1250
+   },
+   {
+    "type": "checks",
+    "label": "ONDE A MILHA VALE MAIS",
+    "labelColor": "#6FBF93",
+    "at": [
+     0.3,
+     0.9,
+     1.5
+    ],
+    "items": [
+     {
+      "icon": "plane",
+      "label": "VOO",
+      "label2": "INTERNACIONAL"
+     },
+     {
+      "icon": "calendar",
+      "label": "DATA DE",
+      "label2": "FÉRIAS"
+     },
+     {
+      "icon": "bell",
+      "label": "PROMOÇÃO",
+      "label2": "RELÂMPAGO"
+     }
+    ],
+    "t0": 21.0,
+    "t1": 24.0,
+    "cy": 1250
+   }
+  ],
+  "sfx": [
+   {
+    "t": 4.8,
+    "dur": 0.3,
+    "kind": "stamp"
+   }
+  ],
+  "caps": [
+   {
+    "start": 0.0,
+    "end": 3.0,
+    "text": "Milha não é desconto. É [[dinheiro]].",
+    "y": -650
+   },
+   {
+    "start": 3.0,
+    "end": 6.0,
+    "text": "Madri por 58 mil milhas é de graça?",
+    "y": -600
+   },
+   {
+    "start": 6.0,
+    "end": 9.0,
+    "text": "Com o milheiro a R$ 29,40…",
+    "y": -600
+   },
+   {
+    "start": 9.0,
+    "end": 12.0,
+    "text": "…essa passagem custaria cerca de [[R$ 1.705]], mais taxas.",
+    "y": -600
+   },
+   {
+    "start": 12.0,
+    "end": 15.0,
+    "text": "Às vezes, a passagem em dinheiro sai por menos.",
+    "y": -600
+   },
+   {
+    "start": 15.0,
+    "end": 18.0,
+    "text": "Rio–Curitiba já saiu por R$ 319 ida e volta, em dinheiro.",
+    "y": -600
+   },
+   {
+    "start": 18.0,
+    "end": 21.0,
+    "text": "Gastar milha num voo assim é [[jogar milha fora]].",
+    "y": -600
+   },
+   {
+    "start": 21.0,
+    "end": 24.0,
+    "text": "Guarde a milha para o voo que vale mais.",
+    "y": -600
+   },
+   {
+    "start": 24.0,
+    "end": 30.0,
+    "text": "Essa conta eu ensino no Duplicando Milhas.",
+    "small": "Link na bio",
+    "y": 380
+   }
+  ],
+  "caption": "Milha não é desconto, é dinheiro. Madri por 58 mil milhas parece de graça, mas com os pontos comprados a R$ 29,40 o milheiro essa passagem sairia por cerca de R$ 1.705, mais taxas. E já teve semana em que Rio–Curitiba saía por R$ 319 ida e volta em dinheiro.\n\nQuem sabe quanto cada milha vale guarda para o voo que vale a pena. No treinamento Duplicando Milhas eu ensino a fazer essa conta. Link na bio.\n\n#milhas #pontos #viajarbarato #latampass #viagem"
+ },
+ {
+  "id": "M3",
+  "duration": 30.0,
+  "bpm": 80,
+  "cover_t": 0.5,
+  "cap_lead": 0.15,
+  "word_step": 0.08,
+  "pulse_bar": 0.022,
+  "tema": "A próxima data dupla é 11/11",
+  "drops": [
+   3.0,
+   24.0
+  ],
+  "shots": [
+   {
+    "start": 0.0,
+    "video": "IMG_9913.mov",
+    "from": 2.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ]
+   },
+   {
+    "start": 3.0,
+    "video": "IMG_5025.MOV",
+    "from": 2.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "zoom",
+    "td": 0.4
+   },
+   {
+    "start": 6.0,
+    "video": "IMG_9812.mov",
+    "from": 1.5,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "whipL",
+    "td": 0.4
+   },
+   {
+    "start": 9.0,
+    "video": "IMG_5486.mov",
+    "from": 1.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "cube",
+    "td": 0.4
+   },
+   {
+    "start": 12.0,
+    "video": "IMG_9837.mov",
+    "from": 4.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "glitch",
+    "td": 0.4
+   },
+   {
+    "start": 15.0,
+    "video": "IMG_6915.mov",
+    "from": 3.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "spin",
+    "td": 0.4
+   },
+   {
+    "start": 18.0,
+    "video": "IMG_0073.mov",
+    "from": 3.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "whipU",
+    "td": 0.4
+   },
+   {
+    "start": 21.0,
+    "video": "IMG_5174.mov",
+    "from": 3.0,
+    "vol": 0.25,
+    "plate": [
+     12,
+     0.36
+    ],
+    "tr": "leak",
+    "td": 0.6
+   },
+   {
+    "start": 24.0,
+    "img": "IMG_9241",
+    "card": true,
+    "tr": "slab",
+    "td": 0.55
+   }
+  ],
+  "scenes": {
+   "countdown": {
+    "t0": 12.0,
+    "t1": 15.0,
+    "cy": 1200
+   }
+  },
+  "cards": [
+   {
+    "type": "big",
+    "label": "A MELHOR PASSAGEM DO MÊS",
+    "value": "1 DIA",
+    "fs": 220,
+    "color": "#6FBF93",
+    "t0": -1,
+    "t1": 3.0,
+    "cy": 1250
+   },
+   {
+    "type": "months",
+    "label": "LATAM PASS · ATÉ 40% OFF COM MILHAS",
+    "months": [
+     {
+      "l": "JUN",
+      "d": "06/06"
+     },
+     {
+      "l": "JUL",
+      "d": "06/07"
+     },
+     {
+      "l": "AGO",
+      "d": "09/08"
+     },
+     {
+      "l": "SET",
+      "d": "08/09"
+     },
+     {
+      "l": "OUT",
+      "d": "09/10"
+     }
+    ],
+    "foot": "DATAS DAS OFERTAS EM 2026",
+    "at": [
+     0.6,
+     1.5,
+     2.4,
+     3.3,
+     4.2
+    ],
+    "t0": 3.0,
+    "t1": 9.0,
+    "cy": 1250
+   },
+   {
+    "type": "big",
+    "label": "CURITIBA → LONDRINA · 10.10",
+    "value": "2.939",
+    "count": true,
+    "unit": "MILHAS O TRECHO, MAIS TAXAS",
+    "color": "#6FBF93",
+    "t0": 9.0,
+    "t1": 12.0,
+    "cy": 1250
+   },
+   {
+    "type": "text",
+    "icon": "bank",
+    "title": [
+     "Pontos no banco,",
+     "não na companhia"
+    ],
+    "fs": 88,
+    "w": 960,
+    "stamp": "PERDEU",
+    "stampAt": 1.6,
+    "t0": 15.0,
+    "t1": 18.0,
+    "cy": 1250
+   },
+   {
+    "type": "checks",
+    "label": "QUEM SE PREPARA SABE",
+    "labelColor": "#6FBF93",
+    "at": [
+     0.4,
+     1.1,
+     1.8
+    ],
+    "items": [
+     {
+      "icon": "plane",
+      "label": "QUANTO CUSTA",
+      "label2": "O DESTINO"
+     },
+     {
+      "icon": "wallet",
+      "label": "ONDE ESTÃO",
+      "label2": "OS PONTOS"
+     },
+     {
+      "icon": "tag",
+      "label": "QUANTO VALE",
+      "label2": "CADA MILHA"
+     }
+    ],
+    "t0": 18.0,
+    "t1": 21.0,
+    "cy": 1250
+   },
+   {
+    "type": "big",
+    "label": "PRÓXIMA DATA DUPLA",
+    "value": "11.11",
+    "fs": 250,
+    "color": "#6FBF93",
+    "t0": 21.0,
+    "t1": 24.0,
+    "cy": 1250
+   }
+  ],
+  "sfx": [
+   {
+    "t": 16.6,
+    "dur": 0.3,
+    "kind": "stamp"
+   }
+  ],
+  "caps": [
+   {
+    "start": 0.0,
+    "end": 3.0,
+    "text": "A melhor passagem do mês costuma durar [[1 dia]].",
+    "y": -650
+   },
+   {
+    "start": 3.0,
+    "end": 6.0,
+    "text": "Em 2026, a LATAM Pass deu até 40% off em voos com milhas…",
+    "y": -600
+   },
+   {
+    "start": 6.0,
+    "end": 9.0,
+    "text": "…em junho, julho, agosto, setembro e outubro.",
+    "y": -600
+   },
+   {
+    "start": 9.0,
+    "end": 12.0,
+    "text": "No 10.10, Curitiba–Londrina saiu por 2.939 milhas o trecho.",
+    "y": -600
+   },
+   {
+    "start": 12.0,
+    "end": 15.0,
+    "text": "A maioria dessas promoções valeu por um dia.",
+    "y": -600
+   },
+   {
+    "start": 15.0,
+    "end": 18.0,
+    "text": "Quem tinha os pontos no banco, e não na companhia, perdeu.",
+    "y": -600
+   },
+   {
+    "start": 18.0,
+    "end": 21.0,
+    "text": "Quem se prepara sabe 3 coisas antes da promoção.",
+    "y": -600
+   },
+   {
+    "start": 21.0,
+    "end": 24.0,
+    "text": "A próxima data dupla é [[11.11]].",
+    "y": -600
+   },
+   {
+    "start": 24.0,
+    "end": 30.0,
+    "text": "Para chegar pronto: Duplicando Milhas.",
+    "small": "Link na bio",
+    "y": 380
+   }
+  ],
+  "caption": "A melhor passagem do mês costuma aparecer num dia só. Em 2026, a LATAM Pass deu até 40% de desconto em voos com milhas em junho, julho, agosto, setembro e outubro, e no 10.10 Curitiba–Londrina saiu por 2.939 milhas o trecho. A maioria dessas ofertas durou um dia.\n\nA próxima data dupla é 11/11. Para chegar pronto, o método está no treinamento Duplicando Milhas. Link na bio.\n\n#milhas #latampass #promocao #curitiba #viajarbarato"
+ }
+]

@@ -808,7 +808,7 @@ function cardList(C, u){
   icon(C.icon || 'plane', -W/2 + 64, -H/2 + 45, 50, GREEN); tx(C.title, -W/2 + 110, -H/2 + 60, '800 46px BarlowC', '#fff', 'left', 6);
   C.items.forEach((it, i) => { const q = cl((u - (C.at ? C.at[i] : .3 + i * .45)) / .25); if (q <= 0) return; gc.save(); gc.globalAlpha *= q; gc.translate((1 - ease(q)) * -30, 0);
     const y = -H/2 + 170 + i * 104; icon(it.icon || 'check', -W/2 + 76, y - 18, 56, CARBON); tx(it.t, -W/2 + 130, y, '800 62px BarlowC', CARBON, 'left', 2); gc.restore(); });
-  if (C.stamp) { const sq = cl((u - C.stampAt) / .2); if (sq > 0) { gc.save(); gc.rotate(-.16); const kk = 2.4 - 1.4 * expo(sq); gc.scale(kk, kk); gc.font = '800 84px BarlowC'; gc.letterSpacing = '8px'; const sw = gc.measureText(C.stamp).width + 60; gc.letterSpacing = '0px'; rr(-sw/2, -62, sw, 118, 16); gc.fillStyle = 'rgba(244,245,247,.85)'; gc.fill(); gc.lineWidth = 9; gc.strokeStyle = C.stampColor || RED; gc.stroke(); tx(C.stamp, 0, 30, '800 84px BarlowC', C.stampColor || RED, 'center', 8); gc.restore(); } }
+  if (C.stamp) { const sq = cl((u - C.stampAt) / .2); if (sq > 0) { gc.save(); gc.translate(C.stampX || 0, C.stampY || 0); gc.rotate(-.16); const kk = 2.4 - 1.4 * expo(sq); gc.scale(kk, kk); gc.font = '800 84px BarlowC'; gc.letterSpacing = '8px'; const sw = gc.measureText(C.stamp).width + 60; gc.letterSpacing = '0px'; rr(-sw/2, -62, sw, 118, 16); gc.fillStyle = 'rgba(244,245,247,.85)'; gc.fill(); gc.lineWidth = 9; gc.strokeStyle = C.stampColor || RED; gc.stroke(); tx(C.stamp, 0, 30, '800 84px BarlowC', C.stampColor || RED, 'center', 8); gc.restore(); } }
   gc.restore();
 }
 function cardBars(C, u){
